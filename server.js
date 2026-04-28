@@ -17,12 +17,16 @@ app.post("/check", (req, res) => {
   const { message } = req.body;
 
   if (!message) {
-    return res.json({ error: "Message is required" }); // ✅ FIX
+    return res.json({ error: "Message is required" });
   }
 
-  const result = detectScam(message);
-  res.json(result);
-});
+  const scamResult = detectScam(message);
+  const manipulationResult = detectManipulation(message);
+
+  res.json({
+    ...scamResult,
+    ...manipulationResult
+  });
 
 // ✅ PORT FIX (Replit stable)
 const PORT = process.env.PORT || 3000;
