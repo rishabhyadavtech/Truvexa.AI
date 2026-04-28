@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 
-const detectScam = require("./logic/scamDetector"); // ✅ FIX
+const detectScam = require("./logic/scamDetector");
+
+const { detectManipulation } = require("./logic/manipulationDetector");
 
 app.use(express.json());
 app.use(express.static("public"));
