@@ -23,28 +23,29 @@ async function checkScam() {
 Risk Score: ${data.riskScore}
 Scam Type: ${data.scamType}
 
-🔥 Manipulation Analysis:
-Level: ${data.manipulationLevel}
-Score: ${data.manipulationScore}
-
-Detected Signals:
-- ${data.signals.join("\n- ")}
-
-Explanation:
-- ${data.reasons.join("\n- ")}
-
-What to do:
-- ${data.advice.join("\n- ")}
-
-------------------------
-
-Safety Status:
-${data.safetyStatus}
-
-Important Reminder:
-${data.reminder}
-
-${data.emergency || ""}
+🔥 Manipulation Analysis:          
+Level: ${data.manipulationLevel}          
+Score: ${data.manipulationScore}          
+      
+Detected Signals:          
+- ${(data.signals || []).join("\n- ")}          
+      
+Explanation:          
+- ${(data.reasons || []).join("\n- ")}          
+      
+What to do:          
+- ${(data.advice || []).join("\n- ")}          
+      
+------------------------          
+      
+Safety Status:          
+${data.safetyStatus || ""}          
+      
+Important Reminder:          
+${data.reminder || ""}          
+      
+${data.emergency || ""}          
+`;        
 
 ----------------------
 
