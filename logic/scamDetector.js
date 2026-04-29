@@ -61,6 +61,7 @@ function detectScam(input) {
     reasons.push("Message me suspicious link hai.");
     advice.push("Unknown links par click karne se pehle URL verify karein.");
   }
+  humanMessage += "🔗 Is message me suspicious link hai. Aise links se aapka data chura sakte hain.\n\n";
 
   // ✅ RESULT FIX
   if (riskScore >= 70) result = "DANGEROUS ❌";
@@ -100,7 +101,8 @@ function detectScam(input) {
     advice,    
     safetyStatus,
     reminder,
-    emergency
+    emergency,
+    humanMessage,
   };
 }
 
