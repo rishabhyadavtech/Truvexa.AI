@@ -30,8 +30,9 @@ Score: ${data.manipulationScore}
 Detected Signals:
 - ${(data.signals || []).join("\n- ")}
 
-Explanation:
-- ${(data.reasons || []).join("\n- ")}
+🧠 AI Explanation:
+
+${data.humanMessage}
 
 What to do:
 - ${(data.advice || []).join("\n- ")}
