@@ -18,14 +18,18 @@ function detectScam(input) {
 
   // 🔴 MONEY SCAM
   if (
-    text.includes("profit") ||
-    text.includes("double money") ||
-    text.includes("investment")
-  ) {
-    riskScore += 40;
-    scamType = "Investment Scam";
-    reasons.push("Easy profit ya paisa double karne ka promise diya gaya hai.");
-    advice.push("Investment offers ko bina verify kiye accept na karein.");
+  text.includes("money") ||
+  text.includes("rupees") ||
+  text.includes("lakh") ||
+  text.includes("prize") ||
+  text.includes("invest") ||
+  text.includes("cash")
+) {
+  riskScore += 25;
+
+  reasons.push("Greed / paisa ka lalach diya gaya hai");
+
+  humanMessage += "💰 Yeh message aapko paise ka lalach de raha hai (jaise prize, reward ya investment). Scammers aksar greed ka use karte hain taki aap jaldi trap ho jao.\n\n";
   }
 
   // 🔴 BANK / OTP
