@@ -14,6 +14,7 @@ function detectScam(input) {
     reasons.push("Message me urgency create ki gayi hai (jaldi decision lene ka pressure).");
     advice.push("Aise urgent messages me turant react na karein, pehle verify karein.");
   }
+  humanMessage += "⚠️ Yeh message aapko jaldi decision lene par majboor kar raha hai. Scammers aise pressure create karte hain taki aap bina soche react karein.\n\n";
 
   // 🔴 MONEY SCAM
   if (
