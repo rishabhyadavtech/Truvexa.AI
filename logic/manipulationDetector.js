@@ -14,7 +14,16 @@ function detectManipulation(input) {
     signals.push("Fear");
     score += 25;
   }
+if (
+  text.includes("blocked") ||
+  text.includes("suspend") ||
+  text.includes("warning")
+) {
+  manipulationScore += 20;
+  signals.push("Fear");
 
+  manipulationMessage += "😨 Yeh message dar create kar raha hai (account block ya problem ka). Scammers fear ka use karke aapko panic me decision lene par majboor karte hain.\n\n";
+}
   // ⏰ URGENCY
   if (
     text.includes("urgent") ||
