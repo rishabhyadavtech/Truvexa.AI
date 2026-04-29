@@ -34,6 +34,12 @@ if (
     signals.push("Urgency");
     score += 20;
   }
+  if (text.includes("urgent") || text.includes("immediately")) {
+  manipulationScore += 20;
+  signals.push("Urgency");
+
+  manipulationMessage += "⚠️ Yeh message aapko jaldi decision lene par majboor kar raha hai. Yeh ek psychological trick hai jisse aap bina soche action le lo.\n\n";
+  }
 
   // 👑 AUTHORITY
   if (
