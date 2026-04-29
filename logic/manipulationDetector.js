@@ -3,7 +3,8 @@ function detectManipulation(input) {
 
   let signals = [];
   let score = 0;
-
+  let manipulationMessage = "";
+  
   // 😨 FEAR
   if (
     text.includes("blocked") ||
