@@ -39,6 +39,7 @@ function detectScam(input) {
     reasons.push("Bank ya OTP related sensitive information maangi ja rahi hai.");
     advice.push("Kabhi bhi OTP ya bank details kisi ke sath share na karein.");
   }
+  humanMessage += "🚨 Yeh message aapse sensitive information (OTP ya bank details) maang raha hai. Yaad rakhein, koi bhi genuine bank kabhi OTP nahi maangta.\n\n";
 
   // 🔴 FAKE REWARD
   if (
