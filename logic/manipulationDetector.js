@@ -72,6 +72,16 @@ if (
     signals.push("Greed");
     score += 25;
   }
+  if (
+  text.includes("win") ||
+  text.includes("reward") ||
+  text.includes("prize")
+) {
+  manipulationScore += 20;
+  signals.push("Greed");
+
+  manipulationMessage += "💰 Yeh message aapko lalach de raha hai (reward ya prize). Yeh ek common manipulation technique hai jisme aapko easy profit ka promise diya jata hai.\n\n";
+  }
 
   // 🎯 PRESSURE
   if (
