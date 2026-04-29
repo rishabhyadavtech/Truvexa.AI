@@ -52,6 +52,7 @@ function detectScam(input) {
     reasons.push("Fake reward ya unknown selection ka message hai.");
     advice.push("Aise reward messages ko ignore karein aur source verify karein.");
   }
+  humanMessage += "🎁 Yeh ek fake reward ya offer ho sakta hai. Scammers aksar lalach ka use karte hain.\n\n";
 
   // 🔴 LINK DETECTION
   if (text.includes("http") || text.includes("www")) {
