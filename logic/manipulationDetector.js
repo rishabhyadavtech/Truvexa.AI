@@ -51,6 +51,16 @@ if (
     signals.push("Authority");
     score += 20;
   }
+  if (
+  text.includes("bank") ||
+  text.includes("government") ||
+  text.includes("official")
+) {
+  manipulationScore += 15;
+  signals.push("Authority");
+
+  manipulationMessage += "🏛️ Yeh message kisi authority (bank ya government) ka naam use kar raha hai. Yeh trust gain karne ki trick hoti hai.\n\n";
+  }
 
   // 💰 GREED
   if (
