@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truvexa AI</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      resize: none;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 12px;
+      background: #4f46e5;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* STATES */
+    .safe {
+      background: #ecfdf5;
+      border-left: 5px solid #22c55e;
+    }
+
+    .danger {
+      background: #fef2f2;
+      border-left: 5px solid #ef4444;
+    }
+
+    .warning {
+      background: #fffbeb;
+      border-left: 5px solid #f59e0b;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🛡️ Truvexa AI</h1>
+  <p>Paste any message, link, or email to check if it's safe.</p>
+
+  <textarea 
+    id="input" 
+    placeholder="Enter message, link, or email..."
+    rows="5">
+  </textarea>
+
+  <button onclick="checkScam()">Check Message</button>
+
+  <div id="result" class="result-box">
+Result will appear here...
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
