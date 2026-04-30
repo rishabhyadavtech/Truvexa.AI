@@ -52,6 +52,7 @@ app.post("/check", (req, res) => {
     // 🔍 Run detectors
     const scamResult = detectScam(message);
     const manipulationResult = detectManipulation(message);
+    const decision = decideAction(scamResult, manipulationResult);
 
     // 🎯 FINAL DECISION ENGINE
     const finalType = getFinalResultType(scamResult, manipulationResult);
