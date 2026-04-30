@@ -74,7 +74,8 @@ app.post("/check", (req, res) => {
       finalMessage: "",
       explanation: "",
       signals,
-      advice
+      advice,
+      decision
     };
 
     // 🟢 SAFE RESPONSE (Clean)
