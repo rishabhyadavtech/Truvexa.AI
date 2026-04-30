@@ -3,6 +3,7 @@ const app = express();
 
 const detectScam = require("./logic/scamDetector");
 const { detectManipulation } = require("./logic/manipulationDetector");
+const { decideAction } = require("./logic/decisionHelper");
 
 app.use(express.json());
 app.use(express.static("public"));
