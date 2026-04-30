@@ -14,19 +14,34 @@ app.get("/", (req, res) => {
 
 // API route
 app.post("/check", (req, res) => {
-  const { message } = req.body;
+  try {
+    const { message } = req.body;
 
-  if (!message) {
-    return res.json({ error: "Message is required" });
+    if (!message || message.trim() === "") {
+      return res.status(400).json({
+        error: "Message is required"
+      });
+    }
+
+    // 🔍 Run detectors
+    const scamResult = detectScam(message);
+    const manipulationResult = detectManipulation(message);
+
+    // ✅ SAFE MERGE (no overwrite risk)
+    const finalResult = {
+      scam: scamResult,
+      manipulation: manipulationResult
+    };
+
+    res.json(finalResult);
+
+  } catch (error) {
+    console.error("❌ Server Error:", error);
+
+    res.status(500).json({
+      error: "Server error. Please try again."
+    });
   }
-
-  const scamResult = detectScam(message);
-  const manipulationResult = detectManipulation(message);
-
-  res.json({
-    ...scamResult,
-    ...manipulationResult
-  });
 });
 
 // ✅ PORT FIX (Replit stable)
