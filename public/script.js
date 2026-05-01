@@ -31,17 +31,20 @@ async function checkScam() {
     // 🟢 SAFE MODE (CLEAN UX)
     // =========================
     if (type === "SAFE") {
-      resultBox.classList.add("safe");
+  resultBox.classList.add("safe");
 
-      resultBox.innerText = `
-✅ Yeh message safe lag raha hai.
+  resultBox.innerText = `
+🟢 Good News — Yeh message safe lag raha hai.
 
-Koi strong scam ya manipulation signal detect nahi hua.
+Is message me koi bhi strong scam ya manipulation pattern detect nahi hua.
+Na urgency hai, na lalach, na koi suspicious behavior.
 
-👉 Aap bina tension ke isse normal treat kar sakte hain.
-      `.trim();
+👍 Aap isse normal conversation ki tarah handle kar sakte hain.
 
-      return;
+💡 Phir bhi basic caution rakho — unknown links ya personal info share karne se pehle ek baar soch lena hamesha smart hota hai.
+  `;
+
+  return;
     }
 
     // =========================
