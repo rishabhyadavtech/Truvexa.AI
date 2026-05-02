@@ -1,1 +1,167 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 720px;
+  padding: 20px;
+}
+
+/* HEADER */
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* INPUT BOX */
+.input-box {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  padding: 10px;
+  line-height: 1.6;
+  background: transparent;
+}
+
+/* BUTTON */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* MAIN BUTTON */
+#checkBtn {
+  background: #4f46e5;
+  color: white;
+}
+
+#checkBtn:hover {
+  background: #4338ca;
+}
+
+/* RESULT BOX */
+.result-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+/* STATES */
+.safe {
+  background: #ecfdf5;
+  border-left: 5px solid #22c55e;
+}
+
+.warning {
+  background: #fffbeb;
+  border-left: 5px solid #f59e0b;
+}
+
+.danger {
+  background: #fef2f2;
+  border-left: 5px solid #ef4444;
+}
+
+/* FEEDBACK */
+.feedback-box {
+  margin-top: 14px;
+  display: none;
+}
+
+.feedback-text {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* FEEDBACK BUTTONS */
+.feedback-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-success {
+  background: #22c55e;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #16a34a;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-warning {
+  background: #f59e0b;
+  color: white;
+  width: 100%;
+}
+
+.btn-warning:hover {
+  background: #d97706;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #9ca3af;
+}
