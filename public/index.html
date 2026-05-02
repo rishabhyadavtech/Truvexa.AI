@@ -144,6 +144,18 @@
   <div id="result" class="result-box">
 Type something above and click “Check”
   </div>
+  <div id="feedbackBox" style="display:none; margin-top:10px;">
+
+  <p style="font-size:13px; color:#555;">Kya yeh result helpful tha?</p>
+
+  <button onclick="sendFeedback('yes')" style="background:#22c55e;">👍 Sahi hai</button>
+  <button onclick="sendFeedback('no')" style="background:#ef4444;">👎 Galat hai</button>
+
+  <button onclick="reportIssue()" style="background:#f59e0b; margin-top:8px;">
+    🚨 Report Wrong Result
+  </button>
+
+  </div>
 
   <div class="footer">
     Built for safety • Think before you act
