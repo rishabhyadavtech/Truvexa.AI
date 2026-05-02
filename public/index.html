@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truvexa AI</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <h1>🛡️ Truvexa AI</h1>
+  <p class="subtitle">
+    Paste any message, link, or email to check if it's safe
+  </p>
+
+  <!-- INPUT -->
+  <div class="input-box">
+    <textarea 
+      id="input" 
+      placeholder="Paste message here... (OTP, link, job offer, etc)"
+      rows="4">
+    </textarea>
+
+    <div class="actions">
+      <button id="checkBtn" onclick="checkScam()">Check</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result" class="result-box">
+    Type something above and click “Check”
+  </div>
+
+  <!-- FEEDBACK -->
+  <div id="feedbackBox" class="feedback-box">
+
+    <p class="feedback-text">Kya yeh result helpful tha?</p>
+
+    <div class="feedback-actions">
+      <button class="btn-success" onclick="sendFeedback('yes')">
+        👍 Sahi hai
+      </button>
+
+      <button class="btn-danger" onclick="sendFeedback('no')">
+        👎 Galat hai
+      </button>
+    </div>
+
+    <button class="btn-warning report-btn" onclick="reportIssue()">
+      🚨 Report Wrong Result
+    </button>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Built for safety • Think before you act
+  </div>
+
+</div>
+
+<!-- Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
