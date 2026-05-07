@@ -166,48 +166,6 @@ app.post("/check", (req, res) => {
   }
 });
 
-
-// =========================
-// 📊 FEEDBACK API (NEW ADD)
-// =========================
-app.post("/feedback", (req, res) => {
-  try {
-    const { message, feedback } = req.body;
-
-    console.log("📊 USER FEEDBACK:");
-    console.log("Message:", message);
-    console.log("Feedback:", feedback);
-    console.log("------------------------");
-
-    res.json({ status: "saved" });
-
-  } catch (error) {
-    console.error("❌ Feedback Error:", error);
-    res.status(500).json({ error: "Feedback failed" });
-  }
-});
-
-
-// =========================
-// 🚨 REPORT WRONG RESULT (NEW ADD)
-// =========================
-app.post("/report", (req, res) => {
-  try {
-    const { message } = req.body;
-
-    console.log("🚨 WRONG DETECTION REPORTED:");
-    console.log("Message:", message);
-    console.log("------------------------");
-
-    res.json({ status: "reported" });
-
-  } catch (error) {
-    console.error("❌ Report Error:", error);
-    res.status(500).json({ error: "Report failed" });
-  }
-});
-
-
 // =========================
 // 🧠 DEBUG ROUTE (OPTIONAL ADD)
 // =========================
