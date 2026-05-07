@@ -174,11 +174,49 @@ async function sendFeedback(type) {
 
 
 // =========================
-// 🚨 REPORT WRONG RESULT
+// 🚨 OPEN REPORT MODAL
 // =========================
 async function reportIssue() {
 
-  const message = document.getElementById("input").value;
+  document.getElementById(
+    "reportModal"
+  ).style.display = "flex";
+}
+
+
+// =========================
+// ❌ CLOSE REPORT MODAL
+// =========================
+function closeReportModal() {
+
+  document.getElementById(
+    "reportModal"
+  ).style.display = "none";
+}
+
+
+// =========================
+// 📤 SUBMIT REPORT
+// =========================
+async function submitReport() {
+
+  const message =
+    document.getElementById("input").value;
+
+  const selected =
+    document.querySelector(
+      'input[name="reportReason"]:checked'
+    );
+
+  const customReason =
+    document.getElementById(
+      "customReport"
+    ).value;
+
+  const reason =
+    selected
+      ? selected.value
+      : "No option selected";
 
   try {
 
@@ -186,15 +224,23 @@ async function reportIssue() {
       "https://script.google.com/macros/s/AKfycby5KiRfYhhHGa4jAS1QDy64eI1EzYmgkB_Bd3zo_fvAMX99pzysGi4J03viLijZgvOw1A/exec",
       {
         method: "POST",
+
         body: JSON.stringify({
+
           message: message,
+
           feedback: "",
-          report: "Wrong Result Reported"
+
+          report: reason,
+
+          customReason: customReason
         })
       }
     );
 
-    alert("🚀 Report submitted successfully");
+    alert("✅ Report submitted successfully");
+
+    closeReportModal();
 
   } catch (err) {
 
