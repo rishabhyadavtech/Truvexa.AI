@@ -57,6 +57,69 @@
     </button>
 
   </div>
+  <!-- 🚨 REPORT MODAL -->
+<div id="reportModal" class="report-modal">
+
+  <div class="report-content">
+
+    <h3>🚨 Report Wrong Result</h3>
+
+    <p>What went wrong?</p>
+
+    <div class="report-options">
+
+      <label>
+        <input type="radio" name="reportReason" value="Scam detected as safe">
+        Scam detected as safe
+      </label>
+
+      <label>
+        <input type="radio" name="reportReason" value="Safe message marked dangerous">
+        Safe message marked dangerous
+      </label>
+
+      <label>
+        <input type="radio" name="reportReason" value="Explanation confusing">
+        Explanation confusing
+      </label>
+
+      <label>
+        <input type="radio" name="reportReason" value="Important signal missing">
+        Important signal missing
+      </label>
+
+      <label>
+        <input type="radio" name="reportReason" value="Other">
+        Other
+      </label>
+
+    </div>
+
+    <textarea
+      id="customReport"
+      placeholder="Optional: explain the issue..."
+      rows="4">
+    </textarea>
+
+    <div class="report-actions">
+
+      <button onclick="submitReport()">
+        Submit Report
+      </button>
+
+      <button
+        onclick="closeReportModal()"
+        class="cancel-btn">
+
+        Cancel
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
   <!-- FOOTER -->
   <div class="footer">
