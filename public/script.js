@@ -145,23 +145,30 @@ ${adviceBlock}
 // 👍 FEEDBACK SYSTEM
 // =========================
 async function sendFeedback(type) {
+
   const message = document.getElementById("input").value;
 
   try {
-    await fetch("/feedback", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message,
-        feedback: type
-      })
-    });
 
-    alert("Thanks! Feedback saved ❤️");
+    await fetch(
+      "https://script.google.com/macros/s/AKfycby5KiRfYhhHGa4jAS1QDy64eI1EzYmgkB_Bd3zo_fvAMX99pzysGi4J03viLijZgvOw1A/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          message: message,
+          feedback: type,
+          report: ""
+        })
+      }
+    );
+
+    alert("❤️ Feedback saved successfully");
+
   } catch (err) {
-    alert("Feedback failed");
+
+    console.error(err);
+
+    alert("❌ Feedback failed");
   }
 }
 
@@ -170,19 +177,29 @@ async function sendFeedback(type) {
 // 🚨 REPORT WRONG RESULT
 // =========================
 async function reportIssue() {
+
   const message = document.getElementById("input").value;
 
   try {
-    await fetch("/report", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message })
-    });
 
-    alert("Report sent! Hum ise improve karenge 🚀");
+    await fetch(
+      "https://script.google.com/macros/s/AKfycby5KiRfYhhHGa4jAS1QDy64eI1EzYmgkB_Bd3zo_fvAMX99pzysGi4J03viLijZgvOw1A/exec",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          message: message,
+          feedback: "",
+          report: "Wrong Result Reported"
+        })
+      }
+    );
+
+    alert("🚀 Report submitted successfully");
+
   } catch (err) {
-    alert("Report failed");
+
+    console.error(err);
+
+    alert("❌ Report failed");
   }
 }
