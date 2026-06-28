@@ -196,13 +196,24 @@ ${decision.reason || ""}
     resultBox.innerText = `
 ${data.finalMessage || "⚠️ Yeh message suspicious lag raha hai."}
 
-🧠 Samajh kya aa raha hai:
+${riskBlock}
+
+${confidenceBlock}
+
+${categoryBlock}
+
+🧠 Analysis
 
 ${explanation}
+
 ${decisionBlock}
+
+${evidenceBlock}
+
 ${signalsBlock}
+
 ${adviceBlock}
-    `.trim();
+`.trim();
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
