@@ -30,7 +30,12 @@ let context = {
   // 🎯 CONTEXT FLAGS
   const hasLink = text.includes("http") || text.includes("www");
   const hasOTP = text.includes("otp");
-
+  context.hasMoney = hasMoney;
+context.hasUrgency = hasUrgency;
+context.hasFear = hasFear;
+context.hasLink = hasLink;
+context.hasSensitiveInfo = hasOTP && hasBank;
+  
   const hasBank =
     text.includes("bank") ||
     text.includes("account") ||
