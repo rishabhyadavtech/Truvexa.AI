@@ -106,14 +106,23 @@ app.post("/check", (req, res) => {
     );
 
     // 🎯 RESPONSE OBJECT
-    let response = {
-      type: finalType,
-      finalMessage: "",
-      explanation: "",
-      signals,
-      advice,
-      decision
-    };
+  let response = {
+  type: finalType,
+  finalMessage: "",
+  explanation: "",
+
+  // Existing
+  signals,
+  advice,
+  decision,
+
+  // NEW
+  riskScore: scamResult.riskScore,
+  confidence: scamResult.confidence || 0,
+  evidence: scamResult.evidence || [],
+  matchedPatterns: scamResult.matchedPatterns || [],
+  scamCategory: scamResult.scamType || "General"
+};
 
     // =========================
     // 🟢 SAFE
