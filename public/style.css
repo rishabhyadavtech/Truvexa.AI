@@ -244,3 +244,136 @@ button {
   background: #e5e7eb;
   color: #111;
 }
+/* ===========================
+   Truvexa AI v2 UI Upgrade
+=========================== */
+
+/* Smooth animation */
+.result-box{
+    animation: fadeIn .35s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Better textarea */
+textarea{
+    transition:.25s;
+}
+
+textarea:focus{
+    border-radius:12px;
+    background:#fafcff;
+}
+
+/* Better buttons */
+
+button{
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+/* Nice Result Cards */
+
+.safe{
+    border-left:7px solid #22c55e;
+}
+
+.warning{
+    border-left:7px solid #f59e0b;
+}
+
+.danger{
+    border-left:7px solid #ef4444;
+}
+
+/* Mobile Friendly */
+
+@media(max-width:600px){
+
+.container{
+
+padding:16px;
+
+}
+
+h1{
+
+font-size:26px;
+
+}
+
+.subtitle{
+
+font-size:14px;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:8px;
+
+}
+
+.feedback-actions{
+
+flex-direction:column;
+
+}
+
+.report-actions{
+
+flex-direction:column;
+
+}
+
+}
+
+/* Scrollbar */
+
+textarea::-webkit-scrollbar{
+
+width:7px;
+
+}
+
+textarea::-webkit-scrollbar-thumb{
+
+background:#bcbcbc;
+
+border-radius:10px;
+
+}
+
+/* Nice footer */
+
+.footer{
+
+opacity:.75;
+
+transition:.3s;
+
+}
+
+.footer:hover{
+
+opacity:1;
+
+}
