@@ -2,10 +2,30 @@ function detectScam(input) {
   let text = input.toLowerCase();
 
   let riskScore = 0;
-  let signals = [];
-  let reasons = [];
-  let advice = [];
-  let scamTypes = [];
+
+// Core analysis
+let signals = [];
+let reasons = [];
+let advice = [];
+let scamTypes = [];
+
+// NEW: Evidence engine
+let evidence = [];
+
+// NEW: Confidence score
+let confidence = 0;
+
+// NEW: Pattern matches
+let matchedPatterns = [];
+
+// NEW: Context
+let context = {
+  hasMoney: false,
+  hasUrgency: false,
+  hasFear: false,
+  hasLink: false,
+  hasSensitiveInfo: false
+};
 
   // 🎯 CONTEXT FLAGS
   const hasLink = text.includes("http") || text.includes("www");
