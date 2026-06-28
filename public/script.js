@@ -64,7 +64,83 @@ Na urgency hai, na lalach, na koi suspicious behavior.
     // 🧠 EXPLANATION CLEAN
     // =========================
     let explanation = (data.explanation || "").replace(/\n{3,}/g, "\n\n");
+   
+    // =========================
+// 📊 RISK SCORE
+// =========================
+let riskBlock = "";
 
+if (typeof data.riskScore === "number") {
+  riskBlock = `
+----------------------------
+
+📊 Risk Score
+
+${data.riskScore} / 100
+  `;
+}
+
+// =========================
+// 🎯 CONFIDENCE
+// =========================
+let confidenceBlock = "";
+
+if (typeof data.confidence === "number") {
+
+  let bars = Math.round(data.confidence / 10);
+
+  confidenceBlock = `
+----------------------------
+
+🎯 Detection Confidence
+
+${"█".repeat(bars)}${"░".repeat(10-bars)}
+
+${data.confidence}%
+  `;
+}
+
+// =========================
+// 🛡️ SCAM CATEGORY
+// =========================
+let categoryBlock = "";
+
+if (data.scamCategory) {
+
+  categoryBlock = `
+----------------------------
+
+🛡️ Detected Category
+
+${data.scamCategory}
+  `;
+}
+
+// =========================
+// 🔍 EVIDENCE
+// =========================
+let evidenceBlock = "";
+
+if (data.evidence && data.evidence.length > 0) {
+
+  evidenceBlock =
+`
+----------------------------
+
+🔍 Evidence Found
+`;
+
+  data.evidence.forEach(item => {
+
+    evidenceBlock +=
+`
+• ${item.title}
+Severity : ${item.severity}
+Confidence : ${item.confidence}%
+`;
+  });
+
+  }
     // =========================
     // 🎯 DECISION BLOCK
     // =========================
