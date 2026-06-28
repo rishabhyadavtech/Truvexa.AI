@@ -196,6 +196,16 @@ matchedPatterns.push("EXTERNAL_LINK");
 
     reasons.push("Job ke naam par paise maangna almost hamesha scam hota hai.");
   }
+  evidence.push({
+  id: "ADVANCE_FEE",
+  title: "Advance fee requested",
+  severity: "critical",
+  confidence: 99,
+  description:
+    "The sender asks for money before providing the promised service or job."
+});
+
+matchedPatterns.push("ADVANCE_FEE");
 
   // =========================
   // 🔥 COMBO INTELLIGENCE
