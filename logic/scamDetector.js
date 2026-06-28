@@ -40,6 +40,16 @@ context.hasSensitiveInfo = hasOTP && hasBank;
     text.includes("bank") ||
     text.includes("account") ||
     text.includes("rbi");
+  evidence.push({
+  id: "OTP_REQUEST",
+  title: "Sensitive information requested",
+  severity: "critical",
+  confidence: 98,
+  description:
+    "The message requests OTP or banking credentials, which is a common fraud technique."
+});
+
+matchedPatterns.push("OTP_REQUEST");
 
   const hasMoney =
     text.includes("rupees") ||
