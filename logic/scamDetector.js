@@ -143,6 +143,16 @@ matchedPatterns.push("OTP_REQUEST");
     reasons.push("Message me ek external link diya gaya hai.");
     advice.push("Unknown link par click mat karo.");
   }
+  evidence.push({
+  id: "EXTERNAL_LINK",
+  title: "External link detected",
+  severity: "medium",
+  confidence: 80,
+  description:
+    "The message contains an external link that should be verified before opening."
+});
+
+matchedPatterns.push("EXTERNAL_LINK");
 
   if (hasFear) {
     riskScore += 20;
