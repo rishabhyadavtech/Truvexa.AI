@@ -99,10 +99,13 @@ app.post("/check", (req, res) => {
     const finalType = getFinalResultType(scamResult, manipulationResult);
 
     // 🎯 CLEAN DATA
-    const signals = mergeSignals(
-      scamResult.signals,
-      manipulationResult.signals
-    );
+    const signals = [
+  ...new Set([
+    ...(scamResult.signals || []),
+    ...(manipulationResult.signals || []),
+    ...(urlResult.signals || [])
+  ])
+];
 
     const advice = mergeAdvice(
       scamResult.advice,
