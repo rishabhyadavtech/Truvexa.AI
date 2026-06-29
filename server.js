@@ -107,10 +107,14 @@ app.post("/check", (req, res) => {
   ])
 ];
 
-    const advice = mergeAdvice(
-      scamResult.advice,
-      manipulationResult.manipulationAdvice
-    );
+
+const advice = [
+  ...new Set([
+    ...(scamResult.advice || []),
+    ...(manipulationResult.manipulationAdvice || []),
+    ...(urlResult.advice || [])
+  ])
+];
 
     // 🎯 RESPONSE OBJECT
   let response = {
