@@ -91,7 +91,8 @@ app.post("/check", (req, res) => {
     const scamResult = detectScam(message);
     const manipulationResult = detectManipulation(message);
     const decision = decideAction(scamResult, manipulationResult);
-
+    const urlResult = checkUrlReputation(message);
+    
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
 
