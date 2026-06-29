@@ -117,6 +117,7 @@ app.post("/check", (req, res) => {
   signals,
   advice,
   decision,
+  urlReputation: urlResult
 
   // NEW
   riskScore: scamResult.riskScore,
