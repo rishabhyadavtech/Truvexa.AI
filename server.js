@@ -4,8 +4,8 @@ const app = express();
 const detectScam = require("./logic/scamDetector");
 const { detectManipulation } = require("./logic/manipulationDetector");
 const { decideAction } = require("./logic/decisionHelper");
-const { analyzeURL } = require("./logic/urlAnalyzer");
 const { checkUrlReputation } = require("./logic/urlReputation");
+const { analyzeURL } = require("./logic/urlAnalyzer");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -93,6 +93,7 @@ app.post("/check", (req, res) => {
     const manipulationResult = detectManipulation(message);
     const decision = decideAction(scamResult, manipulationResult);
     const urlResult = checkUrlReputation(message);
+    const urlResult = analyzeURL(message);
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
