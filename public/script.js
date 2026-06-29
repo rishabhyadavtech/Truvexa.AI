@@ -179,6 +179,36 @@ ${decision.reason || ""}
     // =========================
     // 👉 ADVICE BLOCK
     // =========================
+
+let domainBlock = "";
+
+if (
+  data.domainInfo &&
+  data.domainInfo.success
+) {
+
+  domainBlock = `
+----------------------------
+
+🌍 Domain Information
+
+🔹 Domain:
+${data.domainInfo.domain}
+
+📅 Domain Age:
+${data.domainInfo.age}
+
+🏢 Registrar:
+${data.domainInfo.registrar}
+
+⚠️ Domain Risk:
+${data.domainInfo.risk}
+
+📝 Status:
+${data.domainInfo.message}
+`;
+
+}
     let adviceBlock = "";
 
     if (data.advice && data.advice.length > 0) {
