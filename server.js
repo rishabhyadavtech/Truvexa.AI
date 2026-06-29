@@ -136,8 +136,8 @@ const advice = [
   decision,
   domainInfo,
   analyzeURL,
-  urlReputation: urlResult
-  
+  urlReputation,
+  safeBrowsing
     
   // NEW
   riskScore: scamResult.riskScore,
