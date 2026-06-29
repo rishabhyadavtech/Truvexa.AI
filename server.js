@@ -4,6 +4,7 @@ const app = express();
 const detectScam = require("./logic/scamDetector");
 const { detectManipulation } = require("./logic/manipulationDetector");
 const { decideAction } = require("./logic/decisionHelper");
+const { checkUrlReputation } = require("./logic/urlReputation");
 
 app.use(express.json());
 app.use(express.static("public"));
