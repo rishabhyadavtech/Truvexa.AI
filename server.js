@@ -133,8 +133,11 @@ const advice = [
   signals,
   advice,
   decision,
+  domainInfo,
+  analyzeURL,
   urlReputation: urlResult
-
+  
+    
   // NEW
   riskScore: scamResult.riskScore,
   confidence: scamResult.confidence || 0,
