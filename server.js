@@ -102,6 +102,7 @@ app.post("/check", (req, res) => {
     const urlResult = checkUrlReputation(message);
     const urlResult = analyzeURL(message);
     const domainInfo = checkDomainAge(message);
+    const safeBrowsing = urlInfo.hasURL ? await checkSafeBrowsing(urlInfo.url) : { success: false, safe: true, threats: [], message: "No URL detected." };
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
