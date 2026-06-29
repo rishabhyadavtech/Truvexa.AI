@@ -161,6 +161,21 @@ app.post("/check", (req, res) => {
 
       response.explanation = buildExplanation(
         "DANGEROUS",
+        if (urlResult.found) {
+    response.explanation +=
+
+`\n\n🌐 URL Analysis
+
+Domain: ${urlResult.domain}
+
+Age: ${urlResult.age}
+
+Reputation: ${urlResult.reputation}
+
+HTTPS: ${urlResult.https ? "Yes" : "No"}
+
+Risk: ${urlResult.risk}`;
+        }
         scamResult,
         manipulationResult
       );
