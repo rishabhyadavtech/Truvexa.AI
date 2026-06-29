@@ -7,6 +7,7 @@ const { decideAction } = require("./logic/decisionHelper");
 const { checkUrlReputation } = require("./logic/urlReputation");
 const { analyzeURL } = require("./logic/urlAnalyzer");
 const { checkDomainAge } = require("./logic/domainAge");
+const { checkSafeBrowsing } = require("./logic/safeBrowsing");
 
 app.use(express.json());
 app.use(express.static("public"));
