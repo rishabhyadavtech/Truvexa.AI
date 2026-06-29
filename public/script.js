@@ -242,6 +242,8 @@ ${evidenceBlock}
 
 ${signalsBlock}
 
+${domainBlock}
+
 ${adviceBlock}
 `.trim();
 
