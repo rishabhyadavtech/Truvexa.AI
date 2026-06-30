@@ -85,7 +85,7 @@ if (urlResult.reasons.length > 0) {
 }
 
 // API route
-app.post("/check", (req, res) => {
+app.post("/check", async (req, res) => {
   try {
     const { message } = req.body;
 
