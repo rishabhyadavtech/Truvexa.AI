@@ -136,8 +136,8 @@ const advice = [
   advice,
   decision,
   domainInfo,
-  analyzeURL,
-  urlReputation,
+  urlAnalysis,
+reputationResult,
   safeBrowsing
     
   // NEW
