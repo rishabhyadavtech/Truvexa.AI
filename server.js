@@ -182,26 +182,19 @@ reputationResult,
       response.finalMessage = "🚨 Yeh message risky / scam ho sakta hai.";
 
       response.explanation = buildExplanation(
-        "DANGEROUS",
-        if (urlResult.found) {
+  "DANGEROUS",
+  scamResult,
+  manipulationResult
+);
+
+if (urlAnalysis.found) {
+  response.explanation += "\n\n🌐 URL Analysis\n";
+
+  if (urlAnalysis.reasons.length > 0) {
     response.explanation +=
-
-`\n\n🌐 URL Analysis
-
-Domain: ${urlResult.domain}
-
-Age: ${urlResult.age}
-
-Reputation: ${urlResult.reputation}
-
-HTTPS: ${urlResult.https ? "Yes" : "No"}
-
-Risk: ${urlResult.risk}`;
-        }
-        scamResult,
-        manipulationResult
-      );
-    }
+      "\n- " + urlAnalysis.reasons.join("\n- ");
+  }
+}
 
     // ✅ SEND FINAL
     res.json(response);
