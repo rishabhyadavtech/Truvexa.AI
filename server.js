@@ -53,11 +53,6 @@ function mergeAdvice(scamAdvice = [], manipulationAdvice = []) {
 
 // 🎯 AI EXPLANATION BUILDER (NO TEMPLATE 🔥)
 function buildExplanation(type, scam, manipulation) {
-if (urlResult.reasons.length > 0) {
-  response.explanation +=
-    "\n\n🌐 URL Analysis:\n\n- " +
-    urlResult.reasons.join("\n- ");
-}
   
   let parts = [];
 
