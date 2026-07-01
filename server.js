@@ -239,9 +239,6 @@ app.post("/debug", (req, res) => {
 // PORT
 const PORT = process.env.PORT || 3000;
 
-console.log("Safe Browsing Key:",
-process.env.GOOGLE_SAFE_BROWSING_API_KEY ? "Loaded ✅" : "Missing ❌");
-
 app.listen(PORT, () => {
   console.log("🚀 Truvexa running on port " + PORT);
 });
