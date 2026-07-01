@@ -117,7 +117,7 @@ const advice = [
   ...new Set([
     ...(scamResult.advice || []),
     ...(manipulationResult.manipulationAdvice || []),
-    ...(urlResult.advice || [])
+    ...(urlAnalysis.advice || [])
   ])
 ];
 
