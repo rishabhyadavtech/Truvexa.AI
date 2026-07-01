@@ -189,6 +189,7 @@ if (urlAnalysis.found) {
   }
 }
 
+ }
     // ✅ SEND FINAL
     res.json(response);
 
