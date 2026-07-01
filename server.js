@@ -136,6 +136,7 @@ const advice = mergeAdvice(
   signals,
   advice,
   decision,
+  confidence,
   domainInfo,
   urlAnalysis,
 reputationResult,
@@ -143,7 +144,6 @@ reputationResult,
     
   // NEW
   riskScore: scamResult.riskScore,
-  confidence: scamResult.confidence || 0,
   evidence: scamResult.evidence || [],
   matchedPatterns: scamResult.matchedPatterns || [],
   scamCategory: scamResult.scamType || "General"
