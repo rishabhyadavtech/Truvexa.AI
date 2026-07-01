@@ -121,10 +121,13 @@ if (urlAnalysis.found) {
 );
 
 
-const advice = mergeAdvice(
-  scamResult.advice || [],
-  manipulationResult.manipulationAdvice || []
-);
+const advice = [
+  ...new Set([
+    ...(scamResult.advice || []),
+    ...(manipulationResult.manipulationAdvice || []),
+    ...(urlAnalysis.advice || [])
+  ])
+];
 
     // 🎯 RESPONSE OBJECT
   let response = {
