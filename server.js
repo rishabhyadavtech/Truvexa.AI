@@ -113,6 +113,12 @@ if (urlAnalysis.found) {
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
+   const confidence = calculateConfidence(
+  scamResult,
+  manipulationResult,
+  urlAnalysis,
+  safeBrowsing
+);
 
     // 🎯 CLEAN DATA
     const signals = mergeSignals(
