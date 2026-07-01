@@ -102,7 +102,7 @@ const urlAnalysis = analyzeURL(message);
   safe: true,
   threats: [],
   message: "Safe Browsing will run after URL extraction."
-}; ? await checkSafeBrowsing(urlInfo.url) : { success: false, safe: true, threats: [], message: "No URL detected." };
+};
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
