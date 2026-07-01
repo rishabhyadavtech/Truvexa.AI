@@ -99,12 +99,16 @@ app.post("/check", async (req, res) => {
     const reputationResult = analyzeUrlReputation(message);
 const urlAnalysis = analyzeURL(message);
     const domainInfo = await checkDomainAge(message);
-    const safeBrowsing = {
+    let safeBrowsing = {
   success: false,
   safe: true,
   threats: [],
-  message: "Safe Browsing will run after URL extraction."
+  message: "No URL detected."
 };
+
+if (urlAnalysis.found) {
+  safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
+}
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
