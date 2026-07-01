@@ -114,13 +114,10 @@ const urlAnalysis = analyzeURL(message);
 );
 
 
-const advice = [
-  ...new Set([
-    ...(scamResult.advice || []),
-    ...(manipulationResult.manipulationAdvice || []),
-    ...(urlAnalysis.advice || [])
-  ])
-];
+const advice = mergeAdvice(
+  scamResult.advice || [],
+  manipulationResult.manipulationAdvice || []
+);
 
     // 🎯 RESPONSE OBJECT
   let response = {
