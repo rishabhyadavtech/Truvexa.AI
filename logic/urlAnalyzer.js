@@ -52,12 +52,19 @@ const BRANDS = [
 function analyzeURL(text) {
 
   const result = {
-    found: false,
-    risk: 0,
-    signals: [],
-    reasons: [],
-    advice: []
-  };
+
+found:false,
+
+url:null,
+
+risk:0,
+
+signals:[],
+
+reasons:[],
+
+advice:[]
+}
 
   const regex = /(https?:\/\/[^\s]+|www\.[^\s]+)/i;
 
