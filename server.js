@@ -107,7 +107,8 @@ const urlAnalysis = analyzeURL(message);
   ...new Set([
     ...(scamResult.signals || []),
     ...(manipulationResult.signals || []),
-    ...(urlResult.signals || [])
+    ...(urlAnalysis.signals || []),
+    ...(reputationResult.signals || [])
   ])
 ];
 
