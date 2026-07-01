@@ -139,7 +139,7 @@ const advice = [
   domainInfo,
   urlAnalysis,
 reputationResult,
-  safeBrowsing
+  safeBrowsing,
     
   // NEW
   riskScore: scamResult.riskScore,
