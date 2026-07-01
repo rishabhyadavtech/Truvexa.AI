@@ -108,14 +108,10 @@ const urlAnalysis = analyzeURL(message);
     const finalType = getFinalResultType(scamResult, manipulationResult);
 
     // 🎯 CLEAN DATA
-    const signals = [
-  ...new Set([
-    ...(scamResult.signals || []),
-    ...(manipulationResult.signals || []),
-    ...(urlAnalysis.signals || []),
-    ...(reputationResult.signals || [])
-  ])
-];
+    const signals = mergeSignals(
+  [...(scamResult.signals || []), ...(urlAnalysis.signals || []), ...(reputationResult.signals || [])],
+  manipulationResult.signals || []
+);
 
 
 const advice = [
