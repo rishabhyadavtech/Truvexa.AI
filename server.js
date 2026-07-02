@@ -257,11 +257,15 @@ reputationResult,
       response.finalMessage = "⚠️ Yeh message suspicious lag raha hai.";
 
       response.explanation = buildExplanation(
-        "SUSPICIOUS",
-        scamResult,
-        manipulationResult
-      );
-    }
+  "SUSPICIOUS",
+  scamResult,
+  manipulationResult,
+  urlAnalysis,
+  safeBrowsing,
+  virusTotal,
+  domainInfo,
+  confidence
+);
 
     // =========================
     // 🔴 DANGEROUS
