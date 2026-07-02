@@ -25,18 +25,7 @@ async function checkVirusTotal(url) {
     };
   }
 
-  // API call next step me add karenge
-
-  return {
-    success: false,
-    safe: true,
-    malicious: 0,
-    suspicious: 0,
-    message: "VirusTotal integration ready."
-  };
-
-}
-
+  
 module.exports = {
   checkVirusTotal
 };
