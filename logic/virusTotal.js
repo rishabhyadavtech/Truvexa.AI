@@ -1,3 +1,5 @@
+const fetch = global.fetch;
+
 const VIRUSTOTAL_API =
   "https://www.virustotal.com/api/v3/urls";
 
