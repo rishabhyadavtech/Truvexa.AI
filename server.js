@@ -292,7 +292,7 @@ reputationResult,
     // =========================
     else {
 
-      response.finalMessage = "🚨 Yeh message risky / scam ho sakta hai.";
+      response.finalMessage = t.dangerous;
 
       response.explanation = buildExplanation(
   "DANGEROUS",
