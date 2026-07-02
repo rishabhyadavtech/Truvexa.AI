@@ -258,7 +258,7 @@ reputationResult,
 
       response.finalMessage = t.safe;
 
-        response.explanation = t.noSignal
+        response.explanation = t.noSignal;
     }
 
     // =========================
