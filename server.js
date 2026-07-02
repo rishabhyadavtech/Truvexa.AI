@@ -123,12 +123,6 @@ if (urlAnalysis.found) {
 
   virusTotal = await checkVirusTotal(urlAnalysis.url);
 }
-
-if (!safeBrowsing.safe) {
-  response.explanation +=
-    "\n\n🛡 Google Safe Browsing detected known threats: " +
-    safeBrowsing.threats.join(", ");
-}
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
