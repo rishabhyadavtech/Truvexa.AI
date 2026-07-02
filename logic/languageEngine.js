@@ -2,6 +2,9 @@ const LANG = {
 
   en: {
 
+dangerExplanation:
+"This message uses fear, urgency or greed to pressure you into acting quickly."
+
     safe: "This message appears safe.",
 
     suspicious: "This message looks suspicious.",
