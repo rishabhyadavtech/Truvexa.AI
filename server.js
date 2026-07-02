@@ -3,6 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
+const { getLanguage } =
+require("./logic/languageEngine");
 const detectScam = require("./logic/scamDetector");
 const { detectManipulation } = require("./logic/manipulationDetector");
 const { calculateConfidence } = require("./logic/confidenceEngine");
