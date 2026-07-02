@@ -274,7 +274,7 @@ reputationResult,
     // =========================
     else if (finalType === "SUSPICIOUS") {
 
-      response.finalMessage = "⚠️ Yeh message suspicious lag raha hai.";
+      response.finalMessage = t.suspicious;
 
       response.explanation = buildExplanation(
   "SUSPICIOUS",
