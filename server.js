@@ -118,8 +118,12 @@ const urlAnalysis = analyzeURL(message);
 };
 
 if (urlAnalysis.found) {
+
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
+
+  virusTotal = await checkVirusTotal(urlAnalysis.url);
 }
+
 if (!safeBrowsing.safe) {
   response.explanation +=
     "\n\n🛡 Google Safe Browsing detected known threats: " +
