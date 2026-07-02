@@ -108,6 +108,14 @@ const urlAnalysis = analyzeURL(message);
   threats: [],
   message: "No URL detected."
 };
+  let virusTotal = {
+  success: false,
+  safe: true,
+  malicious: 0,
+  suspicious: 0,
+  harmless: 0,
+  message: "No URL detected."
+};
 
 if (urlAnalysis.found) {
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
