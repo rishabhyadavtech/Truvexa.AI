@@ -266,8 +266,11 @@ reputationResult,
 
       response.finalMessage = t.safe;
 
-      response.explanation =
-        t.noSignal;
+     en: {
+   ...
+   dangerExplanation:
+   "This message uses fear, urgency or greed to pressure you into acting quickly."
+}
     }
 
     // =========================
