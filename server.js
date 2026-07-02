@@ -154,7 +154,10 @@ Suspicious: ${virusTotal.suspicious}`
 // API route
 app.post("/check", async (req, res) => {
   try {
-    const { message } = req.body;
+    const {
+  message,
+  language = "hi"
+} = req.body;
 
     if (!message || message.trim() === "") {
       return res.status(400).json({
