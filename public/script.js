@@ -28,6 +28,8 @@ document.getElementById("language").value;
     if (!res.ok) throw new Error("Server error");
 
     const data = await res.json();
+    const lang =
+data.language || "hi";
 
     const type = data.type;
     const decision = data.decision || {};
