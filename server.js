@@ -68,6 +68,7 @@ function buildExplanation(
   virusTotal,
   domainInfo,
   confidence
+  t
 ) {
 
   let parts = [];
@@ -276,7 +277,8 @@ reputationResult,
   safeBrowsing,
   virusTotal,
   domainInfo,
-  confidence
+  confidence,
+  t
 );
 
     // =========================
@@ -294,7 +296,8 @@ reputationResult,
   safeBrowsing,
   virusTotal,
   domainInfo,
-  confidence
+  confidence,
+  t
 );
 
 if (urlAnalysis.found) {
