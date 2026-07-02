@@ -147,6 +147,9 @@ Suspicious: ${virusTotal.suspicious}`
     );
 
   }
+if (type === "DANGEROUS") {
+  parts.push(t.dangerExplanation);
+}
 
   return parts.join("\n\n");
 
