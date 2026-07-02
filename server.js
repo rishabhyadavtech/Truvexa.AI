@@ -193,14 +193,6 @@ if (urlAnalysis.found) {
 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
 
-  virusTotal = await checkVirusTotal(urlAnalysis.url);
-}
-let virusTotal = {
-  success: false,
-  malicious: 0,
-  suspicious: 0
-};
-
 if (urlAnalysis.found) {
 
   virusTotal =
