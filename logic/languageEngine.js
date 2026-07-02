@@ -23,6 +23,9 @@ dangerExplanation:
 
   hi: {
 
+ dangerExplanation:
+"👉 Yeh combination (fear, urgency, ya lalach) usually scam messages me use hota hai taaki aap bina soche react karein."
+
     safe: "✅ Yeh message safe lag raha hai.",
 
     suspicious: "⚠️ Yeh message suspicious lag raha hai.",
