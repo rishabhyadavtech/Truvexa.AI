@@ -131,6 +131,7 @@ if (urlAnalysis.found) {
   manipulationResult,
   urlAnalysis,
   safeBrowsing
+  virusTotal
 );
 
     // 🎯 CLEAN DATA
