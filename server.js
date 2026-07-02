@@ -188,6 +188,18 @@ if (urlAnalysis.found) {
 
   virusTotal = await checkVirusTotal(urlAnalysis.url);
 }
+let virusTotal = {
+  success: false,
+  malicious: 0,
+  suspicious: 0
+};
+
+if (urlAnalysis.found) {
+
+  virusTotal =
+    await checkVirusTotal(urlAnalysis.url);
+
+}
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult);
