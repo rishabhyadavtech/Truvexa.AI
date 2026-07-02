@@ -1,27 +1,57 @@
-function calculateConfidence(scam, manipulation, urlAnalysis, safeBrowsing) {
+function calculateConfidence(
+  scam,
+  manipulation,
+  urlAnalysis,
+  safeBrowsing,
+  virusTotal,
+  domainInfo
+) {
 
-  let confidence = 0;
+  let score = 0;
 
-  // Scam Risk
-  confidence += Math.min(scam.riskScore || 0, 40);
+  // Scam Engine
+  score += Math.min(scam.riskScore || 0, 40);
 
   // Manipulation
-  confidence += Math.min(manipulation.manipulationScore || 0, 25);
+  if (manipulation.manipulationLevel === "HIGH") {
+    score += 20;
+  } else if (manipulation.manipulationLevel === "MEDIUM") {
+    score += 10;
+  }
 
   // URL Analysis
-  confidence += Math.min(urlAnalysis.risk || 0, 20);
+  score += Math.min(urlAnalysis.risk || 0, 20);
 
   // Google Safe Browsing
   if (safeBrowsing.success && !safeBrowsing.safe) {
-    confidence += 15;
+    score += 15;
   }
 
-  // Limit 100
-  if (confidence > 100) {
-    confidence = 100;
+  // VirusTotal
+  if (virusTotal.success) {
+    score += Math.min(
+      (virusTotal.malicious * 2) + virusTotal.suspicious,
+      20
+    );
   }
 
-  return Math.round(confidence);
+  // Domain Age
+  if (
+    domainInfo.success &&
+    domainInfo.age !== "Unknown"
+  ) {
+
+    const age = parseInt(domainInfo.age);
+
+    if (!isNaN(age) && age < 6) {
+      score += 10;
+    }
+
+  }
+
+  if (score > 100) score = 100;
+
+  return score;
 }
 
 module.exports = {
