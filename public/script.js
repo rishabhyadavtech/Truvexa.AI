@@ -40,16 +40,32 @@ data.language || "hi";
     if (type === "SAFE") {
       resultBox.classList.add("safe");
 
-      resultBox.innerText = `
+      if (lang === "en") {
+
+resultBox.innerText = `
+🟢 Good News — This message appears to be safe.
+
+No strong scam or manipulation patterns were detected.
+
+You can treat this as a normal conversation.
+
+💡 Still, staying cautious online is always a good habit.
+`.trim();
+
+}
+else {
+
+resultBox.innerText = `
 🟢 Good News — Yeh message safe lag raha hai.
 
 Is message me koi bhi strong scam ya manipulation pattern detect nahi hua.
-Na urgency hai, na lalach, na koi suspicious behavior.
 
 👍 Aap ise normal conversation ki tarah treat kar sakte hain.
 
 💡 Phir bhi online safety ke liye basic caution rakhna smart hota hai.
-      `.trim();
+`.trim();
+
+}
 
       feedbackBox.style.display = "block";
       return;
