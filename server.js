@@ -266,7 +266,7 @@ reputationResult,
       response.finalMessage = t.safe;
 
       response.explanation =
-        "Koi strong scam ya manipulation signal detect nahi hua.\n\n👉 Aap ise normal conversation ki tarah treat kar sakte hain.";
+        t.noSignal;
     }
 
     // =========================
