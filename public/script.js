@@ -22,7 +22,7 @@ document.getElementById("language").value;
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({ message,language })
     });
 
     if (!res.ok) throw new Error("Server error");
