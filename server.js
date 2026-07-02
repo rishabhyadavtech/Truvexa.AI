@@ -163,7 +163,8 @@ const advice = [
   urlAnalysis,
 reputationResult,
   safeBrowsing,
-    
+  virusTotal,
+  
   // NEW
   riskScore: scamResult.riskScore,
   evidence: scamResult.evidence || [],
