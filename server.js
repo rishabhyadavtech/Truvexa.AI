@@ -56,32 +56,97 @@ function mergeAdvice(scamAdvice = [], manipulationAdvice = []) {
   return [...new Set([...scamAdvice, ...manipulationAdvice])];
 }
 
-// 🎯 AI EXPLANATION BUILDER (NO TEMPLATE 🔥)
-function buildExplanation(type, scam, manipulation) {
-  
+// 🎯 AI EXPLANATION BUILDER
+function buildExplanation(
+  type,
+  scam,
+  manipulation,
+  urlAnalysis,
+  safeBrowsing,
+  virusTotal,
+  domainInfo,
+  confidence
+) {
+
   let parts = [];
 
-  // SCAM SIDE
-  if (scam.humanMessage && scam.humanMessage.trim() !== "") {
-    parts.push(scam.humanMessage.trim());
+  // Scam explanation
+  if (scam.humanMessage) {
+    parts.push(scam.humanMessage);
   }
 
-  // MANIPULATION SIDE
+  // Manipulation explanation
   if (
-    manipulation.manipulationMessage &&
-    manipulation.manipulationLevel !== "LOW"
+    manipulation.manipulationLevel !== "LOW" &&
+    manipulation.manipulationMessage
   ) {
-    parts.push(manipulation.manipulationMessage.trim());
+    parts.push(manipulation.manipulationMessage);
   }
 
-  // EXTRA INTELLIGENCE LINE
-  if (type === "DANGEROUS") {
+  // URL Analysis
+  if (urlAnalysis.found && urlAnalysis.reasons.length) {
+
     parts.push(
-      "👉 Yeh combination (fear, urgency, ya lalach) usually scam messages me use hota hai taaki aap bina soche react karein."
+      "🌐 URL Analysis:\n- " +
+      urlAnalysis.reasons.join("\n- ")
     );
+
+  }
+
+  // Safe Browsing
+  if (safeBrowsing.success && !safeBrowsing.safe) {
+
+    parts.push(
+      "🛡 Google Safe Browsing detected:\n- " +
+      safeBrowsing.threats.join(", ")
+    );
+
+  }
+
+  // VirusTotal
+  if (
+    virusTotal.success &&
+    (virusTotal.malicious > 0 ||
+     virusTotal.suspicious > 0)
+  ) {
+
+    parts.push(
+`🦠 VirusTotal Report
+
+Malicious: ${virusTotal.malicious}
+
+Suspicious: ${virusTotal.suspicious}`
+    );
+
+  }
+
+  // Domain
+  if (
+    domainInfo.success &&
+    domainInfo.age !== "Unknown"
+  ) {
+
+    parts.push(
+      `🌍 Domain Age: ${domainInfo.age}`
+    );
+
+  }
+
+  // Confidence
+  parts.push(
+    `🎯 Confidence: ${confidence}%`
+  );
+
+  if (type === "DANGEROUS") {
+
+    parts.push(
+      "👉 Multiple independent security checks indicate this message is risky."
+    );
+
   }
 
   return parts.join("\n\n");
+
 }
 
 // API route
