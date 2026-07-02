@@ -250,7 +250,8 @@ const advice = [
 reputationResult,
   safeBrowsing,
   virusTotal,
-  
+  language,
+
   // NEW
   riskScore: scamResult.riskScore,
   evidence: scamResult.evidence || [],
