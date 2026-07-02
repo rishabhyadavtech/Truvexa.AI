@@ -266,16 +266,7 @@ reputationResult,
 
       response.finalMessage = t.safe;
 
-     en: {
-   ...
-   dangerExplanation:
-   "This message uses fear, urgency or greed to pressure you into acting quickly."
-}
-  hi: {
-   ...
-   dangerExplanation:
-   "👉 Yeh combination (fear, urgency, ya lalach) usually scam messages me use hota hai taaki aap bina soche react karein."
-}
+        response.explanation = t.noSignal
     }
 
     // =========================
