@@ -75,11 +75,13 @@ advice:[]
   result.found = true;
 
   let raw = match[0];
-  result.url = raw;
-
+  
   if (!raw.startsWith("http")) {
     raw = "https://" + raw;
   }
+
+ result.url = raw;
+
 
   try {
 
