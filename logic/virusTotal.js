@@ -37,4 +37,4 @@ async function checkVirusTotal(url) {
 
 module.exports = {
   checkVirusTotal
-};
+}
