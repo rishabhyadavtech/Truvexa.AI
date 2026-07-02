@@ -159,6 +159,8 @@ app.post("/check", async (req, res) => {
   language = "hi"
 } = req.body;
 
+const t = getLanguage(language);
+
     if (!message || message.trim() === "") {
       return res.status(400).json({
         error: "Message is required"
