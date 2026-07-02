@@ -277,7 +277,12 @@ reputationResult,
       response.explanation = buildExplanation(
   "DANGEROUS",
   scamResult,
-  manipulationResult
+  manipulationResult,
+  urlAnalysis,
+  safeBrowsing,
+  virusTotal,
+  domainInfo,
+  confidence
 );
 
 if (urlAnalysis.found) {
