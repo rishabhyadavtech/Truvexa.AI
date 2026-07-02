@@ -130,7 +130,7 @@ if (urlAnalysis.found) {
   scamResult,
   manipulationResult,
   urlAnalysis,
-  safeBrowsing
+  safeBrowsing,
   virusTotal
 );
 
