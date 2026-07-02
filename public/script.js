@@ -1,4 +1,4 @@
-async function checkScam() {
+sasync function checkScam() {
 
   const message = document.getElementById("input").value.trim();
 const language =
