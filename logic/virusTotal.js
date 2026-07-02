@@ -1,4 +1,4 @@
-const fetch = global.fetch;
+cconst fetch = global.fetch;
 
 const VIRUSTOTAL_API =
   "https://www.virustotal.com/api/v3/urls";
