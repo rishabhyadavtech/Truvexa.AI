@@ -385,19 +385,17 @@ font-size:15px;
 
 width:100%;
 
-padding:18px;
+padding:16px;
 
-font-size:18px;
+font-size:16px;
 
-font-weight:700;
+font-weight:600;
 
 background:#2563eb;
 
 color:white;
 
-border-radius:16px;
-
-transition:.3s;
+border-radius:14px;
 
 }
 .scan-btn:hover{
