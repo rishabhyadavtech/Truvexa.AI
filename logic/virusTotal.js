@@ -99,6 +99,8 @@ try {
   };
 
 }
+
+ }
   
 module.exports = {
   checkVirusTotal
