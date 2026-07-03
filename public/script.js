@@ -305,27 +305,25 @@ ${data.domainInfo.message}
     // 🎯 FINAL OUTPUT
     // =========================
     resultBox.innerText = `
-${data.finalMessage || "⚠️ Yeh message suspicious lag raha hai."}
+${data.finalMessage}
 
-${riskBlock}
-
-${confidenceBlock}
-
-${categoryBlock}
-
-🧠 Analysis
+🧠 Why this result?
 
 ${explanation}
 
-${decisionBlock}
+🛡 Scam Category
 
-${evidenceBlock}
+${data.scamCategory || "General"}
+
+💡 Recommended Action
+
+${decision.action || "Be cautious before taking any action."}
+
+${adviceBlock}
 
 ${signalsBlock}
 
 ${domainBlock}
-
-${adviceBlock}
 `.trim();
 
     // ✅ SHOW FEEDBACK UI
