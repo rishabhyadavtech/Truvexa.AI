@@ -24,9 +24,16 @@ document.getElementById("confidenceText");
   }
 
   // 🔄 Reset UI
-  resultBox.className = "result-box";
-  resultBox.innerText = "⏳ Checking message...";
-  feedbackBox.style.display = "none";
+ resultBox.className = "card result-card";
+resultBox.innerText = "";
+
+feedbackBox.style.display = "none";
+
+loadingBox.style.display = "block";
+
+riskMeter.style.display = "none";
+
+confidenceCard.style.display = "none";
 
   try {
     const res = await fetch("/check", {
