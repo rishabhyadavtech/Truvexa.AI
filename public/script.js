@@ -52,6 +52,30 @@ confidenceCard.style.display = "none";
 riskMeter.style.display = "block";
 
 confidenceCard.style.display = "block";
+ riskFill.style.width =
+data.riskScore + "%";
+
+if(data.riskScore < 35){
+
+riskFill.style.background="#22c55e";
+
+riskText.innerText="Low Risk";
+
+}
+else if(data.riskScore <70){
+
+riskFill.style.background="#f59e0b";
+
+riskText.innerText="Medium Risk";
+
+}
+else{
+
+riskFill.style.background="#ef4444";
+
+riskText.innerText="High Risk";
+
+}
 
     const lang =
 data.language || "hi";
