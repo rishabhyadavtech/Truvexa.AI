@@ -27,6 +27,13 @@ document.getElementById("confidenceText");
  resultBox.className = "card result-card";
 resultBox.innerText = "";
 
+riskFill.style.width = "5%";
+riskFill.style.background = "#22c55e";
+riskText.innerText = "Safe";
+
+confidenceFill.style.width = "100%";
+confidenceText.innerText = "100%";
+
 feedbackBox.style.display = "none";
 
 loadingBox.style.display = "block";
