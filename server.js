@@ -377,7 +377,7 @@ reputationResult,
   confidence,
   t
 );
-
+  }
     // =========================
     // 🔴 DANGEROUS
     // =========================
