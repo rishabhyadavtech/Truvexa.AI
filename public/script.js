@@ -333,6 +333,11 @@ ${adviceBlock}
 
   } catch (error) {
     console.error("Fetch Error:", error);
+  loadingBox.style.display = "none";
+
+riskMeter.style.display = "none";
+
+confidenceCard.style.display = "none";
 
     resultBox.className = "result-box danger";
     resultBox.innerText =
