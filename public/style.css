@@ -400,11 +400,10 @@ border-radius:14px;
 }
 .scan-btn:hover{
 
-transform:scale(1.02);
-
 background:#1d4ed8;
 
 }
+
 .loading-card{
 
 text-align:center;
