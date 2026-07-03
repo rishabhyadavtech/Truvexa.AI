@@ -294,10 +294,7 @@ if (urlAnalysis.found) {
 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
 
-if (urlAnalysis.found) {
-
-  virusTotal =
-    await checkVirusTotal(urlAnalysis.url);
+  virusTotal = await checkVirusTotal(urlAnalysis.url);
 
 }
     
