@@ -4,6 +4,18 @@ async function checkScam() {
 const language =
 document.getElementById("language").value;
   const resultBox = document.getElementById("result");
+  const loadingBox = document.getElementById("loadingBox");
+const riskMeter = document.getElementById("riskMeter");
+const confidenceCard = document.getElementById("confidenceCard");
+
+const riskFill = document.getElementById("riskFill");
+const riskText = document.getElementById("riskText");
+
+const confidenceFill =
+document.getElementById("confidenceFill");
+
+const confidenceText =
+document.getElementById("confidenceText");
   const feedbackBox = document.getElementById("feedbackBox");
 
   if (!message) {
