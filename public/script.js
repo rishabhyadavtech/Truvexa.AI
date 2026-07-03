@@ -47,6 +47,12 @@ confidenceCard.style.display = "none";
     if (!res.ok) throw new Error("Server error");
 
     const data = await res.json();
+   loadingBox.style.display = "none";
+
+riskMeter.style.display = "block";
+
+confidenceCard.style.display = "block";
+
     const lang =
 data.language || "hi";
 
