@@ -68,88 +68,185 @@ function buildExplanation(
   virusTotal,
   domainInfo,
   confidence
-  t
 ) {
 
   let parts = [];
 
-  // Scam explanation
+  // ======================
+  // Heading
+  // ======================
+
+  parts.push(
+    "🧠 Why Truvexa reached this decision"
+  );
+
+  // ======================
+  // Scam
+  // ======================
+
   if (scam.humanMessage) {
-    parts.push(scam.humanMessage);
+
+    parts.push(
+
+      "This message contains patterns commonly seen in online scams.\n\n" +
+
+      scam.humanMessage
+
+    );
+
   }
 
-  // Manipulation explanation
+  // ======================
+  // Manipulation
+  // ======================
+
   if (
     manipulation.manipulationLevel !== "LOW" &&
     manipulation.manipulationMessage
   ) {
-    parts.push(manipulation.manipulationMessage);
-  }
-
-  // URL Analysis
-  if (urlAnalysis.found && urlAnalysis.reasons.length) {
 
     parts.push(
-      "🌐 URL Analysis:\n- " +
-      urlAnalysis.reasons.join("\n- ")
+
+      "The sender is also trying to influence your emotions.\n\n" +
+
+      manipulation.manipulationMessage
+
     );
 
   }
 
-  // Safe Browsing
-  if (safeBrowsing.success && !safeBrowsing.safe) {
+  // ======================
+  // URL
+  // ======================
 
-    parts.push(
-      "🛡 Google Safe Browsing detected:\n- " +
-      safeBrowsing.threats.join(", ")
-    );
-
-  }
-
-  // VirusTotal
   if (
-    virusTotal.success &&
-    (virusTotal.malicious > 0 ||
-     virusTotal.suspicious > 0)
+    urlAnalysis.found &&
+    urlAnalysis.reasons.length
   ) {
 
     parts.push(
-`🦠 VirusTotal Report
 
-Malicious: ${virusTotal.malicious}
+      "🌐 The link itself raised warning signs.\n\n" +
 
-Suspicious: ${virusTotal.suspicious}`
+      urlAnalysis.reasons
+        .map(r => "• " + r)
+        .join("\n")
+
     );
 
   }
 
+  // ======================
+  // Safe Browsing
+  // ======================
+
+  if (
+    safeBrowsing.success &&
+    !safeBrowsing.safe
+  ) {
+
+    parts.push(
+
+      "🛡 Google Safe Browsing has already flagged this URL.\n\nThreats:\n• " +
+
+      safeBrowsing.threats.join("\n• ")
+
+    );
+
+  }
+
+  // ======================
+  // VirusTotal
+  // ======================
+
+  if (
+    virusTotal.success &&
+    (
+      virusTotal.malicious > 0 ||
+      virusTotal.suspicious > 0
+    )
+  ) {
+
+    parts.push(
+
+`🦠 VirusTotal checked this URL using multiple security vendors.
+
+Malicious detections : ${virusTotal.malicious}
+
+Suspicious detections : ${virusTotal.suspicious}`
+
+    );
+
+  }
+
+  // ======================
   // Domain
+  // ======================
+
   if (
     domainInfo.success &&
     domainInfo.age !== "Unknown"
   ) {
 
     parts.push(
-      `🌍 Domain Age: ${domainInfo.age}`
+
+`🌍 Domain Information
+
+Domain Age : ${domainInfo.age}
+
+Registrar : ${domainInfo.registrar}`
+
     );
 
   }
 
+  // ======================
   // Confidence
+  // ======================
+
   parts.push(
-    `🎯 Confidence: ${confidence}%`
+
+`🎯 Overall Confidence
+
+${confidence}%
+
+Multiple independent security checks contributed to this confidence score.`
+
   );
 
-  if (type === "DANGEROUS") {
+  // ======================
+  // Final Recommendation
+  // ======================
+
+  if (type === "SAFE") {
 
     parts.push(
-      "👉 Multiple independent security checks indicate this message is risky."
+
+"✅ No strong warning signs were found.\n\nEven then, always stay cautious before sharing personal information."
+
     );
 
   }
-if (type === "DANGEROUS") {
-  parts.push(t.dangerExplanation);
-}
+
+  else if (type === "SUSPICIOUS") {
+
+    parts.push(
+
+"⚠ Some warning signs were detected.\n\nVerify the sender before clicking links or replying."
+
+    );
+
+  }
+
+  else {
+
+    parts.push(
+
+"🚨 Multiple security checks agree this message is risky.\n\nAvoid clicking links, sharing OTPs, passwords or bank information."
+
+    );
+
+  }
 
   return parts.join("\n\n");
 
