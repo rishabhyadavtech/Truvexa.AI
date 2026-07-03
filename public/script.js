@@ -76,6 +76,11 @@ riskFill.style.background="#ef4444";
 riskText.innerText="High Risk";
 
 }
+confidenceFill.style.width =
+data.confidence + "%";
+
+confidenceText.innerText =
+data.confidence + "%";
 
     const lang =
 data.language || "hi";
