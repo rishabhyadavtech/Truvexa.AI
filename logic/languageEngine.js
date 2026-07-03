@@ -9,8 +9,7 @@ const LANG = {
     dangerous: "This message may be a scam.",
 
 dangerExplanation:
-"This message uses fear, urgency or greed to pressure you into acting quickly."
-
+"This message uses fear, urgency or greed to pressure you into acting quickly.",
 
     noSignal: "No strong scam indicators were detected.",
 
@@ -31,7 +30,7 @@ dangerExplanation:
     dangerous: "🚨 Yeh message scam ho sakta hai.",
  
 dangerExplanation:
-"👉 Yeh combination (fear, urgency, ya lalach) usually scam messages me use hota hai taaki aap bina soche react karein."
+"👉 Yeh combination (fear, urgency, ya lalach) usually scam messages me use hota hai taaki aap bina soche react karein.",
 
 
     noSignal: "Koi strong scam signal detect nahi hua.",
