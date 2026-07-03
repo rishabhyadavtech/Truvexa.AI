@@ -15,10 +15,10 @@ body{
 }
 
 /* CONTAINER */
-.container {
-  width: 100%;
-  max-width: 720px;
-  padding: 20px;
+.container{
+  width:100%;
+  max-width:760px;
+  padding:28px 20px 40px;
 }
 
 /* HEADER */
