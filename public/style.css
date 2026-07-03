@@ -326,17 +326,19 @@ opacity:1;
 
 .card{
 
-background:white;
+background:#ffffff;
 
-border-radius:20px;
+border:1px solid #e5e7eb;
+
+border-radius:18px;
 
 padding:22px;
 
-margin-top:20px;
+margin-top:18px;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 3px 10px rgba(0,0,0,.04);
 
-transition:.3s;
+transition:.25s;
 
 }
 
