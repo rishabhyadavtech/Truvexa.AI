@@ -28,66 +28,50 @@ let context = {
 };
 
   // 🎯 CONTEXT FLAGS
-  const hasLink = text.includes("http") || text.includes("www");
-  const hasOTP = text.includes("otp");
-  context.hasMoney = hasMoney;
+
+const hasLink =
+text.includes("http") ||
+text.includes("www");
+
+const hasOTP =
+text.includes("otp");
+
+const hasBank =
+text.includes("bank") ||
+text.includes("account") ||
+text.includes("rbi");
+
+const hasMoney =
+text.includes("rupees") ||
+text.includes("rs") ||
+text.includes("lakh") ||
+text.includes("money") ||
+text.includes("payment") ||
+text.includes("salary") ||
+text.includes("income");
+
+const hasUrgency =
+text.includes("urgent") ||
+text.includes("immediately") ||
+text.includes("now") ||
+text.includes("within") ||
+text.includes("expire") ||
+text.includes("act fast") ||
+text.includes("last chance");
+
+const hasFear =
+text.includes("blocked") ||
+text.includes("suspended") ||
+text.includes("legal action") ||
+text.includes("warning") ||
+text.includes("penalty");
+
+// Context
+context.hasMoney = hasMoney;
 context.hasUrgency = hasUrgency;
 context.hasFear = hasFear;
 context.hasLink = hasLink;
 context.hasSensitiveInfo = hasOTP && hasBank;
-  
-  const hasBank =
-    text.includes("bank") ||
-    text.includes("account") ||
-    text.includes("rbi");
-  
-  const hasMoney =
-    text.includes("rupees") ||
-    text.includes("rs") ||
-    text.includes("lakh") ||
-    text.includes("money") ||
-    text.includes("payment") ||
-    text.includes("salary") ||
-    text.includes("income");
-
-  const hasUrgency =
-    text.includes("urgent") ||
-    text.includes("immediately") ||
-    text.includes("now") ||
-    text.includes("within") ||
-    text.includes("expire") ||
-    text.includes("act fast") ||
-    text.includes("last chance");
-
-  const hasFear =
-    text.includes("blocked") ||
-    text.includes("suspended") ||
-    text.includes("legal action") ||
-    text.includes("warning") ||
-    text.includes("penalty");
-
-  const hasGreed =
-    text.includes("win") ||
-    text.includes("reward") ||
-    text.includes("prize") ||
-    text.includes("free") ||
-    text.includes("offer");
-
-  const hasJob =
-    text.includes("job") ||
-    text.includes("work from home") ||
-    text.includes("earn");
-
-  const hasFee =
-    text.includes("registration fee") ||
-    text.includes("joining fee") ||
-    text.includes("fee") ||
-    text.includes("charges") ||
-    text.includes("pay");
-
-  const hasNoExperience =
-    text.includes("no experience") ||
-    text.includes("no skills");
 
   // 🎯 TYPE DETECTION
   if (hasJob) scamTypes.push("Job Scam");
@@ -116,24 +100,40 @@ context.hasSensitiveInfo = hasOTP && hasBank;
     advice.push("Too good to be true offers ignore karo.");
   }
 
-  if (hasOTP && hasBank) {
-    riskScore += 40;
-    signals.push("Sensitive Info");
-    scamTypes.push("OTP Scam");
+ if (hasOTP && hasBank) {
 
-    reasons.push("Aapse OTP ya sensitive details maangi ja rahi hain.");
-    advice.push("OTP ya bank details kabhi share mat karo.");
-  }
-  evidence.push({
-  id: "OTP_REQUEST",
-  title: "Sensitive information requested",
-  severity: "critical",
-  confidence: 98,
-  description:
-    "The message requests OTP or banking credentials, which is a common fraud technique."
+riskScore += 40;
+
+signals.push("Sensitive Info");
+
+scamTypes.push("OTP Scam");
+
+reasons.push(
+"Aapse OTP ya sensitive details maangi ja rahi hain."
+);
+
+advice.push(
+"OTP ya bank details kabhi share mat karo."
+);
+
+evidence.push({
+
+id:"OTP_REQUEST",
+
+title:"Sensitive information requested",
+
+severity:"critical",
+
+confidence:98,
+
+description:
+"The message requests OTP or banking credentials."
+
 });
 
 matchedPatterns.push("OTP_REQUEST");
+
+}
 
 
   if (hasLink) {
