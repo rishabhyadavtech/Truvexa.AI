@@ -136,24 +136,40 @@ matchedPatterns.push("OTP_REQUEST");
 }
 
 
-  if (hasLink) {
-    riskScore += 25;
-    signals.push("Link");
-    scamTypes.push("Phishing");
+ if (hasLink) {
 
-    reasons.push("Message me ek external link diya gaya hai.");
-    advice.push("Unknown link par click mat karo.");
-  }
-  evidence.push({
-  id: "EXTERNAL_LINK",
-  title: "External link detected",
-  severity: "medium",
-  confidence: 80,
-  description:
-    "The message contains an external link that should be verified before opening."
+riskScore +=25;
+
+signals.push("Link");
+
+scamTypes.push("Phishing");
+
+reasons.push(
+"Message me ek external link diya gaya hai."
+);
+
+advice.push(
+"Unknown link par click mat karo."
+);
+
+evidence.push({
+
+id:"EXTERNAL_LINK",
+
+title:"External link detected",
+
+severity:"medium",
+
+confidence:80,
+
+description:
+"Unknown external link detected."
+
 });
 
 matchedPatterns.push("EXTERNAL_LINK");
+
+}
 
   if (hasFear) {
     riskScore += 20;
