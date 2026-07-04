@@ -24,7 +24,8 @@ let context = {
   hasUrgency: false,
   hasFear: false,
   hasLink: false,
-  hasSensitiveInfo: false
+  hasSensitiveInfo: false,
+  hasGreed: false
 };
 
   // 🎯 CONTEXT FLAGS
