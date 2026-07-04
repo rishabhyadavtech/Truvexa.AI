@@ -206,22 +206,34 @@ matchedPatterns.push("EXTERNAL_LINK");
   }
 
   // 💥 ULTIMATE JOB FEE SCAM
-  if (hasJob && hasFee) {
-    riskScore += 40;
-    signals.push("Job Fee Scam");
+ if(hasJob && hasFee){
 
-    reasons.push("Job ke naam par paise maangna almost hamesha scam hota hai.");
-  }
-  evidence.push({
-  id: "ADVANCE_FEE",
-  title: "Advance fee requested",
-  severity: "critical",
-  confidence: 99,
-  description:
-    "The sender asks for money before providing the promised service or job."
+riskScore +=40;
+
+signals.push("Job Fee Scam");
+
+reasons.push(
+"Job ke naam par paise maangna almost hamesha scam hota hai."
+);
+
+evidence.push({
+
+id:"ADVANCE_FEE",
+
+title:"Advance fee requested",
+
+severity:"critical",
+
+confidence:99,
+
+description:
+"Money requested before providing the promised service."
+
 });
 
 matchedPatterns.push("ADVANCE_FEE");
+
+}
 
   // =========================
   // 🔥 COMBO INTELLIGENCE
