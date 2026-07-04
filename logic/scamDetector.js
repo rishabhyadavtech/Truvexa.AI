@@ -357,4 +357,6 @@ emergency
 
 };
 
+}
+
 module.exports = detectScam;
