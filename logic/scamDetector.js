@@ -81,7 +81,7 @@ context.hasMoney = hasMoney;
 context.hasUrgency = hasUrgency;
 context.hasFear = hasFear;
 context.hasLink = hasLink;
-context.hasSensitiveInfo = hasOTP && hasBank;
+context.hasSensitiveInfo = hasOTP && hasBank
 
   // 🎯 TYPE DETECTION
   if (hasJob) scamTypes.push("Job Scam");
