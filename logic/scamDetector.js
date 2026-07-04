@@ -66,6 +66,16 @@ text.includes("legal action") ||
 text.includes("warning") ||
 text.includes("penalty");
 
+const hasGreed =
+  text.includes("win") ||
+  text.includes("reward") ||
+  text.includes("prize") ||
+  text.includes("free") ||
+  text.includes("offer");
+
+const hasSensitiveInfo =
+  hasOTP && hasBank;
+
 // Context
 context.hasMoney = hasMoney;
 context.hasUrgency = hasUrgency;
