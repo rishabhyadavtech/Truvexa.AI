@@ -313,22 +313,37 @@ matchedPatterns.push("ADVANCE_FEE");
     finalMessage = "🚨 Yeh message scam ho sakta hai.";
   }
 
-  return {
-    riskScore,
-    result,
-    scamType: scamTypes.join(", ") || "General",
-    evidence,
-    confidence,
-    matchedPatterns,
-    reasons,
-    advice: [...new Set(advice)],
-    humanMessage,
-    finalMessage,
-    signals: [...new Set(signals)],
-    safetyStatus,
-    reminder,
-    emergency
-  };
-}
+ return {
+
+type: result,
+
+riskScore,
+
+scamCategory:
+scamTypes.join(", ") || "General",
+
+evidence,
+
+confidence,
+
+matchedPatterns,
+
+reasons,
+
+advice:[...new Set(advice)],
+
+humanMessage,
+
+finalMessage,
+
+signals:[...new Set(signals)],
+
+safetyStatus,
+
+reminder,
+
+emergency
+
+};
 
 module.exports = detectScam;
