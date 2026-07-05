@@ -398,6 +398,11 @@ font-weight:700;
 margin-bottom:8px;
 
 }
+.header p{
+
+animation:subtitleFade 1s ease;
+
+}
 
 .scan-btn{
 
