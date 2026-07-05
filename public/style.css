@@ -35,26 +35,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-textarea{
-
-width:100%;
-
-border:none;
-
-background:transparent;
-
-font-size:16px;
-
-line-height:1.7;
-
-resize:none;
-
-min-height:180px;
-
-outline:none;
-
-}
-
 /* RESULT BOX */
 .result-box{
 
