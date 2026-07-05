@@ -244,8 +244,9 @@ textarea{
 }
 
 textarea:focus{
-    border-radius:12px;
-    background:#fafcff;
+
+background:transparent;
+
 }
 
 /* Better buttons */
