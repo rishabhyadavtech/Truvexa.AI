@@ -474,6 +474,10 @@ transform .2s ease;
 transform:scale(.98);
 
 }
+.scan-btn:hover{
+    background:#0f172a;
+    transform:translateY(-2px);
+}
 .loading-card{
 
 text-align:center;
