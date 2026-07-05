@@ -360,10 +360,15 @@ cursor:pointer;
 transition:.2s;
 
 }
-
 .scan-btn:hover{
 
-background:#000;
+transform:translateY(-2px);
+
+}
+
+.scan-btn:active{
+
+transform:scale(.98);
 
 }
 .loading-card{
