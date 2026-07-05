@@ -486,13 +486,13 @@ background:#22c55e;
 transition:1s;
 
 }
-.language-card{
+.language-row{
 
 display:flex;
 
-justify-content:space-between;
+justify-content:flex-end;
 
-align-items:center;
+margin-bottom:18px;
 
 }
 #language{
