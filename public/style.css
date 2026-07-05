@@ -243,7 +243,6 @@ margin-top:8px;
 
 }
 
-}
 .feedback-actions{
 
 flex-direction:column;
@@ -253,6 +252,8 @@ flex-direction:column;
 .report-actions{
 
 flex-direction:column;
+
+}
 
 }
 
