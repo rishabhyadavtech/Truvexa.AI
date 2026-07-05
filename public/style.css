@@ -335,9 +335,13 @@ border-radius:10px;
 /* Nice footer */
 .footer{
 
-opacity:.75;
+margin-top:35px;
 
-transition:.3s;
+text-align:center;
+
+font-size:13px;
+
+color:#9ca3af;
 
 }
 .footer:hover{
