@@ -224,14 +224,6 @@ border-left:4px solid #ef4444;
     }
 }
 
-/* Better textarea */
-
-textarea:focus{
-
-background:transparent;
-
-}
-
 /* Better buttons */
 
 button{
