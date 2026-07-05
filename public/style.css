@@ -366,7 +366,7 @@ border:none;
 
 cursor:pointer;
 
-transition:.2s;
+transition:all .25s ease;
 
 }
 .scan-btn:hover{
