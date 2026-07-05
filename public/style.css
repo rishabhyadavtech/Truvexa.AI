@@ -6,13 +6,15 @@
 }
 
 body{
-  font-family: system-ui,-apple-system,sans-serif;
+  font-family:system-ui,-apple-system,sans-serif;
   background:#ffffff;
   color:#111827;
   display:flex;
   justify-content:center;
   min-height:100vh;
   line-height:1.6;
+  position:relative;
+  overflow-x:hidden;
 }
 
 /* CONTAINER */
