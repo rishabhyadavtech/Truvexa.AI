@@ -497,14 +497,14 @@ margin-bottom:18px;
 }
 #language{
 
-padding:8px 12px;
+padding:10px 14px;
 
 border:1px solid #d1d5db;
 
 border-radius:10px;
 
-background:white;
-
 font-size:14px;
+
+background:#fff;
 
 }
