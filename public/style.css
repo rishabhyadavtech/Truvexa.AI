@@ -79,19 +79,22 @@ box-shadow:none;
 }
 
 /* STATES */
-.safe {
-  background: #ecfdf5;
-  border-left: 5px solid #22c55e;
+.safe{
+
+border-left:4px solid #22c55e;
+
 }
 
-.warning {
-  background: #fffbeb;
-  border-left: 5px solid #f59e0b;
+.warning{
+
+border-left:4px solid #f59e0b;
+
 }
 
-.danger {
-  background: #fef2f2;
-  border-left: 5px solid #ef4444;
+.danger{
+
+border-left:4px solid #ef4444;
+
 }
 
 /* FEEDBACK */
