@@ -387,6 +387,15 @@ text-align:center;
 padding:18px;
 
 }
+#loadingText{
+
+margin-top:15px;
+
+color:#6b7280;
+
+font-size:15px;
+
+}
 .loader{
 
 width:34px;
