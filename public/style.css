@@ -50,6 +50,8 @@ font-size:15px;
 
 box-shadow:none;
 
+animation:fadeIn .35s ease;
+
 }
 
 /* STATES */
@@ -207,12 +209,6 @@ border-left:4px solid #ef4444;
 /* ===========================
    Truvexa AI v2 UI Upgrade
 =========================== */
-
-/* Smooth animation */
-.result-box{
-    animation: fadeIn .35s ease;
-}
-
 @keyframes fadeIn{
     from{
         opacity:0;
