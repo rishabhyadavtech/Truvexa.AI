@@ -348,37 +348,29 @@ box-shadow:0 8px 20px rgba(0,0,0,.08);
 
 }
 
-.hero-card{
-
-background:#ffffff;
-
-border:1px solid #e5e7eb;
-
-color:#111827;
-
-padding:28px;
-
-border-radius:20px;
-
-box-shadow:0 8px 24px rgba(0,0,0,.05);
+.header{
 
 text-align:center;
 
-margin-bottom:20px;
+margin-bottom:28px;
 
 }
 
-.hero-text{
+.header h1{
 
-margin-top:12px;
+font-size:32px;
 
-color:#6b7280;
+font-weight:700;
 
-line-height:1.8;
+margin-bottom:8px;
+
+}
+
+.header p{
 
 font-size:15px;
 
-}
+color:#6b7280;
 
 }
 .scan-btn{
