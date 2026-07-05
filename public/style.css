@@ -225,11 +225,6 @@ border-left:4px solid #ef4444;
 }
 
 /* Better buttons */
-
-button{
-    transition:.25s;
-}
-
 button:hover{
     transform:translateY(-2px);
 }
