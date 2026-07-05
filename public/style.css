@@ -391,16 +391,23 @@ font-size:16px;
 
 font-weight:600;
 
-background:#2563eb;
+background:#111827;
 
 color:white;
 
-border-radius:14px;
+border-radius:12px;
+
+border:none;
+
+cursor:pointer;
+
+transition:.2s;
 
 }
+
 .scan-btn:hover{
 
-background:#1d4ed8;
+background:#000;
 
 }
 
