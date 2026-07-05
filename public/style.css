@@ -422,27 +422,28 @@ transition:.2s;
 background:#000;
 
 }
-
 .loading-card{
 
 text-align:center;
 
+padding:18px;
+
 }
 .loader{
 
-width:45px;
+width:34px;
 
-height:45px;
+height:34px;
 
-border:5px solid #ddd;
+border:3px solid #e5e7eb;
 
-border-top:5px solid #2563eb;
+border-top:3px solid #111827;
 
 border-radius:50%;
 
-margin:auto;
+animation:spin .8s linear infinite;
 
-animation:spin 1s linear infinite;
+margin:auto;
 
 }
 
