@@ -448,6 +448,16 @@ background:#ef4444;
 transition:1s;
 
 }
+.risk-card h3,
+.confidence-card h3{
+
+font-size:15px;
+
+font-weight:600;
+
+margin-bottom:10px;
+
+}
 .confidence-bar{
 
 height:14px;
