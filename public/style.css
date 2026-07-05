@@ -56,17 +56,26 @@ outline:none;
 }
 
 /* RESULT BOX */
-.result-box {
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 14px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  white-space: pre-wrap;
-  line-height: 1.7;
-  font-size: 14px;
-  transition: all 0.25s ease;
+.result-box{
+
+margin-top:20px;
+
+padding:22px;
+
+border:1px solid #ececec;
+
+border-radius:16px;
+
+background:#fff;
+
+white-space:pre-wrap;
+
+line-height:1.8;
+
+font-size:15px;
+
+box-shadow:none;
+
 }
 
 /* STATES */
