@@ -76,9 +76,15 @@ opacity:.7;
 
 /* CONTAINER */
 .container{
-  width:100%;
-  max-width:760px;
-  padding:28px 20px 40px;
+    width:100%;
+    max-width:760px;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:28px 20px 24px;
 }
 
 /* HEADER */
@@ -348,15 +354,12 @@ border-radius:10px;
 
 /* Nice footer */
 .footer{
+    margin-top:auto;
+    padding-top:28px;
 
-margin-top:35px;
-
-text-align:center;
-
-font-size:13px;
-
-color:#9ca3af;
-
+    text-align:center;
+    font-size:13px;
+    color:#9ca3af;
 }
 
 .card{
