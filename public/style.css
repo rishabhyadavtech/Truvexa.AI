@@ -45,28 +45,14 @@ body::before{
 }
 @keyframes blueGlow{
 
-0%{
-
-transform:translateX(-50%) scale(1);
-
-opacity:.7;
-
+0%,100%{
+    transform:translateX(-50%) scale(1);
+    opacity:.85;
 }
 
 50%{
-
-transform:translateX(-50%) scale(1.08);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateX(-50%) scale(1);
-
-opacity:.7;
-
+    transform:translateX(-50%) scale(1.06);
+    opacity:1;
 }
 
 }
