@@ -153,15 +153,13 @@ This means Google's security systems have previously detected malicious or decep
 
     parts.push(
 
-`🦠 VirusTotal results.
+`VirusTotal checked this website using multiple security vendors.
 
-Malicious detections : ${virusTotal.malicious}
+${virusTotal.malicious} vendors marked it as malicious.
 
-Suspicious detections : ${virusTotal.suspicious}`
+${virusTotal.suspicious} vendors reported suspicious behaviour.`
 
-    );
-
-  }
+);
 
   // ======================
   // Domain
@@ -198,7 +196,13 @@ Newly created domains are commonly used in phishing campaigns because attackers 
 }
 
 }
+      parts.push(
 
+`Overall Assessment
+
+This result is based on message content, detected scam patterns, link analysis and external security checks.`
+
+);
   // ======================
   // Final Recommendation
   // ======================
