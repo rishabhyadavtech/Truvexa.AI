@@ -17,9 +17,7 @@ dangerExplanation:
 
     dontClick: "Do not click unknown links.",
 
-    dontShare: "Do not share OTP, passwords or bank details."
-
-  },
+    dontShare: "Do not share OTP, passwords or bank details.",
 
 reasons: {
 
@@ -113,7 +111,6 @@ dangerExplanation:
 
     dontShare: "OTP, password aur bank details share mat karein.",
 
-  }
 reasons: {
 
 SHORTENED_URL:
