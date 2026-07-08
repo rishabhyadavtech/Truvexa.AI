@@ -72,11 +72,7 @@ function decideAction(scam, manipulation) {
 
     decision = "No major risk detected.";
 
-    action = pick([
-      "Aap normal tarike se proceed kar sakte hain",
-      "Is par action lena safe lag raha hai",
-      "Aap bina tension ke continue kar sakte hain"
-    ]);
+    action = "SAFE_TO_PROCEED";
 
     reason = pick([
       "Koi strong scam ya manipulation signal detect nahi hua.",
