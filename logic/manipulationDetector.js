@@ -132,15 +132,6 @@ function detectManipulation(input) {
   if (score >= 60) level = "HIGH";
   else if (score >= 30) level = "MEDIUM";
 
-  // 🎯 SMART SUMMARY (NOT TEMPLATE)
-  let summary = "";
-
-  if (level === "HIGH") {
-    summary = "🚨 Yeh message strong manipulation tactics use kar raha hai.";
-  } else {
-    summary = "⚠️ Is message me kuch manipulation patterns dikh rahe hain.";
-  }
-
   // 🎯 FINAL AI STYLE MESSAGE
   let finalMessage = `
 ${summary}
