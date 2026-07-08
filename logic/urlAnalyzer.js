@@ -63,7 +63,9 @@ signals:[],
 
 reasons:[],
 
-advice:[]
+advice:[],
+
+evidence: []
 }
 
   const regex = /(https?:\/\/[^\s]+|www\.[^\s]+)/i;
