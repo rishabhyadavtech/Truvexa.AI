@@ -256,6 +256,10 @@ result.evidence.push({
   severity: "high"
 });
     
+  result.signals = [...new Set(result.signals)];
+result.reasons = [...new Set(result.reasons)];
+result.advice = [...new Set(result.advice)];
+
   return result;
 }
 
