@@ -198,7 +198,7 @@ Newly created domains are commonly used in phishing campaigns because attackers 
 
 }
 
-}
+
       parts.push(
 
 `Overall Assessment
