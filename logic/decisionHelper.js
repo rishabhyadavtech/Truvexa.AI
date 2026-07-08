@@ -22,7 +22,7 @@ function decideAction(scam, manipulation) {
       action = "DONT_SHARE_OTP";
     } 
     else if (signals.includes("Link")) {
-      action = "Is link par click mat karo — yeh phishing ho sakta hai";
+      action = "DONT_CLICK_LINK";
     } 
     else if (signals.includes("Greed")) {
       action = "Paise bhejne ya invest karne se completely avoid karo";
