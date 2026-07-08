@@ -101,9 +101,7 @@ function buildExplanation(
     urlAnalysis.reasons.length  
   ) {  
   
-    parts.push(  
-  
-      "🌐 The link itself raised warning signs.\n\n" +  
+    parts.push(
   
       urlAnalysis.reasons  
         .map(r => "• " + r)  
