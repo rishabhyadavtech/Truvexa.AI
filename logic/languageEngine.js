@@ -114,6 +114,80 @@ dangerExplanation:
     dontShare: "OTP, password aur bank details share mat karein."
 
   }
+reasons: {
+
+SHORTENED_URL:
+"Shortened link asli destination ko chhupa sakta hai.",
+
+UNUSUAL_TLD:
+"Domain unusual extension use kar raha hai jo scams me common hai.",
+
+BRAND_IMPERSONATION:
+"Domain kisi popular brand ki nakal karta hua lag raha hai.",
+
+LONG_URL:
+"Bahut lambi URL phishing ka signal ho sakti hai.",
+
+MULTIPLE_SUBDOMAINS:
+"Bahut saare subdomains phishing me common hote hain.",
+
+INVALID_URL:
+"URL valid format me nahi hai.",
+
+HIGH_RISK:
+"Kai independent security signals high risk dikha rahe hain.",
+
+MEDIUM_RISK:
+"Kuch suspicious indicators detect hue hain.",
+
+SAFE:
+"Koi major security risk detect nahi hua."
+
+},
+
+actions: {
+
+DONT_SHARE_OTP:
+"OTP, password ya bank details kabhi share mat karein.",
+
+DONT_CLICK_LINK:
+"Link par click mat karein. Official website manually kholen.",
+
+DONT_SEND_MONEY:
+"Verify kiye bina paise mat bhejein.",
+
+VERIFY_OFFICIAL_SOURCE:
+"Official website ya customer support se verify karein.",
+
+IGNORE_MESSAGE:
+"Message ignore karein aur zarurat ho to sender ko block karein.",
+
+VERIFY_LINK:
+"Link kholne se pehle verify karein.",
+
+VERIFY_OFFER:
+"Offer ko official website se confirm karein.",
+
+VERIFY_FIRST:
+"Koi bhi action lene se pehle verify karein.",
+
+SAFE_TO_PROCEED:
+"Koi major warning sign detect nahi hua."
+
+},
+
+decisions: {
+
+SAFE:
+"Koi major risk detect nahi hua.",
+
+MEDIUM:
+"Action lene se pehle verify karein.",
+
+HIGH:
+"Is message se interact na karein."
+
+},
 
 };
 
