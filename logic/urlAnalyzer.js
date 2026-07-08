@@ -134,11 +134,8 @@ advice:[]
 
         result.reasons.push("BRAND_IMPERSONATION");
 
-        result.advice.push(
-          "Official website manually open karo."
-        );
-
-        break;
+       result.advice.push("OPEN_OFFICIAL_WEBSITE");
+      break;
       }
     }
 
