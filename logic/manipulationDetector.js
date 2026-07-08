@@ -6,11 +6,6 @@ function detectManipulation(input) {
   let messages = [];
   let advice = [];
 
-  // 🎯 Random variation (AI feel, no template)
-  function pick(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
   // 😨 FEAR
   if (
     text.includes("blocked") ||
