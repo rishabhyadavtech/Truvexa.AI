@@ -74,6 +74,17 @@ const hasGreed =
   text.includes("free") ||
   text.includes("offer");
 
+const hasJob =
+  text.includes("job") ||
+  text.includes("work from home") ||
+  text.includes("vacancy") ||
+  text.includes("hiring") ||
+  text.includes("recruitment") ||
+  text.includes("part time") ||
+  text.includes("full time") ||
+  text.includes("salary") ||
+  text.includes("earn money");
+
 const hasSensitiveInfo =
   hasOTP && hasBank;
 
