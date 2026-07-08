@@ -31,12 +31,6 @@ function detectManipulation(input) {
     signals.push("Urgency");
     score += 20;
 
-    messages.push(pick([
-      "⚠️ Yeh message tumhe jaldi decision lene ke liye push kar raha hai.",
-      "⚠️ Yahan urgency create ki gayi hai taaki tum bina soche react karo.",
-      "⚠️ Jaldi karne ka pressure diya ja raha hai — yeh common manipulation hai."
-    ]));
-
     advice.push("Jaldi decision mat lo — thoda rukkar socho.");
   }
 
@@ -50,12 +44,6 @@ function detectManipulation(input) {
   ) {
     signals.push("Authority");
     score += 20;
-
-    messages.push(pick([
-      "🏛️ Authority ka naam use karke trust gain karne ki koshish ho rahi hai.",
-      "🏛️ Yeh official lagne ka natak ho sakta hai.",
-      "🏛️ Naam dekhkar trust mat karo — verify zaroor karo."
-    ]));
 
     advice.push("Official website ya helpline se verify karo.");
   }
@@ -75,12 +63,6 @@ function detectManipulation(input) {
     signals.push("Greed");
     score += 25;
 
-    messages.push(pick([
-      "💰 Yeh message tumhe lalach dekar fasana chah raha hai.",
-      "💰 Easy money ka promise diya ja raha hai — yeh risky sign hai.",
-      "💰 Yeh reward ya paisa ka trap ho sakta hai."
-    ]));
-
     advice.push("Too good to be true offers ignore karo.");
   }
 
@@ -93,12 +75,6 @@ function detectManipulation(input) {
     signals.push("Pressure");
     score += 20;
 
-    messages.push(pick([
-      "🎯 Tum par pressure banaya ja raha hai taaki tum soch na pao.",
-      "🎯 Secret ya limited time ka use manipulation ka sign hota hai.",
-      "🎯 Yeh tumhe isolate karne ki koshish hai (dusron se na batane ke liye)."
-    ]));
-
     advice.push("Kisi trusted person se discuss karo.");
   }
 
@@ -107,13 +83,7 @@ function detectManipulation(input) {
     signals.push("Link");
     score += 20;
 
-    messages.push(pick([
-      "🔗 Yeh link tumhe fake ya phishing site par le ja sakta hai.",
-      "🔗 Unknown link ke through data chori ho sakta hai.",
-      "🔗 Link click karna risky ho sakta hai — pehle check karo."
-    ]));
-
-    advice.push("Link click karne se pehle URL verify karo.");
+     advice.push("Link click karne se pehle URL verify karo.");
   }
 
   // 🧠 NO SIGNAL (SAFE CASE)
