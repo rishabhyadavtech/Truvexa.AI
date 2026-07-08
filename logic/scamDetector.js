@@ -277,8 +277,10 @@ matchedPatterns.push("ADVANCE_FEE");
 
   if (hasUrgency && hasLink) {
     riskScore += 20;
-    reasons.push("Urgency + link ka combo phishing me common hota hai.");
-  }
+    reasons.push(
+"The combination of urgency and an external link is commonly used in phishing attacks."
+);
+}
 
   if (hasOTP && hasLink) {
     riskScore += 25;
