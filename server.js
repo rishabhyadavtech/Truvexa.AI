@@ -78,7 +78,19 @@ function buildExplanation(
   if (scam.humanMessage) {
     parts.push(scam.humanMessage);
 }
+  if (scam.signals && scam.signals.length) {
 
+parts.push(
+
+`Why was this flagged?
+
+The decision is based on these detected warning signs:
+
+• ${scam.signals.join("\n• ")}`
+
+);
+
+}
   // ======================
   // Manipulation
   // ======================
