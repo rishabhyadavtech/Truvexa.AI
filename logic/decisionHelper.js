@@ -46,16 +46,16 @@ function decideAction(scam, manipulation) {
     decision = "Verify before taking any action.";
 
     if (signals.includes("Link")) {
-      action = "Link open karne se pehle URL dhyaan se check karo";
+      action = "VERIFY_LINK";
     } 
     else if (signals.includes("Authority")) {
       action = "Official source (website/app) se confirm karo";
     } 
     else if (signals.includes("Greed")) {
-      action = "Offer ko blindly accept mat karo — verify karo";
+      action = "VERIFY_OFFER";
     } 
     else {
-      action = "Thoda rukkar kisi trusted person se discuss karo";
+      action = "VERIFY_FIRST";
     }
 
     reason = pick([
