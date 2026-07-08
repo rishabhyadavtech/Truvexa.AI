@@ -48,16 +48,6 @@ function getFinalResultType(scam, manipulation) {
   return "SUSPICIOUS";
 }
 
-// 🎯 Merge Signals
-function mergeSignals(scamSignals = [], manipulationSignals = []) {
-  return [...new Set([...scamSignals, ...manipulationSignals])];
-}
-
-// 🎯 Merge Advice
-function mergeAdvice(scamAdvice = [], manipulationAdvice = []) {
-  return [...new Set([...scamAdvice, ...manipulationAdvice])];
-}
-
 // 🎯 AI EXPLANATION BUILDER
 function buildExplanation(
   type,
