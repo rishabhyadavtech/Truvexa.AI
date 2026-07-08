@@ -161,7 +161,7 @@ severity:"critical",
 confidence:98,
 
 description:
-"The message requests OTP or banking credentials."
+"The message asks for an OTP or banking credential."
 
 });
 
