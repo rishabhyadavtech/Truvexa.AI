@@ -28,10 +28,10 @@ function decideAction(scam, manipulation) {
       action = "DONT_SEND_MONEY";
     } 
     else if (signals.includes("Authority")) {
-      action = "Khud official website ya helpline par jaakar verify karo";
+      action = "VERIFY_OFFICIAL_SOURCE";
     } 
     else {
-      action = "Is message ko ignore karo aur koi action mat lo";
+      action = "IGNORE_MESSAGE";
     }
 
     reason = "HIGH_RISK";
