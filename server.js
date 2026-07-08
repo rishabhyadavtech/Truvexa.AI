@@ -65,7 +65,8 @@ function buildExplanation(
   safeBrowsing,
   virusTotal,
   domainInfo,
-  confidence
+  confidence,
+  t
 ) {
 
   let parts = [];
