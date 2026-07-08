@@ -77,39 +77,20 @@ function buildExplanation(
   // ======================
 
   if (scam.humanMessage) {
-
-    parts.push(
-
-     "The message creates urgency by claiming your account will be blocked.
-
-It requests an OTP.
-
-It asks you to open an unofficial SBI website.\n\n" +
-
-      scam.humanMessage
-
-    );
-
-  }
+    parts.push(scam.humanMessage);
+}
 
   // ======================
   // Manipulation
   // ======================
 
-  if (
+ if (
     manipulation.manipulationLevel !== "LOW" &&
     manipulation.manipulationMessage
-  ) {
+){
+    parts.push(manipulation.manipulationMessage);
 
-    parts.push(
-
-      "The sender is also trying to influence your emotions.\n\n" +
-
-      manipulation.manipulationMessage
-
-    );
-
-  }
+}
 
   // ======================  
   // URL  
