@@ -58,11 +58,7 @@ function decideAction(scam, manipulation) {
       action = "VERIFY_FIRST";
     }
 
-    reason = pick([
-      "Kuch signals suspicious hain jo risk create kar sakte hain.",
-      "Yeh message completely safe nahi lag raha — thoda doubt hai.",
-      "Agar bina verify kiye action liya to risk ho sakta hai."
-    ]);
+    reason = "MEDIUM_RISK";
   }
 
   // =========================
