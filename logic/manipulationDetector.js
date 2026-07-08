@@ -17,7 +17,7 @@ function detectManipulation(input) {
     signals.push("Fear");
     score += 25;
 
-    advice.push("Panic me decision mat lo — pehle verify karo.");
+    advice.push
   }
 
   // ⏰ URGENCY
@@ -92,7 +92,7 @@ function detectManipulation(input) {
       manipulationScore: 0,
       manipulationLevel: "LOW",
       signals: [],
-      manipulationAdvice: ["Basic caution rakho."]
+      manipulationAdvice: []
     };
   }
 
