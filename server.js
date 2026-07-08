@@ -304,7 +304,7 @@ reputationResult,
   riskScore: scamResult.riskScore,
   evidence: scamResult.evidence || [],
   matchedPatterns: scamResult.matchedPatterns || [],
-  scamCategory: scamResult.scamType || "General"
+  scamCategory: scamResult.scamCategory || "General"
 };
 
     // =========================
