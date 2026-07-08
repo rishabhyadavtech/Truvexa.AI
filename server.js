@@ -357,8 +357,7 @@ reputationResult,
   virusTotal,
   domainInfo,
   confidence,
-  t
-);
+  t);
   }
     // =========================
     // 🔴 DANGEROUS
