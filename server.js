@@ -139,6 +139,8 @@ This means Google's security systems have previously detected malicious or decep
 
 );
 
+}
+
   // ======================
   // VirusTotal
   // ======================
@@ -161,6 +163,7 @@ ${virusTotal.suspicious} vendors reported suspicious behaviour.`
 
 );
 
+}
   // ======================
   // Domain
   // ======================
@@ -203,6 +206,8 @@ Newly created domains are commonly used in phishing campaigns because attackers 
 This result is based on message content, detected scam patterns, link analysis and external security checks.`
 
 );
+
+}
   // ======================
   // Final Recommendation
   // ======================
