@@ -105,7 +105,6 @@ function detectManipulation(input) {
     manipulationScore: score,
     manipulationLevel: level,
     signals: [...new Set(signals)],
-    manipulationMessage: "",
     manipulationAdvice: [...new Set(advice)]
   };
 }
