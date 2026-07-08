@@ -35,7 +35,7 @@ function decideAction(scam, manipulation) {
     }
 
     reason = "HIGH_RISK";
-    ]);
+ 
   }
 
   // =========================
@@ -43,11 +43,7 @@ function decideAction(scam, manipulation) {
   // =========================
   else if (isMedium) {
 
-    decision = pick([
-      "⚠️ Direct action lene se pehle ruk jao",
-      "⚠️ Yeh thoda suspicious lag raha hai",
-      "⚠️ Bina verify kiye aage mat badho"
-    ]);
+    decision = "Verify before taking any action.";
 
     if (signals.includes("Link")) {
       action = "Link open karne se pehle URL dhyaan se check karo";
@@ -74,11 +70,7 @@ function decideAction(scam, manipulation) {
   // =========================
   else {
 
-    decision = pick([
-      "✅ Yeh safe lag raha hai",
-      "👍 Koi issue nahi lag raha",
-      "✅ Normal message lag raha hai"
-    ]);
+    decision = "No major risk detected.";
 
     action = pick([
       "Aap normal tarike se proceed kar sakte hain",
