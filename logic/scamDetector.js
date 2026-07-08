@@ -197,7 +197,7 @@ severity:"medium",
 confidence:80,
 
 description:
-"Unknown external link detected."
+"The message contains an external website that should be verified before opening."
 
 });
 
