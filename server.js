@@ -73,14 +73,6 @@ function buildExplanation(
   let parts = [];
 
   // ======================
-  // Heading
-  // ======================
-
-  parts.push(
-    "🧠 Why Truvexa reached this decision"
-  );
-
-  // ======================
   // Scam
   // ======================
 
@@ -88,7 +80,11 @@ function buildExplanation(
 
     parts.push(
 
-      "This message contains patterns commonly seen in online scams.\n\n" +
+     "The message creates urgency by claiming your account will be blocked.
+
+It requests an OTP.
+
+It asks you to open an unofficial SBI website.\n\n" +
 
       scam.humanMessage
 
@@ -115,25 +111,25 @@ function buildExplanation(
 
   }
 
-  // ======================
-  // URL
-  // ======================
-
-  if (
-    urlAnalysis.found &&
-    urlAnalysis.reasons.length
-  ) {
-
-    parts.push(
-
-      "🌐 The link itself raised warning signs.\n\n" +
-
-      urlAnalysis.reasons
-        .map(r => "• " + r)
-        .join("\n")
-
-    );
-
+  // ======================  
+  // URL  
+  // ======================  
+  
+  if (  
+    urlAnalysis.found &&  
+    urlAnalysis.reasons.length  
+  ) {  
+  
+    parts.push(  
+  
+      "🌐 The link itself raised warning signs.\n\n" +  
+  
+      urlAnalysis.reasons  
+        .map(r => "• " + r)  
+        .join("\n")  
+  
+    );  
+  
   }
 
   // ======================
@@ -199,20 +195,6 @@ Registrar : ${domainInfo.registrar}`
     );
 
   }
-
-  // ======================
-  // Confidence
-  // ======================
-
-  parts.push(
-
-`🎯 Overall Confidence
-
-${confidence}%
-
-Multiple independent security checks contributed to this confidence score.`
-
-  );
 
   // ======================
   // Final Recommendation
@@ -397,16 +379,6 @@ reputationResult,
   t
 );
 
-if (urlAnalysis.found) {
-  response.explanation += "\n\n🌐 URL Analysis\n";
-
-  if (urlAnalysis.reasons.length > 0) {
-    response.explanation +=
-      "\n- " + urlAnalysis.reasons.join("\n- ");
-  }
-}
-
- }
     // ✅ SEND FINAL
     res.json(response);
 
