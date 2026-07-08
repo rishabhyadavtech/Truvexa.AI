@@ -25,7 +25,7 @@ function decideAction(scam, manipulation) {
       action = "DONT_CLICK_LINK";
     } 
     else if (signals.includes("Greed")) {
-      action = "Paise bhejne ya invest karne se completely avoid karo";
+      action = "DONT_SEND_MONEY";
     } 
     else if (signals.includes("Authority")) {
       action = "Khud official website ya helpline par jaakar verify karo";
