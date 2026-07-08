@@ -92,7 +92,6 @@ function detectManipulation(input) {
       manipulationScore: 0,
       manipulationLevel: "LOW",
       signals: [],
-      manipulationMessage: "👍 Koi strong manipulation detect nahi hua.",
       manipulationAdvice: ["Basic caution rakho."]
     };
   }
