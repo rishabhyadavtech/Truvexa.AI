@@ -177,7 +177,7 @@ advice:[]
     result.signals.push("Invalid URL");
 
     result.reasons.push(
-      "URL malformed lag rahi hai."
+      "INVALID_URL"
     );
   }
 
