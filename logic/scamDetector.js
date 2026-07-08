@@ -12,9 +12,6 @@ let scamTypes = [];
 // NEW: Evidence engine
 let evidence = [];
 
-// NEW: Confidence score
-let confidence = 0;
-
 // NEW: Pattern matches
 let matchedPatterns = [];
 
