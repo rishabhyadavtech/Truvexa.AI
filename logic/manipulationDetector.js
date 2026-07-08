@@ -87,7 +87,7 @@ function detectManipulation(input) {
   }
 
   // 🧠 NO SIGNAL (SAFE CASE)
-  if (messages.length === 0) {
+  if (signals.length === 0){
     return {
       manipulationScore: 0,
       manipulationLevel: "LOW",
