@@ -49,7 +49,7 @@ function decideAction(scam, manipulation) {
       action = "VERIFY_LINK";
     } 
     else if (signals.includes("Authority")) {
-      action = "Official source (website/app) se confirm karo";
+      action = "VERIFY_OFFICIAL_SOURCE";
     } 
     else if (signals.includes("Greed")) {
       action = "VERIFY_OFFER";
