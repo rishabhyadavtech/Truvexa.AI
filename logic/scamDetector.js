@@ -85,6 +85,21 @@ const hasJob =
   text.includes("salary") ||
   text.includes("earn money");
 
+const hasFee =
+  text.includes("fee") ||
+  text.includes("registration fee") ||
+  text.includes("processing fee") ||
+  text.includes("security deposit") ||
+  text.includes("advance payment") ||
+  text.includes("pay first") ||
+  text.includes("joining fee");
+
+const hasNoExperience =
+  text.includes("no experience") ||
+  text.includes("without experience") ||
+  text.includes("freshers") ||
+  text.includes("experience not required");
+
 const hasSensitiveInfo =
   hasOTP && hasBank;
 
