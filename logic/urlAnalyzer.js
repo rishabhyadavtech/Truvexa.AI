@@ -97,7 +97,7 @@ advice:[]
       result.signals.push("URL Shortener");
 
       result.reasons.push(
-        "Shortened URL destination hide karta hai."
+        "SHORTENED_URL"
       );
 
       result.advice.push(
@@ -151,7 +151,7 @@ advice:[]
       result.signals.push("Long URL");
 
       result.reasons.push(
-        "Bahut lambi URL suspicious ho sakti hai."
+        "LONG_URL"
       );
     }
 
@@ -166,7 +166,7 @@ advice:[]
       result.signals.push("Multiple Subdomains");
 
       result.reasons.push(
-        "Extra subdomains phishing me common hote hain."
+        "MULTIPLE_SUBDOMAINS"
       );
     }
 
