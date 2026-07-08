@@ -344,6 +344,8 @@ reputationResult,
   t
 );
 
+}
+
     // ✅ SEND FINAL
     res.json(response);
 
