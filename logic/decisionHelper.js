@@ -74,11 +74,7 @@ function decideAction(scam, manipulation) {
 
     action = "SAFE_TO_PROCEED";
 
-    reason = pick([
-      "Koi strong scam ya manipulation signal detect nahi hua.",
-      "Message me koi risky pattern nahi mila.",
-      "Yeh normal communication lag raha hai."
-    ]);
+    reason = "SAFE";
   }
 
   return {
