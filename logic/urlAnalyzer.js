@@ -101,7 +101,7 @@ advice:[]
       );
 
       result.advice.push(
-        "Expand kiye bina open mat karo."
+        "EXPAND_SHORT_URL"
       );
     }
 
