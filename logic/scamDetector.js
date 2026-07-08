@@ -146,7 +146,7 @@ signals.push("Sensitive Info");
 scamTypes.push("OTP Scam");
 
 reasons.push(
-"Aapse OTP ya sensitive details maangi ja rahi hain."
+"The message asks for an OTP, which legitimate organisations never request through messages."
 );
 
 advice.push(
@@ -211,7 +211,9 @@ matchedPatterns.push("EXTERNAL_LINK");
   if (hasFear) {
     riskScore += 20;
     signals.push("Fear");
-    reasons.push("Dar create karke aapko control kiya ja raha hai.");
+    reasons.push(
+"The message creates fear by claiming something bad will happen if you don't act quickly."
+);
     advice.push("Panic mat karo, pehle verify karo.");
   }
 
