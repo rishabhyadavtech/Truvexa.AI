@@ -132,13 +132,12 @@ The decision is based on these detected warning signs:
   ) {
 
     parts.push(
-`🛡 Google Safe Browsing flagged this URL.
 
-Threats:
-• ${safeBrowsing.threats.join("\n• ")}`
+`Google Safe Browsing identified this website as unsafe.
+
+This means Google's security systems have previously detected malicious or deceptive activity associated with this link.`
+
 );
-
-}
 
   // ======================
   // VirusTotal
@@ -184,6 +183,21 @@ Registrar : ${domainInfo.registrar}`
     );
 
   }
+if(domainInfo.success){
+
+if(domainInfo.risk==="HIGH"){
+
+parts.push(
+
+`The website appears to be recently registered.
+
+Newly created domains are commonly used in phishing campaigns because attackers frequently abandon them after being reported.`
+
+);
+
+}
+
+}
 
   // ======================
   // Final Recommendation
