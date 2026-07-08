@@ -353,7 +353,7 @@ matchedPatterns.push("ADVANCE_FEE");
 
  return {
 
-type: result,
+result,
 
 riskScore,
 
