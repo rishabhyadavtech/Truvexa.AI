@@ -182,7 +182,7 @@ signals.push("Link");
 scamTypes.push("Phishing");
 
 reasons.push(
-"Message me ek external link diya gaya hai."
+"The message contains an external website that cannot be trusted automatically."
 );
 
 advice.push(
