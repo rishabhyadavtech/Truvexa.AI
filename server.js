@@ -117,6 +117,8 @@ Threats:
 • ${safeBrowsing.threats.join("\n• ")}`
 );
 
+}
+
   // ======================
   // VirusTotal
   // ======================
