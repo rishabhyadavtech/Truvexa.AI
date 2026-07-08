@@ -362,8 +362,6 @@ scamTypes.join(", ") || "General",
 
 evidence,
 
-confidence,
-
 matchedPatterns,
 
 reasons,
