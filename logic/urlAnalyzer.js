@@ -114,9 +114,7 @@ advice:[]
 
         result.signals.push("Suspicious Domain");
 
-        result.reasons.push(
-          "Domain unusual TLD use kar raha hai."
-        );
+        result.reasons.push("UNUSUAL_TLD");
 
         break;
       }
@@ -134,9 +132,7 @@ advice:[]
 
         result.signals.push("Brand Impersonation");
 
-        result.reasons.push(
-          "Popular brand ka naam unusual domain me use hua hai."
-        );
+        result.reasons.push("BRAND_IMPERSONATION");
 
         result.advice.push(
           "Official website manually open karo."
