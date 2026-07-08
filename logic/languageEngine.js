@@ -91,6 +91,8 @@ decisions: {
     "Avoid interacting with this message."
 },
 
+}
+
   hi: {
 
     safe: "✅ Yeh message safe lag raha hai.",
@@ -184,7 +186,9 @@ MEDIUM:
 HIGH:
 "Is message se interact na karein."
 
-},
+}
+
+}
 
 };
 
