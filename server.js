@@ -111,17 +111,11 @@ function buildExplanation(
   ) {
 
     parts.push(
+`🛡 Google Safe Browsing flagged this URL.
 
-      "🛡 Google Safe Browsing flagged this URL.
-
-Threat:
-• Malware" +
-
-      safeBrowsing.threats.join("\n• ")
-
-    );
-
-  }
+Threats:
+• ${safeBrowsing.threats.join("\n• ")}`
+);
 
   // ======================
   // VirusTotal
