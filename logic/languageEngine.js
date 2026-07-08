@@ -81,6 +81,18 @@ reasons: {
     "No major warning signs were detected."
 },
 
+decisions: {
+
+  SAFE:
+    "No major risk detected.",
+
+  MEDIUM:
+    "Verify before taking any action.",
+
+  HIGH:
+    "Avoid interacting with this message."
+},
+
   hi: {
 
     safe: "✅ Yeh message safe lag raha hai.",
