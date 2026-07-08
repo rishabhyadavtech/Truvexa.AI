@@ -17,12 +17,6 @@ function detectManipulation(input) {
     signals.push("Fear");
     score += 25;
 
-    messages.push(pick([
-      "😨 Yeh message dar create kar raha hai taaki tum panic me decision lo.",
-      "😨 Dar ka use karke tumhe control karne ki koshish ho rahi hai.",
-      "😨 Yeh threat-based tactic hai — jaldi react karwane ke liye."
-    ]));
-
     advice.push("Panic me decision mat lo — pehle verify karo.");
   }
 
