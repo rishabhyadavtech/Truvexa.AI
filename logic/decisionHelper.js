@@ -3,11 +3,6 @@ function decideAction(scam, manipulation) {
   const signals = scam.signals || [];
   const level = manipulation.manipulationLevel;
 
-  // 🎯 Random AI feel (no template)
-  function pick(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
   let decision = "";
   let action = "";
   let reason = "";
@@ -19,12 +14,6 @@ function decideAction(scam, manipulation) {
   // 🚨 HIGH RISK
   // =========================
   if (isHigh) {
-
-    decision = pick([
-      "❌ Isse turant avoid karo",
-      "🚫 Is message par trust mat karo",
-      "❌ Yeh risky lag raha hai — action lena unsafe ho sakta hai"
-    ]);
 
     // 🎯 CONTEXT BASED ACTION
     if (signals.includes("Sensitive Info")) {
