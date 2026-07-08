@@ -21,6 +21,36 @@ dangerExplanation:
 
   },
 
+reasons: {
+
+  SHORTENED_URL:
+    "The message contains a shortened URL that hides the real destination.",
+
+  UNUSUAL_TLD:
+    "The website uses an uncommon top-level domain frequently abused in scams.",
+
+  BRAND_IMPERSONATION:
+    "The domain appears to imitate a well-known brand.",
+
+  LONG_URL:
+    "The URL is unusually long, which is common in phishing attacks.",
+
+  MULTIPLE_SUBDOMAINS:
+    "The domain contains multiple subdomains, a common phishing technique.",
+
+  INVALID_URL:
+    "The URL format appears to be invalid.",
+
+  HIGH_RISK:
+    "Multiple independent security signals indicate high risk.",
+
+  MEDIUM_RISK:
+    "Several suspicious indicators were detected.",
+
+  SAFE:
+    "No significant security risks were detected."
+},
+
   hi: {
 
     safe: "✅ Yeh message safe lag raha hai.",
