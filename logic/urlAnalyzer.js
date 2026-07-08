@@ -106,6 +106,12 @@ evidence: []
         "EXPAND_SHORT_URL"
       );
     }
+      
+     result.evidence.push({
+  id: "SHORTENED_URL",
+  title: "Shortened URL detected",
+  severity: "medium"
+});
 
     // Suspicious TLD
     for (const tld of SUSPICIOUS_TLDS) {
@@ -121,6 +127,12 @@ evidence: []
         break;
       }
     }
+
+   result.evidence.push({
+  id: "UNUSUAL_TLD",
+  title: "Unusual top-level domain",
+  severity: "medium"
+});
 
     // Fake Brand
     for (const brand of BRANDS) {
@@ -140,6 +152,11 @@ evidence: []
       break;
       }
     }
+result.evidence.push({
+  id: "BRAND_IMPERSONATION",
+  title: "Brand impersonation detected",
+  severity: "high"
+});
 
     // Long URL
 
@@ -153,6 +170,11 @@ evidence: []
         "LONG_URL"
       );
     }
+  result.evidence.push({
+  id: "LONG_URL",
+  title: "Unusually long URL",
+  severity: "low"
+});
 
     // Multiple subdomains
 
@@ -179,6 +201,11 @@ evidence: []
       "INVALID_URL"
     );
   }
+    result.evidence.push({
+  id: "MULTIPLE_SUBDOMAINS",
+  title: "Multiple subdomains detected",
+  severity: "medium"
+});
 
   return result;
 }
