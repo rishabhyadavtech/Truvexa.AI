@@ -108,6 +108,31 @@ if (url.protocol === "http:") {
   });
 
 }
+  
+   const ipRegex =
+/^\d{1,3}(\.\d{1,3}){3}$/;
+
+if(ipRegex.test(host)){
+
+result.risk +=30;
+
+result.signals.push("IP Address URL");
+
+result.reasons.push("IP_ADDRESS_URL");
+
+result.advice.push("AVOID_IP_URL");
+
+result.evidence.push({
+
+id:"IP_ADDRESS_URL",
+
+title:"URL uses an IP address",
+
+severity:"high"
+
+});
+
+}
 
     // URL Shortener
     if (SHORTENERS.includes(host)) {
