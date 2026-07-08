@@ -17,7 +17,7 @@ function detectManipulation(input) {
     signals.push("Fear");
     score += 25;
 
-    advice.push
+    advice.push("VERIFY_FIRST");
   }
 
   // ⏰ URGENCY
@@ -31,7 +31,7 @@ function detectManipulation(input) {
     signals.push("Urgency");
     score += 20;
 
-    advice.push("Jaldi decision mat lo — thoda rukkar socho.");
+    advice.push("DO_NOT_RUSH");
   }
 
   // 👑 AUTHORITY
@@ -45,7 +45,7 @@ function detectManipulation(input) {
     signals.push("Authority");
     score += 20;
 
-    advice.push("Official website ya helpline se verify karo.");
+    advice.push("USE_OFFICAL_SOURCE");
   }
 
   // 💰 GREED
@@ -63,7 +63,7 @@ function detectManipulation(input) {
     signals.push("Greed");
     score += 25;
 
-    advice.push("Too good to be true offers ignore karo.");
+    advice.push("IGNORE_TOO_GOOD_OFFERS");
   }
 
   // 🎯 PRESSURE / ISOLATION
@@ -75,7 +75,7 @@ function detectManipulation(input) {
     signals.push("Pressure");
     score += 20;
 
-    advice.push("Kisi trusted person se discuss karo.");
+    advice.push("TAKE_TIME");
   }
 
   // 🔗 LINK
@@ -83,7 +83,7 @@ function detectManipulation(input) {
     signals.push("Link");
     score += 20;
 
-     advice.push("Link click karne se pehle URL verify karo.");
+     advice.push("CHECK_LINK_FIRST");
   }
 
   // 🧠 NO SIGNAL (SAFE CASE)
