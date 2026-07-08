@@ -190,6 +190,12 @@ result.evidence.push({
         "MULTIPLE_SUBDOMAINS"
       );
     }
+      result.evidence.push({
+  id: "MULTIPLE_SUBDOMAINS",
+  title: "Multiple subdomains detected",
+  severity: "medium"
+});
+
 
   } catch {
 
@@ -200,13 +206,13 @@ result.evidence.push({
     result.reasons.push(
       "INVALID_URL"
     );
-  }
+  } 
     result.evidence.push({
-  id: "MULTIPLE_SUBDOMAINS",
-  title: "Multiple subdomains detected",
-  severity: "medium"
+  id: "INVALID_URL",
+  title: "Malformed URL",
+  severity: "high"
 });
-
+    
   return result;
 }
 
