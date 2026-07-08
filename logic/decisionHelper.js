@@ -15,9 +15,11 @@ function decideAction(scam, manipulation) {
   // =========================
   if (isHigh) {
 
+  decision = "Avoid interacting with this message.";
+
     // 🎯 CONTEXT BASED ACTION
     if (signals.includes("Sensitive Info")) {
-      action = "OTP, password ya bank details bilkul share mat karo";
+      action = "DONT_SHARE_OTP";
     } 
     else if (signals.includes("Link")) {
       action = "Is link par click mat karo — yeh phishing ho sakta hai";
@@ -32,10 +34,7 @@ function decideAction(scam, manipulation) {
       action = "Is message ko ignore karo aur koi action mat lo";
     }
 
-    reason = pick([
-      "Is message me strong scam ya manipulation signals detect hue hain.",
-      "Yeh message tumhe emotionally control karke galat decision dilwa sakta hai.",
-      "Isme aise patterns hain jo usually scam ya fraud me use hote hain."
+    reason = "HIGH_RISK";
     ]);
   }
 
