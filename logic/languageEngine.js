@@ -51,6 +51,36 @@ reasons: {
     "No significant security risks were detected."
 },
 
+ actions: {
+
+  DONT_SHARE_OTP:
+    "Never share your OTP, passwords or banking details.",
+
+  DONT_CLICK_LINK:
+    "Do not click the link. Visit the official website manually.",
+
+  DONT_SEND_MONEY:
+    "Do not send money until the offer has been independently verified.",
+
+  VERIFY_OFFICIAL_SOURCE:
+    "Verify the information using the official website or customer support.",
+
+  IGNORE_MESSAGE:
+    "Ignore this message and block the sender if necessary.",
+
+  VERIFY_LINK:
+    "Check the destination of the link before opening it.",
+
+  VERIFY_OFFER:
+    "Confirm the offer from the company's official website.",
+
+  VERIFY_FIRST:
+    "Verify the information before taking any action.",
+
+  SAFE_TO_PROCEED:
+    "No major warning signs were detected."
+},
+
   hi: {
 
     safe: "✅ Yeh message safe lag raha hai.",
