@@ -122,7 +122,10 @@ function buildExplanation(
 
     parts.push(
 
-      "🛡 Google Safe Browsing has already flagged this URL.\n\nThreats:\n• " +
+      "🛡 Google Safe Browsing flagged this URL.
+
+Threat:
+• Malware" +
 
       safeBrowsing.threats.join("\n• ")
 
@@ -144,7 +147,7 @@ function buildExplanation(
 
     parts.push(
 
-`🦠 VirusTotal checked this URL using multiple security vendors.
+`🦠 VirusTotal results.
 
 Malicious detections : ${virusTotal.malicious}
 
