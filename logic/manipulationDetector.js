@@ -132,17 +132,6 @@ function detectManipulation(input) {
   if (score >= 60) level = "HIGH";
   else if (score >= 30) level = "MEDIUM";
 
-  // 🎯 FINAL AI STYLE MESSAGE
-  let finalMessage = `
-${summary}
-
-👉 Dhyaan dene wali baatein:
-
-${messages.join("\n\n")}
-
-👉 Isliye bina soche action lena risky ho sakta hai.
-  `.trim();
-
   return {
     manipulationScore: score,
     manipulationLevel: level,
