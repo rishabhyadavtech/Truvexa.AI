@@ -91,6 +91,24 @@ evidence: []
 
     const host = url.hostname.toLowerCase();
 
+if (url.protocol === "http:") {
+
+  result.risk += 10;
+
+  result.signals.push("Insecure HTTP");
+
+  result.reasons.push("INSECURE_HTTP");
+
+  result.advice.push("USE_HTTPS");
+
+  result.evidence.push({
+    id: "INSECURE_HTTP",
+    title: "Website is not using HTTPS",
+    severity: "low"
+  });
+
+}
+
     // URL Shortener
     if (SHORTENERS.includes(host)) {
 
