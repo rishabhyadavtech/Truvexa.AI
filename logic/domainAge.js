@@ -59,6 +59,7 @@ const timeout = setTimeout(() => {
 }
 
     const data = await response.json();
+    clearTimeout(timeout);
 
     const result = data.result || {};
 
@@ -80,7 +81,14 @@ if (!isNaN(createdDate.getTime())) {
     (now - createdDate) / (1000 * 60 * 60 * 24)
   );
 
+  const years = Math.floor(days / 365);
+const months = Math.floor((days % 365) / 30);
+
+if (years > 0) {
+  age = `${years} year${years > 1 ? "s" : ""} ${months} month${months !== 1 ? "s" : ""}`;
+} else {
   age = `${days} days`;
+}
 
   if (days < 30)
     risk = "HIGH";
