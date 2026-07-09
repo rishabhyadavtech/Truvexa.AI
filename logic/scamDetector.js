@@ -146,9 +146,7 @@ scamTypes.push("OTP Scam");
 
 reasons.push(L.reasons.OTP_REQUEST);
 
-advice.push(
-"OTP ya bank details kabhi share mat karo."
-);
+advice.push(L.actions.DONT_SHARE_OTP);
 
 evidence.push({
 
@@ -160,8 +158,7 @@ severity:"critical",
 
 confidence:98,
 
-description:
-"The message asks for an OTP or banking credential."
+reasons.push(L.reasons.OTP_REQUEST);
 
 });
 
