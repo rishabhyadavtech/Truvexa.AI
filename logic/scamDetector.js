@@ -164,8 +164,6 @@ description: L.evidence.OTP_REQUEST
 
 });
 
-reasons.push(L.reasons.OTP_REQUEST);
-
 matchedPatterns.push("OTP_REQUEST");
 
 }
