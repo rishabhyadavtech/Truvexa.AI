@@ -320,9 +320,17 @@ matchedPatterns.push("ADVANCE_FEE");
   // =========================
 
   let safetyStatus = "";
-  let reminder=L.dontShare;
-safetyStatus=L.decisions.HIGH;
-L.decisions.MEDIUM
+let reminder = L.dontShare;
+let emergency = "";
+
+if (result === "DANGEROUS") {
+  safetyStatus = L.dangerous;
+  emergency = L.verify;
+} else if (result === "SUSPICIOUS") {
+  safetyStatus = L.suspicious;
+} else {
+  safetyStatus = L.safe;
+}
 
   // =========================
   // 🎯 FINAL MESSAGE
@@ -330,14 +338,13 @@ L.decisions.MEDIUM
 
   let finalMessage = "";
 
- if(result==="SAFE")
-finalMessage=L.safe;
-
-else if(result==="SUSPICIOUS")
-finalMessage=L.suspicious;
-
-else
-finalMessage=L.dangerous;
+ if (result === "SAFE") {
+  finalMessage = L.safe;
+} else if (result === "SUSPICIOUS") {
+  finalMessage = L.suspicious;
+} else {
+  finalMessage = L.dangerous;
+}
 
  return {
 
