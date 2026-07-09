@@ -4,6 +4,8 @@ function detectScam(input, lang = "en") {
 
 const L = getLanguage(lang);
 
+let text = input.toLowerCase();
+
   let riskScore = 0;
 
 // Core analysis
