@@ -202,7 +202,7 @@ severity:"medium",
 
 confidence:80,
 
-detected:urlAnalysis?.url || "External URL",
+detected: urlAnalysis.url,
 
 description: L.evidence.EXTERNAL_LINK
 
