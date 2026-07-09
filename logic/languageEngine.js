@@ -271,7 +271,6 @@ MONEY_URGENCY:
 
 FEAR_LINK:
   "Dar aur link ka combination phishing me frequently use hota hai."
-
 },
 
   actions: {
