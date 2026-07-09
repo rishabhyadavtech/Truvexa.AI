@@ -1,5 +1,8 @@
-function detectScam(input) {
-  let text = input.toLowerCase();
+const { getLanguage } = require("./languageEngine");
+
+function detectScam(input, lang = "en") {
+
+const L = getLanguage(lang);
 
   let riskScore = 0;
 
@@ -123,8 +126,7 @@ context.hasSensitiveInfo = hasOTP && hasBank;
   if (hasUrgency) {
     riskScore += 20;
     signals.push("Urgency");
-    reasons.push("Message jaldi decision lene ka pressure bana raha hai.");
-    advice.push("Jaldi decision mat lo.");
+    reasons.push(L.reasons.URGENCY);
   }
 
   if (hasGreed || hasMoney) {
