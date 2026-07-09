@@ -231,9 +231,7 @@ emergency:
       "Kuch suspicious indicators detect hue hain.",
 
     SAFE:
-      "Koi major security risk detect nahi hua."
-
-  },
+      "Koi major security risk detect nahi hua.",
 
 URGENCY:
   "Message turant action lene ka pressure bana raha hai.",
