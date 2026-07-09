@@ -270,7 +270,9 @@ MONEY_URGENCY:
   "Paise aur urgency ka combination scam me common hota hai.",
 
 FEAR_LINK:
-  "Dar aur link ka combination phishing me frequently use hota hai.",
+  "Dar aur link ka combination phishing me frequently use hota hai."
+
+},
 
   actions: {
 
