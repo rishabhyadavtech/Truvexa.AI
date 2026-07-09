@@ -95,7 +95,7 @@ ${item.confidence}%
 
 Why:
 
-${t.evidence[item.id] || item.description}
+${t.evidence?.[item.id] || item.description}
 
 `;
 
