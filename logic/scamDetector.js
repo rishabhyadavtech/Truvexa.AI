@@ -1,9 +1,7 @@
 const { getLanguage } = require("./languageEngine");
 
 function detectScam(input, lang = "en") {
-
 const L = getLanguage(lang);
-
 let text = input.toLowerCase();
 
   let riskScore = 0;
@@ -146,9 +144,7 @@ signals.push("Sensitive Info");
 
 scamTypes.push("OTP Scam");
 
-reasons.push(
-"The message asks for an OTP, which legitimate organisations never request through messages."
-);
+reasons.push(L.reasons.OTP_REQUEST);
 
 advice.push(
 "OTP ya bank details kabhi share mat karo."
