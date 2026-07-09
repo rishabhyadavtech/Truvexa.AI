@@ -98,6 +98,8 @@ if (years > 0) {
     risk = "LOW";
 }
 
+}
+
     return {
 
       success: true,
