@@ -62,6 +62,47 @@ const LANG = {
 
     },
 
+    URGENCY:
+  "The message creates pressure to act immediately.",
+
+GREED:
+  "The message promises money, rewards or unrealistic benefits.",
+
+OTP_REQUEST:
+  "The message asks for an OTP or banking credentials.",
+
+EXTERNAL_LINK:
+  "The message contains an external link that should be verified before opening.",
+
+FEAR:
+  "The message uses fear to pressure you into taking action.",
+
+UPFRONT_PAYMENT:
+  "The message asks for money before providing the promised service.",
+
+TOO_EASY_JOB:
+  "The job offer promises high income with little or no experience.",
+
+JOB_COMBO:
+  "The combination of an easy job and high income is commonly used in scams.",
+
+JOB_FEE:
+  "Legitimate employers do not ask candidates to pay fees before hiring.",
+
+URGENT_LINK:
+  "Urgency combined with a link is a common phishing technique.",
+
+OTP_LINK:
+  "The combination of an OTP request and a link indicates a high-risk phishing attempt.",
+
+MONEY_URGENCY:
+  "Money combined with urgency is a common scam pattern.",
+
+FEAR_LINK:
+  "Fear combined with a link is frequently used in phishing attacks."
+
+},
+
     // =========================
     // ACTIONS
     // =========================
@@ -165,6 +206,45 @@ hi: {
       "Koi major security risk detect nahi hua."
 
   },
+
+URGENCY:
+  "Message turant action lene ka pressure bana raha hai.",
+
+GREED:
+  "Message paise ya reward ka lalach de raha hai.",
+
+OTP_REQUEST:
+  "Message OTP ya bank details maang raha hai.",
+
+EXTERNAL_LINK:
+  "Message me external link hai jise verify kiye bina open nahi karna chahiye.",
+
+FEAR:
+  "Message dar ka istemal karke action lene ka pressure bana raha hai.",
+
+UPFRONT_PAYMENT:
+  "Message service dene se pehle paise maang raha hai.",
+
+TOO_EASY_JOB:
+  "Bina experience ke high income ka promise suspicious hai.",
+
+JOB_COMBO:
+  "Easy job aur high salary ka combination scams me common hai.",
+
+JOB_FEE:
+  "Asli companies job dene se pehle registration fee nahi leti.",
+
+URGENT_LINK:
+  "Urgency aur link ka combination phishing ka common pattern hai.",
+
+OTP_LINK:
+  "OTP request aur link ka combination bahut high-risk phishing signal hai.",
+
+MONEY_URGENCY:
+  "Paise aur urgency ka combination scam me common hota hai.",
+
+FEAR_LINK:
+  "Dar aur link ka combination phishing me frequently use hota hai.",
 
   actions: {
 
