@@ -61,7 +61,7 @@ const timeout = setTimeout(() => {
     const data = await response.json();
     clearTimeout(timeout);
 
-    const result = data.result || {};
+    const result = data;
 
     const created = result.creation_date || "Unknown";
     const registrar = result.registrar || "Unknown";
