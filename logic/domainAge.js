@@ -76,7 +76,7 @@ async function checkDomainAge(input) {
       else
         risk = "LOW";
 
-    }
+   }
 
     return {
 
