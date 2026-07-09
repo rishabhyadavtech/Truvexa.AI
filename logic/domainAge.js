@@ -38,6 +38,11 @@ async function checkDomainAge(input) {
   }
 
   try {
+ const controller = new AbortController();
+
+const timeout = setTimeout(() => {
+  controller.abort();
+}, 8000);
 
     const response = await fetch(
       `https://api.apilayer.com/whois/query?domain=${domain}`,
