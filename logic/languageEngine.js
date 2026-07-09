@@ -170,6 +170,19 @@ FEAR_LINK:
 
   },
 
+evidence: {
+
+OTP_REQUEST:
+"The message requests sensitive information. Legitimate organisations do not ask for OTPs through messages.",
+
+ADVANCE_FEE:
+"The sender asks you to pay before receiving the promised service or job. This is a common scam pattern.",
+
+EXTERNAL_LINK:
+"The message contains an external website. Always verify the destination before opening it."
+
+},
+
 hi: {
 
   highRisk:
@@ -316,6 +329,19 @@ FEAR_LINK:
       "Is message se interact na karein."
 
   }
+
+evidence: {
+
+OTP_REQUEST:
+"Message me OTP ya sensitive information maangi ja rahi hai. Legitimate organisations kabhi bhi message se OTP nahi maangti.",
+
+ADVANCE_FEE:
+"Service ya job dene se pehle paise maange ja rahe hain. Ye scam ka common pattern hai.",
+
+EXTERNAL_LINK:
+"Message me external website hai. Link kholne se pehle uski authenticity verify karein."
+
+},
 
 }
   
