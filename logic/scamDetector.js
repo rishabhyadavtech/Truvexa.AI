@@ -221,8 +221,8 @@ matchedPatterns.push("EXTERNAL_LINK");
     riskScore += 35;
     signals.push("Upfront Payment");
 
-    reasons.push("Paise pehle dene ko bola ja raha hai (fee / charges). Yeh common scam pattern hota hai.");
-    advice.push("Kabhi bhi job ya offer ke liye pehle paise mat do.");
+    reasons.push(L.reasons.UPFRONT_PAYMENT);
+    advice.push(L.actions.DONT_SEND_MONEY);
   }
 
   // 🎯 NO EXPERIENCE TRAP
