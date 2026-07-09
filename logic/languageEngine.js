@@ -166,8 +166,6 @@ FEAR_LINK:
       HIGH:
         "Avoid interacting with this message."
 
-    }
-
   },
 
 evidence: {
@@ -180,6 +178,8 @@ ADVANCE_FEE:
 
 EXTERNAL_LINK:
 "The message contains an external website. Always verify the destination before opening it."
+
+}
 
 },
 
@@ -328,7 +328,7 @@ FEAR_LINK:
     HIGH:
       "Is message se interact na karein."
 
-  }
+  },
 
 evidence: {
 
