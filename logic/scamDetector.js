@@ -339,13 +339,14 @@ matchedPatterns.push("ADVANCE_FEE");
 
   let finalMessage = "";
 
-  if (result === "SAFE") {
-    finalMessage = "✅ Yeh message safe lag raha hai.";
-  } else if (result === "SUSPICIOUS") {
-    finalMessage = "⚠️ Yeh message suspicious lag raha hai.";
-  } else {
-    finalMessage = "🚨 Yeh message scam ho sakta hai.";
-  }
+ if(result==="SAFE")
+finalMessage=L.safe;
+
+else if(result==="SUSPICIOUS")
+finalMessage=L.suspicious;
+
+else
+finalMessage=L.dangerous;
 
  return {
 
