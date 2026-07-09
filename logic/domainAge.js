@@ -63,8 +63,13 @@ const timeout = setTimeout(() => {
 
     const result = data;
 
-    const created = result.creation_date || "Unknown";
-    const registrar = result.registrar || "Unknown";
+    const created =
+  result.creation_date ||
+  result.created ||
+  "Unknown";
+    const registrar =
+  result.registrar ||
+  "Unknown";
 
     let age = "Unknown";
     let risk = "Unknown";
