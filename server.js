@@ -87,6 +87,10 @@ explain += `
 
 ✓ ${item.title}
 
+Detected:
+${item.detected || "Matched pattern"}
+
+
 Severity:
 ${item.severity}
 
