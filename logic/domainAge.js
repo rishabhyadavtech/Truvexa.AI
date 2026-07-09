@@ -48,6 +48,10 @@ async function checkDomainAge(input) {
       }
     );
 
+  if (!response.ok) {
+  throw new Error(`WHOIS API Error: ${response.status}`);
+}
+
     const data = await response.json();
 
     const result = data.result || {};
