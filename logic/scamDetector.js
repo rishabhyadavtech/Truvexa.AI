@@ -158,6 +158,8 @@ severity:"critical",
 
 confidence:98,
 
+detected:"OTP",
+
 reasons.push(L.reasons.OTP_REQUEST);
 
 });
