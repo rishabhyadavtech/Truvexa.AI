@@ -65,22 +65,25 @@ async function checkDomainAge(input) {
     if (created !== "Unknown") {
 
       const createdDate = new Date(created);
-      const now = new Date();
 
-      const days = Math.floor(
-        (now - createdDate) / (1000 * 60 * 60 * 24)
-      );
+if (!isNaN(createdDate.getTime())) {
 
-      age = `${days} days`;
+  const now = new Date();
 
-      if (days < 30)
-        risk = "HIGH";
-      else if (days < 180)
-        risk = "MEDIUM";
-      else
-        risk = "LOW";
+  const days = Math.floor(
+    (now - createdDate) / (1000 * 60 * 60 * 24)
+  );
 
-   }
+  age = `${days} days`;
+
+  if (days < 30)
+    risk = "HIGH";
+  else if (days < 180)
+    risk = "MEDIUM";
+  else
+    risk = "LOW";
+
+}
 
     return {
 
