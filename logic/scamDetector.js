@@ -320,18 +320,9 @@ matchedPatterns.push("ADVANCE_FEE");
   // =========================
 
   let safetyStatus = "";
-  let reminder = "👉 Kabhi bhi OTP ya personal details share mat karo.";
-  let emergency = "";
-
-  if (result === "DANGEROUS") {
-    safetyStatus = "🚨 High risk — yeh scam ho sakta hai.";
-    emergency =
-      "⚠️ Agar aapne info share kiya hai to turant bank ya service provider se contact karo.";
-  } else if (result === "SUSPICIOUS") {
-    safetyStatus = "⚠️ Yeh message suspicious hai — verify karna zaroori hai.";
-  } else {
-    safetyStatus = "✅ Safe — koi strong risk detect nahi hua.";
-  }
+  let reminder=L.dontShare;
+safetyStatus=L.decisions.HIGH;
+L.decisions.MEDIUM
 
   // =========================
   // 🎯 FINAL MESSAGE
