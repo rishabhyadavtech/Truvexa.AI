@@ -213,3 +213,11 @@ hi: {
 }
   
 };
+
+function getLanguage(lang = "hi") {
+  return LANG[lang] || LANG.hi;
+}
+
+module.exports = {
+  getLanguage
+};
