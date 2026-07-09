@@ -49,7 +49,8 @@ const timeout = setTimeout(() => {
       {
         headers: {
           apikey: process.env.APILAYER_API_KEY
-        }
+        },
+    signal: controller.signal
       }
     );
 
