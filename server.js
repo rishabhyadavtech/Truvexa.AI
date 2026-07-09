@@ -72,23 +72,36 @@ function buildExplanation(
   let parts = [];
 
   // ======================
-  // Scam
-  // ======================
+// Evidence Based Explanation
+// ======================
 
-  if (scam.humanMessage) {
-    parts.push(scam.humanMessage);
-}
-  if (scam.signals && scam.signals.length) {
+if (scam.evidence && scam.evidence.length) {
 
-parts.push(
+let explain = "Why was this flagged?\n";
 
-`Why was this flagged?
+scam.evidence.forEach(item => {
 
-The decision is based on these detected warning signs:
+explain += `
 
-• ${scam.signals.join("\n• ")}`
+--------------------------------
 
-);
+✓ ${item.title}
+
+Severity:
+${item.severity}
+
+Confidence:
+${item.confidence}%
+
+Why:
+
+${t.evidence[item.id] || item.description}
+
+`;
+
+});
+
+parts.push(explain);
 
 }
   // ======================
