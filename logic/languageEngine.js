@@ -58,9 +58,7 @@ const LANG = {
         "Several suspicious indicators were detected.",
 
       SAFE:
-        "No significant security risks were detected."
-
-    },
+        "No significant security risks were detected.",
 
     URGENCY:
   "The message creates pressure to act immediately.",
