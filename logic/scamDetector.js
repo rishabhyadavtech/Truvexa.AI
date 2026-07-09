@@ -193,9 +193,7 @@ confidence:80,
 
 detected:urlAnalysis?.url || "External URL",
 
-
-description:
-"The message contains an external website that should be verified before opening."
+description: L.evidence.EXTERNAL_LINK
 
 });
 
@@ -258,8 +256,7 @@ confidence:99,
 
 detected:"Registration fee",
 
-description:
-"Money requested before providing the promised service."
+description: L.evidence.ADVANCE_FEE
 
 });
 
