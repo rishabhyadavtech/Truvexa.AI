@@ -96,7 +96,6 @@ if (years > 0) {
     risk = "MEDIUM";
   else
     risk = "LOW";
-
 }
 
     return {
