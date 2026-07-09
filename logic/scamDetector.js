@@ -1,10 +1,13 @@
 const { getLanguage } = require("./languageEngine");
+const { analyzeURL } = require("./urlAnalyzer");
 
 function detectScam(input, lang = "en") {
 const L = getLanguage(lang);
 let text = input.toLowerCase();
+const urlAnalysis = analyzeURL(input);
 
   let riskScore = 0;
+riskScore += urlAnalysis.risk;
 
 // Core analysis
 let signals = [];
@@ -18,6 +21,16 @@ let evidence = [];
 // NEW: Pattern matches
 let matchedPatterns = [];
 
+signals.push(...urlAnalysis.signals);
+
+reasons.push(
+  ...urlAnalysis.reasons.map(r => L.reasons[r] || r)
+);
+
+advice.push(...urlAnalysis.advice);
+
+evidence.push(...urlAnalysis.evidence);
+
 // NEW: Context
 let context = {
   hasMoney: false,
@@ -30,9 +43,7 @@ let context = {
 
   // 🎯 CONTEXT FLAGS
 
-const hasLink =
-text.includes("http") ||
-text.includes("www");
+const hasLink = urlAnalysis.found;
 
 const hasOTP =
 text.includes("otp");
