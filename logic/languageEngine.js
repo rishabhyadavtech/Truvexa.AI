@@ -6,6 +6,21 @@ const LANG = {
     // BASIC UI
     // =========================
 
+highRisk:
+  "High risk — this message appears to be a scam.",
+
+mediumRisk:
+  "This message looks suspicious. Verify before taking action.",
+
+safeStatus:
+  "No major security risks detected.",
+
+reminder:
+  "Never share your OTP, passwords or banking details.",
+
+emergency:
+  "If you already shared sensitive information, contact your bank immediately.",
+
     safe: "This message appears safe.",
 
     suspicious: "This message looks suspicious.",
@@ -156,6 +171,21 @@ FEAR_LINK:
   },
 
 hi: {
+
+  highRisk:
+  "🚨 High risk — yeh message scam lag raha hai.",
+
+mediumRisk:
+  "⚠️ Yeh message suspicious hai. Action lene se pehle verify karein.",
+
+safeStatus:
+  "✅ Koi major security risk detect nahi hua.",
+
+reminder:
+  "👉 Kabhi bhi OTP, password ya bank details share mat karein.",
+
+emergency:
+  "⚠️ Agar aapne details share kar di hain to turant bank se contact karein.",
 
   safe: "✅ Yeh message safe lag raha hai.",
 
