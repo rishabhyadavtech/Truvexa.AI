@@ -160,9 +160,11 @@ confidence:98,
 
 detected:"OTP",
 
-reasons.push(L.reasons.OTP_REQUEST);
+description: L.evidence.OTP_REQUEST
 
 });
+
+reasons.push(L.reasons.OTP_REQUEST);
 
 matchedPatterns.push("OTP_REQUEST");
 
