@@ -201,10 +201,8 @@ matchedPatterns.push("EXTERNAL_LINK");
   if (hasFear) {
     riskScore += 20;
     signals.push("Fear");
-    reasons.push(
-"The message creates fear by claiming something bad will happen if you don't act quickly."
-);
-    advice.push("Panic mat karo, pehle verify karo.");
+    reasons.push(L.reasons.FEAR);
+    advice.push(L.actions.VERIFY_FIRST);
   }
 
   // =========================
@@ -225,13 +223,13 @@ matchedPatterns.push("EXTERNAL_LINK");
     riskScore += 15;
     signals.push("Too Easy Job");
 
-    reasons.push("Bina experience ke high income ka promise suspicious hota hai.");
+   reasons.push(L.reasons.TOO_EASY_JOB);
   }
 
   // 🔴 JOB SCAM BOOST
   if (hasJob && hasMoney) {
     riskScore += 25;
-    reasons.push("Easy job + high income ka combo scam me use hota hai.");
+    reasons.push(L.reasons.JOB_COMBO);
   }
 
   // 💥 ULTIMATE JOB FEE SCAM
@@ -241,9 +239,7 @@ riskScore +=40;
 
 signals.push("Job Fee Scam");
 
-reasons.push(
-"Job ke naam par paise maangna almost hamesha scam hota hai."
-);
+reasons.push(L.reasons.JOB_FEE);
 
 evidence.push({
 
@@ -270,24 +266,22 @@ matchedPatterns.push("ADVANCE_FEE");
 
   if (hasUrgency && hasLink) {
     riskScore += 20;
-    reasons.push(
-"The combination of urgency and an external link is commonly used in phishing attacks."
-);
+    reasons.push(L.reasons.URGENT_LINK);
 }
 
   if (hasOTP && hasLink) {
     riskScore += 25;
-    reasons.push("OTP + link = highly dangerous pattern.");
+    reasons.push(L.reasons.OTP_LINK);
   }
 
   if (hasMoney && hasUrgency) {
     riskScore += 20;
-    reasons.push("Paise + urgency ka combo manipulation strong banata hai.");
+    reasons.push(L.reasons.MONEY_URGENCY);
   }
 
   if (hasFear && hasLink) {
     riskScore += 20;
-    reasons.push("Fear + link ka combo bhi phishing ka strong signal hota hai.");
+    reasons.push(L.reasons.FEAR_LINK);
   }
 
   // =========================
