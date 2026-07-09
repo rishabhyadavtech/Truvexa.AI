@@ -300,8 +300,7 @@ matchedPatterns.push("ADVANCE_FEE");
   let humanMessage = "";
 
   if (signals.length === 0) {
-    humanMessage =
-      "Message normal lag raha hai. Koi strong scam pattern detect nahi hua.";
+    humanMessage = L.reasons.SAFE;
   } else {
     humanMessage = reasons.join("\n");
   }
@@ -316,7 +315,7 @@ let emergency = "";
 
 if (result === "DANGEROUS") {
   safetyStatus = L.dangerous;
-  emergency = L.verify;
+  emergency = L.actions.VERIFY_OFFICIAL_SOURCE;
 } else if (result === "SUSPICIOUS") {
   safetyStatus = L.suspicious;
 } else {
