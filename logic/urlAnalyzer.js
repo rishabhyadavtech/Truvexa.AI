@@ -156,6 +156,7 @@ severity:"high"
   severity: "medium"
 });
 
+}
     // Suspicious TLD
     for (const tld of SUSPICIOUS_TLDS) {
 
@@ -176,6 +177,8 @@ severity:"high"
   title: "Unusual top-level domain",
   severity: "medium"
 });
+
+}
 
     // Fake Brand
     for (const brand of BRANDS) {
@@ -201,6 +204,7 @@ result.evidence.push({
   severity: "high"
 });
 
+}
     // Long URL
 
     if (raw.length > 120) {
@@ -219,6 +223,7 @@ result.evidence.push({
   severity: "low"
 });
 
+}
     // Multiple subdomains
 
     const parts = host.split(".");
@@ -255,6 +260,8 @@ result.evidence.push({
   title: "Malformed URL",
   severity: "high"
 });
+
+}
     
   result.signals = [...new Set(result.signals)];
 result.reasons = [...new Set(result.reasons)];
