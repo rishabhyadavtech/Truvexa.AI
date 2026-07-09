@@ -1,4 +1,5 @@
 const { URL } = require("url");
+require("dotenv").config();
 
 function extractDomain(input) {
   try {
