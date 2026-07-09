@@ -133,11 +133,9 @@ hi: {
 
   dontClick: "Unknown link par click mat karein.",
 
-  dontShare: "OTP, password aur bank details share mat karein."
+  dontShare: "OTP, password aur bank details share mat karein.",
 
-}
-
-reasons: {
+  reasons:{
 
     SHORTENED_URL:
       "Shortened link asli destination ko chhupa sakta hai.",
@@ -212,5 +210,6 @@ reasons: {
 
   }
 
+}
   
 };
