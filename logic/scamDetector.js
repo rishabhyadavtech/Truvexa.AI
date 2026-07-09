@@ -132,8 +132,8 @@ context.hasSensitiveInfo = hasOTP && hasBank;
   if (hasGreed || hasMoney) {
     riskScore += 20;
     signals.push("Greed");
-    reasons.push("Paise ya reward ka lalach diya ja raha hai.");
-    advice.push("Too good to be true offers ignore karo.");
+    reasons.push(L.reasons.GREED);
+    advice.push(L.actions.VERIFY_OFFER);
   }
 
  if (hasOTP && hasBank) {
@@ -180,13 +180,9 @@ signals.push("Link");
 
 scamTypes.push("Phishing");
 
-reasons.push(
-"The message contains an external website that cannot be trusted automatically."
-);
+reasons.push(L.reasons.EXTERNAL_LINK);
 
-advice.push(
-"Unknown link par click mat karo."
-);
+advice.push(L.actions.DONT_CLICK_LINK);
 
 evidence.push({
 
