@@ -153,7 +153,6 @@ severity:"high"
   severity: "medium"
 });
 
-}
     // Suspicious TLD
     for (const tld of SUSPICIOUS_TLDS) {
 
