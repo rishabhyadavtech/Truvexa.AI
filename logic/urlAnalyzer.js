@@ -202,40 +202,40 @@ severity:"high"
 
     // Long URL
 
-    if (raw.length > 120) {
+   if (raw.length > 120) {
 
-      result.risk += 10;
+  result.risk += 10;
 
-      result.signals.push("Long URL");
+  result.signals.push("Long URL");
 
-      result.reasons.push(
-        "LONG_URL"
-      );
-    }
+  result.reasons.push("LONG_URL");
+
   result.evidence.push({
-  id: "LONG_URL",
-  title: "Unusually long URL",
-  severity: "low"
-});
+    id: "LONG_URL",
+    title: "Unusually long URL",
+    severity: "low"
+  });
+
+}
     // Multiple subdomains
 
     const parts = host.split(".");
 
-    if (parts.length >= 5) {
+if (parts.length >= 5) {
 
-      result.risk += 15;
+  result.risk += 15;
 
-      result.signals.push("Multiple Subdomains");
+  result.signals.push("Multiple Subdomains");
 
-      result.reasons.push(
-        "MULTIPLE_SUBDOMAINS"
-      );
-    }
-      result.evidence.push({
-  id: "MULTIPLE_SUBDOMAINS",
-  title: "Multiple subdomains detected",
-  severity: "medium"
-});
+  result.reasons.push("MULTIPLE_SUBDOMAINS");
+
+  result.evidence.push({
+    id: "MULTIPLE_SUBDOMAINS",
+    title: "Multiple subdomains detected",
+    severity: "medium"
+  });
+
+}
 
 
   } catch {
