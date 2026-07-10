@@ -27,9 +27,6 @@ async function checkSafeBrowsing(url) {
 
   try {
 
-console.log("========== GOOGLE SAFE BROWSING ==========");
-console.log("Checking URL:", url);
-
     const body = {
       client: {
         clientId: "truvexa-ai",
@@ -73,13 +70,8 @@ console.log("Checking URL:", url);
     );
 
     const data = await response.json();
-console.log("API Response:");
-console.log(JSON.stringify(data, null, 2));
 
     if (data.matches && data.matches.length > 0) {
-
-console.log("Google Safe Browsing Result: UNSAFE");
-console.log(data.matches);
 
       return {
 
@@ -112,8 +104,6 @@ console.log(data.matches);
     };
 
   } catch (err) {
-console.error("Google Safe Browsing Error:");
-console.error(err);
 
     return {
 
