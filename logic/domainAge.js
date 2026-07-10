@@ -60,7 +60,7 @@ const timeout = setTimeout(() => {
 
     const data = await response.json();
 console.log("WHOIS RAW RESPONSE:");
-console.log(data);
+console.log(JSON.stringify(data, null, 2));
     
 clearTimeout(timeout);
 
