@@ -73,10 +73,16 @@ console.log("Checking URL:", url);
     );
 
     const data = await response.json();
+console.log("API Response:");
+console.log(JSON.stringify(data, null, 2));
 
     if (data.matches && data.matches.length > 0) {
 
+console.log("Google Safe Browsing Result: UNSAFE");
+console.log(data.matches);
+
       return {
+console.log("Google Safe Browsing Result: SAFE");
 
         success: true,
 
@@ -107,6 +113,8 @@ console.log("Checking URL:", url);
     };
 
   } catch (err) {
+console.error("Google Safe Browsing Error:");
+console.error(err);
 
     return {
 
