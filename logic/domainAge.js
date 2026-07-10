@@ -59,12 +59,9 @@ const timeout = setTimeout(() => {
 }
 
     const data = await response.json();
-console.log("WHOIS RAW RESPONSE:");
-console.log(JSON.stringify(data, null, 2));
-    
-clearTimeout(timeout);
+    clearTimeout(timeout);
 
-    const result = data;
+    const result = data.result || {};
 
     const created =
   result.creation_date ||
