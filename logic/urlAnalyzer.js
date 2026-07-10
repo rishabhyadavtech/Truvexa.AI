@@ -107,7 +107,6 @@ if (url.protocol === "http:") {
     severity: "low"
   });
 
-}
   
    const ipRegex =
 /^\d{1,3}(\.\d{1,3}){3}$/;
@@ -131,8 +130,6 @@ title:"URL uses an IP address",
 severity:"high"
 
 });
-
-}
 
     // URL Shortener
     if (SHORTENERS.includes(host)) {
@@ -178,7 +175,6 @@ severity:"high"
   severity: "medium"
 });
 
-}
 
     // Fake Brand
     for (const brand of BRANDS) {
@@ -204,7 +200,6 @@ result.evidence.push({
   severity: "high"
 });
 
-}
     // Long URL
 
     if (raw.length > 120) {
@@ -222,8 +217,6 @@ result.evidence.push({
   title: "Unusually long URL",
   severity: "low"
 });
-
-}
     // Multiple subdomains
 
     const parts = host.split(".");
@@ -260,8 +253,6 @@ result.evidence.push({
   title: "Malformed URL",
   severity: "high"
 });
-
-}
     
   result.signals = [...new Set(result.signals)];
 result.reasons = [...new Set(result.reasons)];
