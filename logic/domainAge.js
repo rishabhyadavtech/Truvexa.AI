@@ -59,8 +59,8 @@ const timeout = setTimeout(() => {
 }
 
     const data = await response.json();
-console.log("WHOIS API RESPONSE");
-console.log(JSON.stringify(data, null, 2));
+console.log("WHOIS RAW RESPONSE:");
+console.log(data);
     
 clearTimeout(timeout);
 
