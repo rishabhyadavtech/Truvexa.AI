@@ -138,70 +138,67 @@ severity:"high"
     // URL Shortener
     if (SHORTENERS.includes(host)) {
 
-      result.risk += 25;
+  result.risk += 25;
 
-      result.signals.push("URL Shortener");
+  result.signals.push("URL Shortener");
 
-      result.reasons.push(
-        "SHORTENED_URL"
-      );
+  result.reasons.push("SHORTENED_URL");
 
-      result.advice.push(
-        "EXPAND_SHORT_URL"
-      );
-    }
-      
-     result.evidence.push({
-  id: "SHORTENED_URL",
-  title: "Shortened URL detected",
-  severity: "medium"
-});
+  result.advice.push("EXPAND_SHORT_URL");
+
+  result.evidence.push({
+    id: "SHORTENED_URL",
+    title: "Shortened URL detected",
+    severity: "medium"
+  });
+
+}
 
     // Suspicious TLD
     for (const tld of SUSPICIOUS_TLDS) {
 
-      if (host.endsWith(tld)) {
+     if (host.endsWith(tld)) {
 
-        result.risk += 20;
+  result.risk += 20;
 
-        result.signals.push("Suspicious Domain");
+  result.signals.push("Suspicious Domain");
 
-        result.reasons.push("UNUSUAL_TLD");
+  result.reasons.push("UNUSUAL_TLD");
 
-        break;
-      }
-    }
+  result.evidence.push({
+    id: "UNUSUAL_TLD",
+    title: "Unusual top-level domain",
+    severity: "medium"
+  });
 
-   result.evidence.push({
-  id: "UNUSUAL_TLD",
-  title: "Unusual top-level domain",
-  severity: "medium"
-});
+  break;
+}
 
 
     // Fake Brand
     for (const brand of BRANDS) {
 
       if (
-        host.includes(brand) &&
-        host !== brand + ".com"
-      ) {
+ host.includes(brand) &&
+ host !== brand + ".com"
+) {
 
-        result.risk += 30;
+ result.risk += 30;
 
-        result.signals.push("Brand Impersonation");
+ result.signals.push("Brand Impersonation");
 
-        result.reasons.push("BRAND_IMPERSONATION");
+ result.reasons.push("BRAND_IMPERSONATION");
 
-       result.advice.push("OPEN_OFFICIAL_WEBSITE");
-      break;
-      }
-    }
-result.evidence.push({
-  id: "BRAND_IMPERSONATION",
-  title: "Brand impersonation detected",
-  severity: "high"
-});
+ result.advice.push("OPEN_OFFICIAL_WEBSITE");
+
+ result.evidence.push({
+   id:"BRAND_IMPERSONATION",
+   title:"Brand impersonation detected",
+   severity:"high"
+ });
+
+ break;
+}
 
     // Long URL
 
