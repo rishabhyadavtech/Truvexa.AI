@@ -253,6 +253,8 @@ if (parts.length >= 5) {
   title: "Malformed URL",
   severity: "high"
 });
+
+}
     
   result.signals = [...new Set(result.signals)];
 result.reasons = [...new Set(result.reasons)];
