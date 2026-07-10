@@ -65,9 +65,11 @@ const timeout = setTimeout(() => {
 
     const created =
   result.creation_date ||
+  result.created_date ||
   result.created ||
   "Unknown";
-    const registrar =
+
+const registrar =
   result.registrar ||
   "Unknown";
 
