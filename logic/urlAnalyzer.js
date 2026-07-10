@@ -174,6 +174,8 @@ severity:"high"
   break;
 }
 
+}
+
 
     // Fake Brand
     for (const brand of BRANDS) {
@@ -198,6 +200,8 @@ severity:"high"
  });
 
  break;
+}
+
 }
 
     // Long URL
