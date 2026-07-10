@@ -27,6 +27,9 @@ async function checkSafeBrowsing(url) {
 
   try {
 
+console.log("========== GOOGLE SAFE BROWSING ==========");
+console.log("Checking URL:", url);
+
     const body = {
       client: {
         clientId: "truvexa-ai",
