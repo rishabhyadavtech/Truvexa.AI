@@ -82,7 +82,6 @@ console.log("Google Safe Browsing Result: UNSAFE");
 console.log(data.matches);
 
       return {
-console.log("Google Safe Browsing Result: SAFE");
 
         success: true,
 
