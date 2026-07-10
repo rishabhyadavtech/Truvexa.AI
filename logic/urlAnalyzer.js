@@ -106,6 +106,8 @@ if (url.protocol === "http:") {
     title: "Website is not using HTTPS",
     severity: "low"
   });
+ 
+}
 
   
    const ipRegex =
@@ -130,6 +132,8 @@ title:"URL uses an IP address",
 severity:"high"
 
 });
+
+}
 
     // URL Shortener
     if (SHORTENERS.includes(host)) {
