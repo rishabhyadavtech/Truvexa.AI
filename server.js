@@ -321,7 +321,7 @@ if (urlAnalysis.found) {
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  urlScan,
+  virusTotal,
   domainInfo
 );
 
