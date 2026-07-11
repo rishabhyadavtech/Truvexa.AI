@@ -295,17 +295,14 @@ const urlAnalysis = analyzeURL(message);
   threats: [],
   message: "No URL detected."
 };
-  let urlScan = {
+
+  let virusTotal = {
   success: false,
   safe: true,
-  malicious: false,
-  score: 0,
-  verdict: "Unknown",
-  country: "Unknown",
-  server: "Unknown",
-  title: "Unknown",
-  screenshot: null,
-  report: null,
+  malicious: 0,
+  suspicious: 0,
+  harmless: 0,
+  undetected: 0,
   message: "No URL detected."
 };
 
