@@ -59,6 +59,7 @@ async function checkDNS(input) {
     };
 
     // A Record
+
     try {
       const a = await dns.resolve4(domain);
       result.hasA = true;
