@@ -13,7 +13,7 @@ const { analyzeUrlReputation } = require("./logic/urlReputation");
 const { analyzeURL } = require("./logic/urlAnalyzer");
 const { checkDomainAge } = require("./logic/domainAge");
 const { checkSafeBrowsing } = require("./logic/safeBrowsing");
-const { checkURLScan } = require("./logic/urlScan");
+const { checkVirusTotal } = require("./logic/virusTotal");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -354,7 +354,7 @@ const advice = [
   urlAnalysis,
 reputationResult,
   safeBrowsing,
-  urlScan,
+  virusTotal,
   language,
 
   // NEW
@@ -387,7 +387,7 @@ reputationResult,
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  urlScan,
+  virusTotal,
   domainInfo,
   confidence,
   t);
@@ -405,7 +405,7 @@ reputationResult,
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  urlScan,
+  virusTotal,
   domainInfo,
   confidence,
   t
