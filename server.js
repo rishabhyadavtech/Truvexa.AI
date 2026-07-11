@@ -304,7 +304,7 @@ if (urlAnalysis.found) {
 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
 
-  virusTotal = await checkVirusTotal(urlAnalysis.url);
+  const urlscan = await checkURLScan(url);
 
 }
     
@@ -315,7 +315,7 @@ if (urlAnalysis.found) {
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  virusTotal,
+  urlScan,
   domainInfo
 );
 
@@ -349,7 +349,7 @@ const advice = [
   urlAnalysis,
 reputationResult,
   safeBrowsing,
-  virusTotal,
+  urlScan,
   language,
 
   // NEW
@@ -382,7 +382,7 @@ reputationResult,
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  virusTotal,
+  urlScan,
   domainInfo,
   confidence,
   t);
@@ -400,7 +400,7 @@ reputationResult,
   manipulationResult,
   urlAnalysis,
   safeBrowsing,
-  virusTotal,
+  urlScan,
   domainInfo,
   confidence,
   t
