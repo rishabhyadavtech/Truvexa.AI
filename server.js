@@ -309,7 +309,7 @@ if (urlAnalysis.found) {
 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
 
-  const urlscan = await checkURLScan(url);
+  virusTotal = await checkVirusTotal(urlAnalysis.url);
 
 }
     
