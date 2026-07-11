@@ -158,24 +158,27 @@ This means Google's security systems have previously detected malicious or decep
 }
 
   // ======================
-// URLScan
-// ======================
-
-if (urlscan.success) {
+ // Virus Total
+// =======================
+ if (
+  virusTotal.success &&
+  (
+    virusTotal.malicious > 0 ||
+    virusTotal.suspicious > 0
+  )
+) {
 
   parts.push(
 
-`URLScan analysis completed.
+`VirusTotal checked this website using multiple security vendors.
 
-Verdict: ${urlscan.verdict}
+Malicious detections: ${virusTotal.malicious}
 
-Country: ${urlscan.country || "Unknown"}
+Suspicious detections: ${virusTotal.suspicious}
 
-Server: ${urlscan.server || "Unknown"}
+Harmless detections: ${virusTotal.harmless}
 
-Screenshot Available: ${urlscan.screenshot ? "Yes" : "No"}
-
-Page Title: ${urlscan.title || "Unknown"}`
+Undetected: ${virusTotal.undetected}`
 
   );
 
