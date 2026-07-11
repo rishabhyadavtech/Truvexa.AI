@@ -63,14 +63,14 @@ async function checkVirusTotal(url) {
     );
 
     const reportData = await report.json();
-console.log("FULL REPORT:");
-console.log(JSON.stringify(reportData, null, 2));
 
     if (!report.ok) {
       throw new Error(reportData.error?.message || "Report failed");
     }
 
     const stats = reportData.data.attributes.stats;
+console.log("FULL REPORT:");
+console.log(JSON.stringify(reportData, null, 2));
 
     return {
 
