@@ -289,6 +289,7 @@ const t = getLanguage(language);
     const decision = decideAction(scamResult, manipulationResult);
     const reputationResult = analyzeUrlReputation(message);
 const urlAnalysis = analyzeURL(message);
+const dnsInfo = await checkDNS(url);
     const domainInfo = await checkDomainAge(message);
     let safeBrowsing = {
   success: false,
