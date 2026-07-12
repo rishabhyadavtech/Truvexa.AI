@@ -446,8 +446,19 @@ reputationResult,
 
       response.finalMessage = t.safe;
 
-        response.explanation = t.noSignal;
-    }
+        response.explanation = buildExplanation(
+  "SAFE",
+  scamResult,
+  manipulationResult,
+  urlAnalysis,
+  safeBrowsing,
+  virusTotal,
+  domainInfo,
+  dnsInfo,
+  sslInfo,
+  confidence,
+  t
+);
 
     // =========================
     // 🟡 SUSPICIOUS
