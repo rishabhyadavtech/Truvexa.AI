@@ -86,18 +86,21 @@ function buildExplanation(
 ) {
 
   let parts = [];
-
-  // ======================
-// Evidence Based Explanation
+// ======================
+// Evidence
 // ======================
 
-if (scam.evidence && scam.evidence.length) {
+if (
+  type !== "SAFE" &&
+  scam.evidence &&
+  scam.evidence.length
+) {
 
-let explain = "Why was this flagged?\n";
+  let explain = "Why was this flagged?\n";
 
-scam.evidence.forEach(item => {
+  scam.evidence.forEach(item => {
 
-explain += `
+    explain += `
 
 --------------------------------
 
@@ -105,7 +108,6 @@ explain += `
 
 Detected:
 ${item.detected || "Matched pattern"}
-
 
 Severity:
 ${item.severity}
@@ -119,9 +121,9 @@ ${t.evidence?.[item.id] || item.description}
 
 `;
 
-});
+  });
 
-parts.push(explain);
+  parts.push(explain);
 
 }
   // ======================
