@@ -180,17 +180,15 @@ matchedPatterns.push("OTP_REQUEST");
 }
 
 
- if (hasLink) {
+if (hasLink) {
 
-riskScore +=25;
+riskScore += 5;
 
-signals.push("Link");
-
-scamTypes.push("Phishing");
+signals.push("External Link");
 
 reasons.push(L.reasons.EXTERNAL_LINK);
 
-advice.push(L.actions.DONT_CLICK_LINK);
+advice.push(L.actions.CHECK_LINK_FIRST);
 
 evidence.push({
 
@@ -198,13 +196,13 @@ id:"EXTERNAL_LINK",
 
 title:"External link detected",
 
-severity:"medium",
+severity:"info",
 
-confidence:80,
+confidence:100,
 
-detected: urlAnalysis.url,
+detected:urlAnalysis.url,
 
-description: L.evidence.EXTERNAL_LINK
+description:L.evidence.EXTERNAL_LINK
 
 });
 
