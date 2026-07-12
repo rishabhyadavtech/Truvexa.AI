@@ -324,7 +324,8 @@ if (urlAnalysis.found) {
   urlAnalysis,
   safeBrowsing,
   virusTotal,
-  domainInfo
+  domainInfo,
+  dnsInfo
 );
 
     // 🎯 CLEAN DATA
@@ -359,6 +360,7 @@ reputationResult,
   safeBrowsing,
   virusTotal,
   language,
+  dnsInfo,
 
   // NEW
   riskScore: scamResult.riskScore,
