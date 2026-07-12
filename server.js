@@ -327,10 +327,6 @@ if (urlAnalysis.found) {
 
 if (urlAnalysis.found) {
 
-domainInfo = await checkDomainAge(urlAnalysis.url);
-
-dnsInfo = await checkDNS(urlAnalysis.url);
-
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
 
   virusTotal = await checkVirusTotal(urlAnalysis.url);
