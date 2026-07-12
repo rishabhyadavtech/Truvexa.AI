@@ -289,7 +289,6 @@ const t = getLanguage(language);
     const decision = decideAction(scamResult, manipulationResult);
     const reputationResult = analyzeUrlReputation(message);
 const urlAnalysis = analyzeURL(message);
-const dnsInfo = await checkDNS(url);
     const domainInfo = await checkDomainAge(message);
     let safeBrowsing = {
   success: false,
@@ -307,6 +306,15 @@ const dnsInfo = await checkDNS(url);
   undetected: 0,
   message: "No URL detected."
 };
+
+let dnsInfo = {
+  success: false,
+  message: "No URL detected."
+};
+
+if (urlAnalysis.found) {
+  dnsInfo = await checkDNS(urlAnalysis.url);
+}
 
 if (urlAnalysis.found) {
 
