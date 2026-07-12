@@ -22,9 +22,6 @@ function extractDomain(input) {
 async function checkDNS(input) {
 
   const domain = extractDomain(input);
- console.log("========== DNS CHECK ==========");
-console.log("Input:", input);
-console.log("Extracted Domain:", domain);
 
   if (!domain) {
     return {
@@ -60,16 +57,11 @@ console.log("Extracted Domain:", domain);
 
       message: "DNS lookup completed."
     };
-console.log("Starting DNS lookup...");
 
     // A Record
 
     try {
       const a = await dns.resolve4(domain);
-console.log("A Records:", a);
-
-result.hasA = true;
-result.records.A = a;
       result.hasA = true;
       result.records.A = a;
     } catch {}
@@ -77,10 +69,6 @@ result.records.A = a;
     // MX Record
     try {
       const mx = await dns.resolveMx(domain);
-console.log("MX Records:", mx);
-
-result.hasMX = mx.length > 0;
-result.records.MX = mx;
       result.hasMX = mx.length > 0;
       result.records.MX = mx;
     } catch {}
@@ -88,10 +76,6 @@ result.records.MX = mx;
     // NS Record
     try {
       const ns = await dns.resolveNs(domain);
-console.log("NS Records:", ns);
-
-result.hasNS = ns.length > 0;
-result.records.NS = ns;
       result.hasNS = ns.length > 0;
       result.records.NS = ns;
     } catch {}
@@ -99,7 +83,6 @@ result.records.NS = ns;
     // TXT Record
     try {
       const txt = await dns.resolveTxt(domain);
-console.log("TXT Records:", txt);
 
       result.hasTXT = txt.length > 0;
 
@@ -119,7 +102,6 @@ console.log("TXT Records:", txt);
       const dmarc = await dns.resolveTxt(
         `_dmarc.${domain}`
       );
-console.log("DMARC:", dmarc);
 
       if (dmarc.length > 0) {
         result.hasDMARC = true;
@@ -140,13 +122,8 @@ console.log("DMARC:", dmarc);
       result.risk = "HIGH";
 
     }
-console.log("DNS RESULT:");
-console.log(JSON.stringify(result, null, 2));
-console.log("===============================");
 
     return result;
-console.log("DNS ERROR:");
-console.error(err);
 
   } catch (err) {
 
