@@ -223,6 +223,40 @@ Registrar : ${domainInfo.registrar}`
   }
 if(domainInfo.success){
 
+if (dnsInfo.success) {
+
+parts.push(
+
+`🌐 DNS Security
+
+A Record : ${dnsInfo.hasA ? "Found" : "Missing"}
+
+MX Record : ${dnsInfo.hasMX ? "Found" : "Missing"}
+
+NS Record : ${dnsInfo.hasNS ? "Found" : "Missing"}
+
+SPF Protection : ${dnsInfo.hasSPF ? "Enabled" : "Missing"}
+
+DMARC Protection : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
+
+DNS Risk : ${dnsInfo.risk}`
+
+);
+
+if (dnsInfo.risk === "HIGH") {
+
+parts.push(
+
+`The DNS configuration looks unusual.
+
+Missing DNS records can indicate a misconfigured or suspicious website.`
+
+);
+
+}
+
+}
+
 if(domainInfo.risk==="HIGH"){
 
 parts.push(
