@@ -62,10 +62,6 @@ function getFinalResultType(
   return "SAFE";
 }
 
-  // DEFAULT
-  return "SUSPICIOUS";
-}
-
 // 🎯 Merge Signals
 function mergeSignals(scamSignals = [], manipulationSignals = []) {
   return [...new Set([
