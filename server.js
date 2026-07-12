@@ -453,7 +453,13 @@ if (urlAnalysis.found) {
 }
     
     // 🎯 FINAL TYPE
-    const finalType = getFinalResultType(scamResult, manipulationResult);
+    const finalType = getFinalResultType(scamResult, manipulationResult,
+safeBrowsing,
+  virusTotal,
+  domainInfo,
+  dnsInfo,
+  sslInfo
+);
    const confidence = calculateConfidence(
   scamResult,
   manipulationResult,
