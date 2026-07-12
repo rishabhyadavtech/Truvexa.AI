@@ -283,15 +283,39 @@ This result is based on message content, detected scam patterns, link analysis a
   // Final Recommendation
   // ======================
 
-  if (type === "SAFE") {
+  if(type==="SAFE"){
 
-    parts.push(
+if(urlAnalysis.found){
 
-"✅ No strong warning signs were found.\n\nEven then, always stay cautious before sharing personal information."
+parts.push(`
 
-    );
+Final Assessment
 
-  }
+✅ This website appears to be legitimate.
+
+Google Safe Browsing did not detect any malicious activity.
+
+VirusTotal did not report this website as malicious.
+
+The domain is well established.
+
+The SSL certificate is valid.
+
+DNS records look healthy.
+
+You can safely visit this website.
+
+Always verify the URL before entering passwords or personal information.
+
+`);
+
+}else{
+
+parts.push("No suspicious indicators were detected.");
+
+}
+
+}
 
   else if (type === "SUSPICIOUS") {
 
@@ -303,15 +327,27 @@ This result is based on message content, detected scam patterns, link analysis a
 
   }
 
-  else {
+  else if(type==="DANGEROUS"){
 
-    parts.push(
+parts.push(`
 
-"🚨 Multiple security checks agree this message is risky.\n\nAvoid clicking links, sharing OTPs, passwords or bank information."
+Final Assessment
 
-    );
+🚨 Multiple independent security checks indicate that this website is unsafe.
 
-  }
+Do not open this website.
+
+Do not enter passwords.
+
+Do not enter OTP.
+
+Do not make any payment.
+
+Leave the page immediately.
+
+`);
+
+}
 
   return parts.join("\n\n");
 
