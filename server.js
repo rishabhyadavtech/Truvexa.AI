@@ -417,6 +417,8 @@ reputationResult,
   safeBrowsing,
   virusTotal,
   domainInfo,
+  dnsInfo,
+  sslInfo,
   confidence,
   t);
   }
@@ -435,6 +437,8 @@ reputationResult,
   safeBrowsing,
   virusTotal,
   domainInfo,
+  dnsInfo,
+  sslInfo,
   confidence,
   t
 );
