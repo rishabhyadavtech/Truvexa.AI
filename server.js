@@ -451,6 +451,22 @@ if (urlAnalysis.found) {
   virusTotal = await checkVirusTotal(urlAnalysis.url);
 
 }
+
+if (
+  urlAnalysis.found &&
+  safeBrowsing.safe &&
+  virusTotal.malicious === 0 &&
+  virusTotal.suspicious === 0 &&
+  domainInfo.risk === "LOW" &&
+  dnsInfo.risk === "LOW" &&
+  sslInfo.risk === "LOW"
+) {
+
+  scamResult.riskScore = 0;
+  scamResult.result = "SAFE";
+  scamResult.scamCategory = "Safe Website";
+
+}
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult,
@@ -486,23 +502,7 @@ const advice = [
   ])
 ];
 
-if (
-
-urlAnalysis.found &&
-
-safeBrowsing.safe &&
-
-virusTotal.malicious===0 &&
-
-virusTotal.suspicious===0 &&
-
-domainInfo.risk==="LOW" &&
-
-dnsInfo.risk==="LOW" &&
-
-sslInfo.risk==="LOW"
-
-){
+{
 
 scamResult.riskScore=0;
 
