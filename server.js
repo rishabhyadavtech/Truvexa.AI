@@ -25,25 +25,42 @@ app.get("/", async (req, res) => {
 });
 
 // 🎯 FINAL TYPE ENGINE (SMART 🔥)
-function getFinalResultType(scam, manipulation) {
-
-  // HARD SAFE (no signal at all)
-  if (
-    scam.result === "SAFE" &&
-    manipulation.manipulationLevel === "LOW" &&
-    (!scam.signals || scam.signals.length === 0)
-  ) {
-    return "SAFE";
-  }
+function getFinalResultType(
+  scam,
+  manipulation,
+  safeBrowsing,
+  virusTotal,
+  domainInfo,
+  dnsInfo,
+  sslInfo
+) {
 
   // HIGH RISK
   if (
     scam.result === "DANGEROUS" ||
     manipulation.manipulationLevel === "HIGH" ||
-    (scam.riskScore >= 60)
+    !safeBrowsing.safe ||
+    virusTotal.malicious > 0 ||
+    virusTotal.suspicious > 0 ||
+    domainInfo.risk === "HIGH" ||
+    dnsInfo.risk === "HIGH" ||
+    sslInfo.risk === "HIGH"
   ) {
     return "DANGEROUS";
   }
+
+  // MEDIUM RISK
+  if (
+    scam.riskScore >= 35 ||
+    domainInfo.risk === "MEDIUM" ||
+    dnsInfo.risk === "MEDIUM"
+  ) {
+    return "SUSPICIOUS";
+  }
+
+  // SAFE
+  return "SAFE";
+}
 
   // DEFAULT
   return "SUSPICIOUS";
