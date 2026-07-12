@@ -99,38 +99,40 @@ data.language || "hi";
     // 🟢 SAFE MODE
     // =========================
     if (type === "SAFE") {
-      resultBox.classList.add("safe");
 
-      if (lang === "en") {
+  resultBox.classList.add("safe");
 
-resultBox.innerText = `
-🟢 Good News — This message appears to be safe.
+  resultBox.innerText = `
+${data.finalMessage}
 
-No strong scam or manipulation patterns were detected.
+${data.explanation}
 
-You can treat this as a normal conversation.
-
-💡 Still, staying cautious online is always a good habit.
+${domainBlock}
 `.trim();
 
-}
-else {
+  feedbackBox.style.display = "block";
 
-resultBox.innerText = `
-🟢 Good News — Yeh message safe lag raha hai.
-
-Is message me koi bhi strong scam ya manipulation pattern detect nahi hua.
-
-👍 Aap ise normal conversation ki tarah treat kar sakte hain.
-
-💡 Phir bhi online safety ke liye basic caution rakhna smart hota hai.
-`.trim();
+  return;
 
 }
 
-      feedbackBox.style.display = "block";
-      return;
-    }
+if (type === "SAFE") {
+
+  resultBox.classList.add("safe");
+
+  resultBox.innerText = `
+${data.finalMessage}
+
+${data.explanation}
+
+${domainBlock}
+`.trim();
+
+  feedbackBox.style.display = "block";
+
+  return;
+
+}
 
     // =========================
     // 🔴 / 🟡 COLOR STATE
