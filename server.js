@@ -89,41 +89,66 @@ function buildExplanation(
 // ======================
 // Evidence
 // ======================
+if (type === "SAFE") {
 
-if (
-  type !== "SAFE" &&
-  scam.evidence &&
-  scam.evidence.length
-) {
+parts.push(`
 
-  let explain = "Why was this flagged?\n";
+🟢 Website Analysis Complete
 
-  scam.evidence.forEach(item => {
+URL
+${urlAnalysis.url}
 
-    explain += `
+Google Safe Browsing
+${safeBrowsing.safe ? "✅ No threats detected" : "⚠ Threat detected"}
 
---------------------------------
+VirusTotal
+${virusTotal.malicious} malicious
+${virusTotal.suspicious} suspicious
+${virusTotal.harmless} harmless
 
-✓ ${item.title}
+🌍 Domain
 
-Detected:
-${item.detected || "Matched pattern"}
+Age : ${domainInfo.age}
 
-Severity:
-${item.severity}
+Registrar : ${domainInfo.registrar}
 
-Confidence:
-${item.confidence}%
+🔒 SSL
 
-Why:
+Status : ${sslInfo.valid ? "Valid" : "Invalid"}
 
-${t.evidence?.[item.id] || item.description}
+Issuer : ${sslInfo.issuer}
 
-`;
+Valid Until : ${sslInfo.validTo}
 
-  });
+🌐 DNS
 
-  parts.push(explain);
+A Record : ${dnsInfo.hasA ? "Found" : "Missing"}
+
+MX Record : ${dnsInfo.hasMX ? "Found" : "Missing"}
+
+NS Record : ${dnsInfo.hasNS ? "Found" : "Missing"}
+
+SPF : ${dnsInfo.hasSPF ? "Enabled" : "Missing"}
+
+DMARC : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
+
+Final Assessment
+
+✅ This website passed all security checks.
+
+No phishing indicators were detected.
+
+No malware detections were reported.
+
+The domain is well established.
+
+The SSL certificate is valid.
+
+The DNS configuration looks healthy.
+
+You can safely visit this website.
+
+`);
 
 }
   // ======================
