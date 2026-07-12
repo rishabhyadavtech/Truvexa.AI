@@ -51,6 +51,38 @@ function calculateConfidence(
 
   }
 
+// DNS
+
+if (dnsInfo && dnsInfo.success) {
+
+  if (dnsInfo.risk === "HIGH") {
+
+    score += 15;
+
+  } else if (dnsInfo.risk === "MEDIUM") {
+
+    score += 8;
+
+  }
+
+}
+
+// SSL
+
+if (sslInfo && sslInfo.success) {
+
+  if (sslInfo.risk === "HIGH") {
+
+    score += 15;
+
+  } else if (sslInfo.risk === "MEDIUM") {
+
+    score += 8;
+
+  }
+
+}
+
   if (score > 100) score = 100;
 
   return score;
