@@ -289,15 +289,13 @@ const t = getLanguage(language);
     const decision = decideAction(scamResult, manipulationResult);
     const reputationResult = analyzeUrlReputation(message);
 const urlAnalysis = analyzeURL(message);
-    const domainInfo = await checkDomainAge(message);
     let safeBrowsing = {
   success: false,
   safe: true,
   threats: [],
   message: "No URL detected."
 };
-
-  let virusTotal = {
+ let virusTotal = {
   success: false,
   safe: true,
   malicious: 0,
@@ -306,7 +304,14 @@ const urlAnalysis = analyzeURL(message);
   undetected: 0,
   message: "No URL detected."
 };
+let domainInfo = {
+  success: false,
+  message: "No URL detected."
+};
 
+if (urlAnalysis.found) {
+  domainInfo = await checkDomainAge(urlAnalysis.url);
+}
 let dnsInfo = {
   success: false,
   message: "No URL detected."
