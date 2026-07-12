@@ -502,16 +502,6 @@ const advice = [
   ])
 ];
 
-{
-
-scamResult.riskScore=0;
-
-scamResult.result="SAFE";
-
-scamResult.scamCategory="Safe Website";
-
-}
-
     // 🎯 RESPONSE OBJECT
   let response = {
   type: finalType,
