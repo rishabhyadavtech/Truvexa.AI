@@ -4,7 +4,9 @@ function calculateConfidence(
   urlAnalysis,
   safeBrowsing,
   virusTotal,
-  domainInfo
+  domainInfo,
+  dnsInfo,
+  sslInfo
 ) {
 
   let score = 0;
