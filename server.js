@@ -222,6 +222,36 @@ Newly created domains are commonly used in phishing campaigns because attackers 
 
 }
 
+if (sslInfo.success) {
+
+parts.push(
+
+`🔒 SSL Certificate
+
+Status : ${sslInfo.valid ? "Valid" : "Invalid"}
+
+Issuer : ${sslInfo.issuer}
+
+Valid Until : ${sslInfo.validTo}
+
+Expires In : ${sslInfo.expiresInDays} days`
+
+);
+
+if (sslInfo.risk === "HIGH") {
+
+parts.push(
+
+`The SSL certificate is invalid or expired.
+
+This increases the risk because trusted websites normally maintain valid HTTPS certificates.`
+
+);
+
+}
+
+}
+
 
       parts.push(
 
