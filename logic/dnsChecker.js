@@ -44,7 +44,6 @@ console.log("Extracted Domain:", domain);
   try {
 
     const result = {
-console.log("Starting DNS lookup...");
       success: true,
       domain,
 
@@ -61,6 +60,7 @@ console.log("Starting DNS lookup...");
 
       message: "DNS lookup completed."
     };
+console.log("Starting DNS lookup...");
 
     // A Record
 
