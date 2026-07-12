@@ -22,6 +22,9 @@ function extractDomain(input) {
 async function checkDNS(input) {
 
   const domain = extractDomain(input);
+ console.log("========== DNS CHECK ==========");
+console.log("Input:", input);
+console.log("Extracted Domain:", domain);
 
   if (!domain) {
     return {
@@ -41,6 +44,7 @@ async function checkDNS(input) {
   try {
 
     const result = {
+console.log("Starting DNS lookup...");
       success: true,
       domain,
 
@@ -62,6 +66,10 @@ async function checkDNS(input) {
 
     try {
       const a = await dns.resolve4(domain);
+console.log("A Records:", a);
+
+result.hasA = true;
+result.records.A = a;
       result.hasA = true;
       result.records.A = a;
     } catch {}
@@ -69,6 +77,10 @@ async function checkDNS(input) {
     // MX Record
     try {
       const mx = await dns.resolveMx(domain);
+console.log("MX Records:", mx);
+
+result.hasMX = mx.length > 0;
+result.records.MX = mx;
       result.hasMX = mx.length > 0;
       result.records.MX = mx;
     } catch {}
@@ -76,6 +88,10 @@ async function checkDNS(input) {
     // NS Record
     try {
       const ns = await dns.resolveNs(domain);
+console.log("NS Records:", ns);
+
+result.hasNS = ns.length > 0;
+result.records.NS = ns;
       result.hasNS = ns.length > 0;
       result.records.NS = ns;
     } catch {}
@@ -83,6 +99,7 @@ async function checkDNS(input) {
     // TXT Record
     try {
       const txt = await dns.resolveTxt(domain);
+console.log("TXT Records:", txt);
 
       result.hasTXT = txt.length > 0;
 
@@ -102,6 +119,7 @@ async function checkDNS(input) {
       const dmarc = await dns.resolveTxt(
         `_dmarc.${domain}`
       );
+console.log("DMARC:", dmarc);
 
       if (dmarc.length > 0) {
         result.hasDMARC = true;
@@ -122,8 +140,13 @@ async function checkDNS(input) {
       result.risk = "HIGH";
 
     }
+console.log("DNS RESULT:");
+console.log(JSON.stringify(result, null, 2));
+console.log("===============================");
 
     return result;
+console.log("DNS ERROR:");
+console.error(err);
 
   } catch (err) {
 
