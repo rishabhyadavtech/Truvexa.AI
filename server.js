@@ -66,6 +66,8 @@ function buildExplanation(
   safeBrowsing,
   virusTotal,
   domainInfo,
+  dnsInfo,
+  sslInfo,
   confidence,
   t
 ) {
