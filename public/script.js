@@ -120,24 +120,6 @@ ${domainBlock}
 
 }
 
-if (type === "SAFE") {
-
-  resultBox.classList.add("safe");
-
-  resultBox.innerText = `
-${data.finalMessage}
-
-${data.explanation}
-
-${domainBlock}
-`.trim();
-
-  feedbackBox.style.display = "block";
-
-  return;
-
-}
-
     // =========================
     // 🔴 / 🟡 COLOR STATE
     // =========================
