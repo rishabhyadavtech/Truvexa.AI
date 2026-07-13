@@ -51,7 +51,11 @@ confidenceCard.style.display = "none";
       body: JSON.stringify({ message,language })
     });
 
-    if (!res.ok) throw new Error("Server error");
+    if (!res.ok) {
+  const err = await res.json();
+  console.log(err);
+  throw new Error(err.error);
+}
 
     const data = await res.json();
    loadingBox.style.display = "none";
