@@ -435,7 +435,7 @@ const urlAnalysis = analyzeURL(message);
 
 let sslInfo = {
   success: false,
-  risk: "UNKNOWN",
+  risk: "Unknown",
   message: "No URL detected."
 };
 
