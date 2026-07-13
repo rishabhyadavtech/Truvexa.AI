@@ -317,24 +317,19 @@ ${domainBlock}
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
 
-  } catch (error) {
-    console.error(error);
-    console.error(error.stack);
-
-    loadingBox.style.display = "none";
-
-    resultBox.innerText = error.message;
-}
-  loadingBox.style.display = "none";
-
-riskMeter.style.display = "none";
-
-confidenceCard.style.display = "none";
-
-    resultBox.className = "result-box danger";
- 
-  }
-}
+  } catch (error) {  
+    console.error("Fetch Error:", error);  
+  loadingBox.style.display = "none";  
+  
+riskMeter.style.display = "none";  
+  
+confidenceCard.style.display = "none";  
+  
+    resultBox.className = "result-box danger";  
+    resultBox.innerText =  
+      "❌ Server error. Please refresh and try again.";  
+  }  
+}  
 
 
 // =========================
