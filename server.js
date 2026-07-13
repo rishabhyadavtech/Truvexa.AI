@@ -432,7 +432,16 @@ const t = getLanguage(language);
     const decision = decideAction(scamResult, manipulationResult);
     const reputationResult = analyzeUrlReputation(message);
 const urlAnalysis = analyzeURL(message);
-const sslInfo = await checkSSL(message);
+
+let sslInfo = {
+  success: false,
+  risk: "UNKNOWN",
+  message: "No URL detected."
+};
+
+if (urlAnalysis.found) {
+  sslInfo = await checkSSL(urlAnalysis.url);
+}
 
 let domainInfo = {
   success: false,
