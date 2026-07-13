@@ -113,6 +113,7 @@ const hasNoExperience =
 
 const hasSensitiveInfo =
   hasOTP && hasBank;
+context.hasGreed = hasGreed;
 
 // Context
 context.hasMoney = hasMoney;
@@ -318,6 +319,7 @@ matchedPatterns.push("ADVANCE_FEE");
 
   let humanMessage = "";
 
+  riskScore = Math.min(riskScore, 100);
   if (signals.length === 0) {
     humanMessage = L.reasons.SAFE;
   } else {
