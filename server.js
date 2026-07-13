@@ -633,12 +633,16 @@ reputationResult,
     res.json(response);
 
   } catch (error) {
-    console.error("❌ Server Error:", error);
+  console.error("❌ SERVER CRASH ❌");
+  console.error(error);
+  console.error(error.stack);
 
-    res.status(500).json({
-      error: "Server error. Please try again."
-    });
-  }
+  res.status(500).json({
+    error: error.message,
+    stack: error.stack
+  });
+}
+
 });
 
 // =========================
