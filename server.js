@@ -412,6 +412,9 @@ Leave the page immediately.
 
 // API route
 app.post("/check", async (req, res) => {
+console.log("🔥 /check route called");
+  console.log(req.body);
+
   try {
     const {
   message,
