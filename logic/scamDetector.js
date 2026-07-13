@@ -137,6 +137,12 @@ context.hasSensitiveInfo = hasOTP && hasBank;
   if (hasUrgency) {
     riskScore += 20;
     signals.push("Urgency");
+    signals.push("GREED");
+signals.push("FEAR");
+signals.push("UPFRONT_PAYMENT");
+signals.push("TOO_EASY_JOB");
+signals.push("JOB_FEE");
+signals.push("EXTERNAL_LINK");
     reasons.push(L.reasons.URGENCY);
   }
 
@@ -188,7 +194,7 @@ signals.push("External Link");
 
 reasons.push(L.reasons.EXTERNAL_LINK);
 
-advice.push(L.actions.CHECK_LINK_FIRST);
+advice.push(L.actions.VERIFY_LINK);
 
 evidence.push({
 
