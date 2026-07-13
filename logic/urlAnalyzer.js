@@ -144,7 +144,7 @@ function analyzeURL(text) {
         host !== `${brand}.com`
       ) {
         result.risk += 30;
-        result.signals.push("Brand Impersonation");
+        result.signals.push("BRAND_IMPERSONATION");
         result.reasons.push("BRAND_IMPERSONATION");
         result.advice.push("OPEN_OFFICIAL_WEBSITE");
         result.evidence.push({
