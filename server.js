@@ -489,9 +489,13 @@ if (urlAnalysis.found) {
 
 if (urlAnalysis.found) {
 
+console.log("1️⃣3️⃣ SafeBrowsing START"); 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
+console.log("1️⃣4️⃣ SafeBrowsing DONE");
 
+console.log("1️⃣5️⃣ VirusTotal START");
   virusTotal = await checkVirusTotal(urlAnalysis.url);
+console.log("1️⃣6️⃣ VirusTotal DONE");
 
 }
 
