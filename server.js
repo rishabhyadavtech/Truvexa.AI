@@ -453,7 +453,6 @@ console.log("7️⃣ checkSSL START");
   sslInfo = await checkSSL(urlAnalysis.url);
  console.log("8️⃣ checkSSL DONE");
 }
-}
 
 let domainInfo = {
   success: false,
