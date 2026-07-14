@@ -516,6 +516,7 @@ if (
 }
     
     // 🎯 FINAL TYPE
+console.log("1️⃣7️⃣ getFinalResultType");
     const finalType = getFinalResultType(scamResult, manipulationResult,
 safeBrowsing,
   virusTotal,
@@ -523,6 +524,7 @@ safeBrowsing,
   dnsInfo,
   sslInfo
 );
+console.log("1️⃣8️⃣ calculateConfidence");
    const confidence = calculateConfidence(
   scamResult,
   manipulationResult,
@@ -533,6 +535,7 @@ safeBrowsing,
   dnsInfo,
   sslInfo
 );
+      console.log("1️⃣9️⃣ Building response");
 
     // 🎯 CLEAN DATA
     const signals = mergeSignals(
@@ -641,7 +644,7 @@ reputationResult,
 );
 
 }
-
+  console.log("2️⃣0️⃣ Sending Response");
     // ✅ SEND FINAL
     res.json(response);
 
