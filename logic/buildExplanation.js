@@ -342,4 +342,153 @@ The final verdict is based on all of these signals together rather than any sing
 
 `);
 
+// =========================================
+// ⚠ SUSPICIOUS (Natural GPT Style)
+// =========================================
+
+if (type === "SUSPICIOUS") {
+
+parts.push(`
+
+⚠ This website deserves some caution.
+
+I found a few warning signs that increase the risk, but I don't have enough evidence to confidently classify it as malicious.
+
+This doesn't necessarily mean the website is dangerous.
+
+However, I recommend verifying it carefully before trusting it with sensitive information.
+
+`);
+
+}
+
+
+// =========================================
+// 🚨 DANGEROUS (Natural GPT Style)
+// =========================================
+
+if (type === "DANGEROUS") {
+
+parts.push(`
+
+🚨 This website appears to be unsafe.
+
+Multiple independent security checks reported serious risk signals.
+
+Based on the available evidence, I do not recommend visiting or interacting with this website.
+
+`);
+
+}
+
+
+// =========================================
+// 🧠 Manipulation Detection
+// =========================================
+
+if (
+manipulation.manipulationLevel !== "LOW" &&
+manipulation.manipulationMessage
+){
+
+parts.push(`
+
+🧠 Social Engineering Analysis
+
+${manipulation.manipulationMessage}
+
+This message appears to use psychological pressure or emotional manipulation to influence your decision.
+
+Always pause and verify before taking action.
+
+`);
+
+}
+
+
+// =========================================
+// 🔗 URL Analysis
+// =========================================
+
+if (
+urlAnalysis.found &&
+urlAnalysis.reasons &&
+urlAnalysis.reasons.length
+){
+
+parts.push(`
+
+🔗 URL Analysis
+
+I also inspected the website address itself.
+
+Possible observations:
+
+${urlAnalysis.reasons.map(r=>"• "+r).join("\n")}
+
+`);
+
+}
+
+
+// =========================================
+// 💡 Final Recommendation
+// =========================================
+
+if(type==="SAFE"){
+
+parts.push(`
+
+💡 Recommendation
+
+You can safely continue if you trust the source of this link.
+
+Even trusted websites can be impersonated, so always double-check the URL before entering passwords, OTPs, payment details, or personal information.
+
+`);
+
+}
+
+else if(type==="SUSPICIOUS"){
+
+parts.push(`
+
+💡 Recommendation
+
+Take a moment to verify the sender.
+
+Avoid entering passwords or payment information until you are confident the website is genuine.
+
+If something feels unusual, leave the website and verify through the company's official website.
+
+`);
+
+}
+
+else{
+
+parts.push(`
+
+💡 Recommendation
+
+Do not open this website.
+
+Do not enter your password.
+
+Do not share OTPs.
+
+Do not make payments.
+
+If you already interacted with this website, consider changing your password immediately and monitor your accounts for suspicious activity.
+
+`);
+
+}
+
+return parts.join("\n\n");
+
+}
+
+module.exports = buildExplanation;
+
  
