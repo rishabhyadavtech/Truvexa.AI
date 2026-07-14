@@ -412,8 +412,6 @@ Leave the page immediately.
 
 // API route
 app.post("/check", async (req, res) => {
-console.log("🔥 /check route called");
-  console.log(req.body);
 
   try {
     const {
@@ -430,17 +428,11 @@ const t = getLanguage(language);
     }
 
     // 🔍 Run engines
-console.log("1️⃣ detectScam");
     const scamResult = detectScam(message);
-console.log("2️⃣ detectManipulation");
     const manipulationResult = detectManipulation(message);
-console.log("3️⃣ decideAction");
     const decision = decideAction(scamResult, manipulationResult);
-console.log("4️⃣ analyzeUrlReputation");
     const reputationResult = analyzeUrlReputation(message);
-console.log("5️⃣ analyzeURL");
 const urlAnalysis = analyzeURL(message);
-console.log("6️⃣ analyzeURL completed");
 
 let sslInfo = {
   success: false,
@@ -449,9 +441,7 @@ let sslInfo = {
 };
 
 if (urlAnalysis.found) {
-console.log("7️⃣ checkSSL START");
   sslInfo = await checkSSL(urlAnalysis.url);
- console.log("8️⃣ checkSSL DONE");
 }
 
 let domainInfo = {
@@ -460,9 +450,7 @@ let domainInfo = {
 };
 
 if (urlAnalysis.found) {
-console.log("9️⃣ checkDomainAge START");
   domainInfo = await checkDomainAge(urlAnalysis.url);
-console.log("🔟 checkDomainAge DONE");
 }
 
 let dnsInfo = {
@@ -471,9 +459,7 @@ let dnsInfo = {
 };
 
 if (urlAnalysis.found) {
-console.log("1️⃣1️⃣ checkDNS START");
   dnsInfo = await checkDNS(urlAnalysis.url);
-console.log("1️⃣2️⃣ checkDNS DONE");
 }
 
     let safeBrowsing = {
@@ -494,14 +480,9 @@ console.log("1️⃣2️⃣ checkDNS DONE");
 };
 
 if (urlAnalysis.found) {
-
-console.log("1️⃣3️⃣ SafeBrowsing START"); 
   safeBrowsing = await checkSafeBrowsing(urlAnalysis.url);
-console.log("1️⃣4️⃣ SafeBrowsing DONE");
 
-console.log("1️⃣5️⃣ VirusTotal START");
   virusTotal = await checkVirusTotal(urlAnalysis.url);
-console.log("1️⃣6️⃣ VirusTotal DONE");
 
 }
 
@@ -522,7 +503,6 @@ if (
 }
     
     // 🎯 FINAL TYPE
-console.log("1️⃣7️⃣ getFinalResultType");
     const finalType = getFinalResultType(scamResult, manipulationResult,
 safeBrowsing,
   virusTotal,
@@ -530,7 +510,6 @@ safeBrowsing,
   dnsInfo,
   sslInfo
 );
-console.log("1️⃣8️⃣ calculateConfidence");
    const confidence = calculateConfidence(
   scamResult,
   manipulationResult,
@@ -541,7 +520,6 @@ console.log("1️⃣8️⃣ calculateConfidence");
   dnsInfo,
   sslInfo
 );
-      console.log("1️⃣9️⃣ Building response");
 
     // 🎯 CLEAN DATA
     const signals = mergeSignals(
@@ -650,7 +628,6 @@ reputationResult,
 );
 
 }
-  console.log("2️⃣0️⃣ Sending Response");
     // ✅ SEND FINAL
     res.json(response);
 
