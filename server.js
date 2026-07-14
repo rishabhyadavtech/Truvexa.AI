@@ -449,7 +449,10 @@ let sslInfo = {
 };
 
 if (urlAnalysis.found) {
+console.log("7️⃣ checkSSL START");
   sslInfo = await checkSSL(urlAnalysis.url);
+ console.log("8️⃣ checkSSL DONE");
+}
 }
 
 let domainInfo = {
@@ -458,7 +461,9 @@ let domainInfo = {
 };
 
 if (urlAnalysis.found) {
+console.log("9️⃣ checkDomainAge START");
   domainInfo = await checkDomainAge(urlAnalysis.url);
+console.log("🔟 checkDomainAge DONE");
 }
 
 let dnsInfo = {
@@ -467,7 +472,9 @@ let dnsInfo = {
 };
 
 if (urlAnalysis.found) {
+console.log("1️⃣1️⃣ checkDNS START");
   dnsInfo = await checkDNS(urlAnalysis.url);
+console.log("1️⃣2️⃣ checkDNS DONE");
 }
 
     let safeBrowsing = {
