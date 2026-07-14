@@ -297,6 +297,7 @@ reputationResult,
   } catch (error) {
   console.error("❌ SERVER CRASH ❌");
   console.error(error);
+  console.error(error.stack);  
 
   res.status(500).json({
     error: error.message,
