@@ -99,20 +99,16 @@ data.language || "hi";
     // =========================
     // 🟢 SAFE MODE
     // =========================
-    if (type === "SAFE") {
+   if (type === "SAFE") {
 
-  resultBox.classList.add("safe");
+  resultBox.className = "card result-card safe";
 
-  resultBox.innerText = `
-${data.finalMessage}
-
-${data.explanation}
-`.trim();
+  resultBox.innerText =
+`${data.explanation}`;
 
   feedbackBox.style.display = "block";
 
   return;
-
 }
 
     // =========================
@@ -287,27 +283,7 @@ ${data.domainInfo.message}
     // =========================
     // 🎯 FINAL OUTPUT
     // =========================
-    resultBox.innerText = `
-${data.finalMessage}
-
-🧠 Why this result?
-
-${explanation}
-
-🛡 Scam Category
-
-${data.scamCategory || "General"}
-
-💡 Recommended Action
-
-${decision.action || "Be cautious before taking any action."}
-
-${adviceBlock}
-
-${signalsBlock}
-
-${domainBlock}
-`.trim();
+    resultBox.innerText = data.explanation;
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
