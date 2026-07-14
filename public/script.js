@@ -54,11 +54,7 @@ confidenceCard.style.display = "none";
     if (!res.ok) throw new Error("Server error");
 
     const data = await res.json();
-console.log(data);
-alert("Response received");
-console.log(data);
-
-alert(JSON.stringify(data));
+ alert(JSON.stringify(data));
    loadingBox.style.display = "none";
 
 riskMeter.style.display = "block";
@@ -317,10 +313,9 @@ ${domainBlock}
     feedbackBox.style.display = "block";
 
   } catch (error) {  
-    console.error(error);
-    alert(error.message);
- 
-  loadingBox.style.display = "none";  
+    console.error("Fetch Error:", error);
+  
+ loadingBox.style.display = "none";  
   
 riskMeter.style.display = "none";  
   
