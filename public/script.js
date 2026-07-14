@@ -111,8 +111,6 @@ data.language || "hi";
 ${data.finalMessage}
 
 ${data.explanation}
-
-${domainBlock}
 `.trim();
 
   feedbackBox.style.display = "block";
@@ -319,7 +317,9 @@ ${domainBlock}
     feedbackBox.style.display = "block";
 
   } catch (error) {  
-    console.error(error.stack);  
+    console.error(error);
+    alert(error.message);
+ 
   loadingBox.style.display = "none";  
   
 riskMeter.style.display = "none";  
