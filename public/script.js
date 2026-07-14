@@ -56,6 +56,9 @@ confidenceCard.style.display = "none";
     const data = await res.json();
 console.log(data);
 alert("Response received");
+console.log(data);
+
+alert(JSON.stringify(data));
    loadingBox.style.display = "none";
 
 riskMeter.style.display = "block";
