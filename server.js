@@ -430,11 +430,17 @@ const t = getLanguage(language);
     }
 
     // 🔍 Run engines
+console.log("1️⃣ detectScam");
     const scamResult = detectScam(message);
+console.log("2️⃣ detectManipulation");
     const manipulationResult = detectManipulation(message);
+console.log("3️⃣ decideAction");
     const decision = decideAction(scamResult, manipulationResult);
+console.log("4️⃣ analyzeUrlReputation");
     const reputationResult = analyzeUrlReputation(message);
+console.log("5️⃣ analyzeURL");
 const urlAnalysis = analyzeURL(message);
+console.log("6️⃣ analyzeURL completed");
 
 let sslInfo = {
   success: false,
