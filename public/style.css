@@ -662,3 +662,13 @@ color:#fff;
 font-size:13px;
 font-weight:600;
 }
+@media(min-width:900px){
+
+#analysisCards{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
