@@ -54,6 +54,10 @@ confidenceCard.style.display = "none";
     if (!res.ok) throw new Error("Server error");
 
     const data = await res.json();
+    const hasURL =
+data.urlAnalysis &&
+data.urlAnalysis.found;
+
    loadingBox.style.display = "none";
 
 riskMeter.style.display = "block";
@@ -242,6 +246,7 @@ ${decision.reason || ""}
 let domainBlock = "";
 
 if (
+  hasURL &&
   data.domainInfo &&
   data.domainInfo.success
 ) {
