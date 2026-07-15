@@ -164,6 +164,81 @@ evidenceCard.innerHTML =
 "✔ No suspicious evidence found.";
 
 }
+safeBrowsingCard.innerHTML = `
+<b>Status</b><br>
+
+${data.safeBrowsing.safe ?
+"✅ Safe" :
+"⚠ Threat Detected"}
+
+<br><br>
+
+${data.safeBrowsing.message}
+`;
+virusTotalCard.innerHTML = `
+Malicious :
+${data.virusTotal.malicious}
+
+<br>
+
+Suspicious :
+${data.virusTotal.suspicious}
+
+<br>
+
+Harmless :
+${data.virusTotal.harmless}
+
+<br>
+
+Undetected :
+${data.virusTotal.undetected}
+`;
+sslCard.innerHTML = `
+Status :
+${data.sslInfo.valid ?
+"✅ Valid" :
+"❌ Invalid"}
+
+<br><br>
+
+Issuer :
+${data.sslInfo.issuer}
+
+<br><br>
+
+Valid Until :
+${data.sslInfo.validTo}
+`;
+dnsCard.innerHTML = `
+A :
+${data.dnsInfo.hasA ? "✔" : "✖"}
+
+<br>
+
+MX :
+${data.dnsInfo.hasMX ? "✔" : "✖"}
+
+<br>
+
+NS :
+${data.dnsInfo.hasNS ? "✔" : "✖"}
+
+<br>
+
+SPF :
+${data.dnsInfo.hasSPF ? "✔" : "✖"}
+
+<br>
+
+DMARC :
+${data.dnsInfo.hasDMARC ? "✔" : "✖"}
+
+<br><br>
+
+Risk :
+${data.dnsInfo.risk}
+`;
 
   feedbackBox.style.display = "block";
 
