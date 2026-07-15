@@ -137,6 +137,12 @@ data.language || "hi";
   resultBox.innerText =
 `${data.explanation}`;
 
+if (hasURL) {
+
+  analysisCards.style.display = "block";
+
+}
+
   feedbackBox.style.display = "block";
 
   return;
