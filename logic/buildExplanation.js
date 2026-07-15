@@ -20,6 +20,24 @@ function buildExplanation(
 
   if (type === "SAFE") {
 
+if (!urlAnalysis.found) {
+
+    parts.push(`
+
+✅ This message looks safe.
+
+I analyzed the message for common scam patterns, manipulation techniques, urgency, impersonation, and suspicious language.
+
+I didn't find any strong warning signs.
+
+Based on the content alone, this message appears legitimate.
+
+`);
+
+    return parts.join("\n\n");
+
+}
+
     // Small evidence summary
     let evidence = [];
 
