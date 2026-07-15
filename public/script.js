@@ -142,6 +142,28 @@ if (hasURL) {
   analysisCards.style.display = "block";
 
 }
+  if (data.evidence && data.evidence.length > 0) {
+
+  evidenceCard.innerHTML =
+  data.evidence.map(item => `
+<div>
+
+<b>${item.title}</b><br>
+
+Severity : ${item.severity}<br>
+
+Confidence : ${item.confidence}%
+
+</div><hr>
+`).join("");
+
+}
+else{
+
+evidenceCard.innerHTML =
+"✔ No suspicious evidence found.";
+
+}
 
   feedbackBox.style.display = "block";
 
