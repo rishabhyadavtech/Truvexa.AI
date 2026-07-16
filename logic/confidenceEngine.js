@@ -97,6 +97,24 @@ if (virusTotal.success) {
     }
 
   }
+// Confidence from Domain
+if (domainInfo.success) {
+
+  if (domainInfo.risk === "LOW") {
+
+    confidence += 8;
+
+  } else if (domainInfo.risk === "MEDIUM") {
+
+    confidence += 4;
+
+  } else {
+
+    confidence += 1;
+
+  }
+
+}
 
 // DNS
 
@@ -113,6 +131,24 @@ if (dnsInfo && dnsInfo.success) {
   }
 
 }
+// Confidence from DNS
+if (dnsInfo && dnsInfo.success) {
+
+  if (dnsInfo.risk === "LOW") {
+
+    confidence += 6;
+
+  } else if (dnsInfo.risk === "MEDIUM") {
+
+    confidence += 3;
+
+  } else {
+
+    confidence += 1;
+
+  }
+
+}
 
 // SSL
 
@@ -125,6 +161,24 @@ if (sslInfo && sslInfo.success) {
   } else if (sslInfo.risk === "MEDIUM") {
 
     score += 8;
+
+  }
+
+}
+// Confidence from SSL
+if (sslInfo && sslInfo.success) {
+
+  if (sslInfo.risk === "LOW") {
+
+    confidence += 6;
+
+  } else if (sslInfo.risk === "MEDIUM") {
+
+    confidence += 3;
+
+  } else {
+
+    confidence += 1;
 
   }
 
