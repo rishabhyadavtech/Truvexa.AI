@@ -61,7 +61,6 @@ Based on the content alone, this message appears legitimate.
 
 
     parts.push(`
-
 ✅ Everything looks legitimate.
 
 I checked this website using multiple independent security signals before making this decision.
@@ -71,19 +70,16 @@ Evidence used:
 ${evidence.join("\n")}
 
 Here's what I found:
-
 `);
 
     // Human style transition
 
     parts.push(`
-
 I didn't find any strong signs of phishing, malware, impersonation, or deceptive behaviour.
 
 Instead of relying on a single security check, this result is based on multiple independent sources working together.
 
 I'll explain each security check below so you can understand *why* this website appears safe.
-
 `);
 
   }
@@ -503,7 +499,11 @@ If you already interacted with this website, consider changing your password imm
 
 }
 
-return parts.join("\n\n");
+return parts
+  .filter(Boolean)
+  .join("\n\n")
+  .replace(/\n{3,}/g, "\n\n")
+  .trim();
 
 }
 
