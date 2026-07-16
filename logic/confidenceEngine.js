@@ -208,6 +208,8 @@ if (score >= 80) {
 // Return Confidence
 return confidence;
 
+}
+
 module.exports = {
   calculateConfidence
 };
