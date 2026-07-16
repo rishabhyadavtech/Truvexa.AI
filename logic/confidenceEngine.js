@@ -32,9 +32,41 @@ if ((scam.riskScore || 0) === 0) {
   } else if (manipulation.manipulationLevel === "MEDIUM") {
     score += 10;
   }
+// Confidence from Manipulation
+if (manipulation.manipulationLevel === "LOW") {
+
+  confidence += 8;
+
+} else if (manipulation.manipulationLevel === "MEDIUM") {
+
+  confidence += 4;
+
+} else {
+
+  confidence += 1;
+
+}
 
   // URL Analysis
   score += Math.min(urlAnalysis.risk || 0, 20);
+// Confidence from URL Analysis
+if (urlAnalysis.found) {
+
+  if ((urlAnalysis.risk || 0) <= 10) {
+
+    confidence += 8;
+
+  } else if ((urlAnalysis.risk || 0) <= 30) {
+
+    confidence += 4;
+
+  } else {
+
+    confidence += 1;
+
+  }
+
+}
 
   // Google Safe Browsing
   if (safeBrowsing.success && !safeBrowsing.safe) {
@@ -203,6 +235,12 @@ if (confidence < 5) {
 // slightly reduce confidence
 if (score >= 80) {
   confidence = Math.max(confidence - 10, 5);
+}
+// Very safe results deserve higher confidence
+if (score <= 10) {
+
+  confidence = Math.min(confidence + 5, 99);
+
 }
 
 // Return Confidence
