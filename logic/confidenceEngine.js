@@ -183,11 +183,30 @@ if (sslInfo && sslInfo.success) {
   }
 
 }
+  // --------------------------
+// Final Risk
+// --------------------------
+if (score > 100) score = 100;
 
-  if (score > 100) score = 100;
-
-  return score;
+// --------------------------
+// Final Confidence
+// --------------------------
+if (confidence > 99) {
+  confidence = 99;
 }
+
+if (confidence < 5) {
+  confidence = 5;
+}
+
+// If overall risk is very high,
+// slightly reduce confidence
+if (score >= 80) {
+  confidence = Math.max(confidence - 10, 5);
+}
+
+// Return Confidence
+return confidence;
 
 module.exports = {
   calculateConfidence
