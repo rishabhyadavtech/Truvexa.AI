@@ -159,7 +159,7 @@ if (
   sslInfo.risk === "LOW"
 ) {
 
-  scamResult.riskScore = 0;
+  scamResult.riskScore = 5;
   scamResult.result = "SAFE";
   scamResult.scamCategory = "Safe Website";
 
