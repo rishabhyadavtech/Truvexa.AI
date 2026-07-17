@@ -330,68 +330,8 @@ matchedPatterns.push("ADVANCE_FEE");
   // =========================
 
   let humanMessage = "";
-
-
-// ==========================
-// 🎯 Better Risk Calibration
-// ==========================
-
-// Strong trust signals reduce risk
-if (
-    urlAnalysis.found &&
-    safeBrowsing &&
-    safeBrowsing.safe &&
-    virusTotal &&
-    virusTotal.malicious === 0 &&
-    virusTotal.suspicious === 0 &&
-    domainInfo &&
-    domainInfo.risk === "LOW" &&
-    sslInfo &&
-    sslInfo.risk === "LOW" &&
-    dnsInfo &&
-    dnsInfo.risk === "LOW"
-) {
-
-    riskScore = Math.max(riskScore - 25, 5);
-
-}
-
-// Message only + no suspicious signals
-if (
-    !urlAnalysis.found &&
-    signals.length === 0
-) {
-
-    riskScore = 5;
-
-}
-
-// Medium confidence websites
-if (
-    urlAnalysis.found &&
-    domainInfo &&
-    domainInfo.risk === "MEDIUM"
-) {
-
-    riskScore += 5;
-
-}
-
-// Very dangerous combination
-if (
-    safeBrowsing &&
-    !safeBrowsing.safe &&
-    virusTotal &&
-    virusTotal.malicious >= 5
-) {
-
-    riskScore = Math.max(riskScore, 90);
-
-}
-
-riskScore = Math.max(5, Math.min(riskScore,100));
-
-  riskScore = Math.min(riskScore, 100);
+  
+ riskScore = Math.min(riskScore, 100);
   if (signals.length === 0) {
     humanMessage = L.reasons.SAFE;
   } else {
