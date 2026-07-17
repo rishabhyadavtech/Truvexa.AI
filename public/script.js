@@ -106,8 +106,73 @@ data.language || "hi";
 
   resultBox.className = "card result-card safe";
 
-  resultBox.innerText =
-`${data.explanation}`;
+  resultBox.innerHTML = `
+<div>${data.explanation}</div>
+
+${hasURL ? `
+
+<hr>
+
+<div class="detail-links">
+
+<button onclick="toggleDetail('safeBrowsingDetail')">
+🛡 Google Safe Browsing ▾
+</button>
+
+<div
+id="safeBrowsingDetail"
+class="detail-box"
+style="display:none;">
+${data.safeBrowsingExplanation || ""}
+</div>
+
+<button onclick="toggleDetail('virusTotalDetail')">
+🦠 VirusTotal ▾
+</button>
+
+<div
+id="virusTotalDetail"
+class="detail-box"
+style="display:none;">
+${data.virusTotalExplanation || ""}
+</div>
+
+<button onclick="toggleDetail('domainDetail')">
+🌍 Domain Information ▾
+</button>
+
+<div
+id="domainDetail"
+class="detail-box"
+style="display:none;">
+${data.domainExplanation || ""}
+</div>
+
+<button onclick="toggleDetail('sslDetail')">
+🔒 SSL Certificate ▾
+</button>
+
+<div
+id="sslDetail"
+class="detail-box"
+style="display:none;">
+${data.sslExplanation || ""}
+</div>
+
+<button onclick="toggleDetail('dnsDetail')">
+🌐 DNS Security ▾
+</button>
+
+<div
+id="dnsDetail"
+class="detail-box"
+style="display:none;">
+${data.dnsExplanation || ""}
+</div>
+
+` : ""}
+
+`;
 
   feedbackBox.style.display = "block";
 
