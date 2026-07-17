@@ -687,11 +687,4 @@ DMARC : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
 
 }
 
-module.exports = {
-  buildExplanation,
-  buildSafeBrowsingExplanation,
-  buildVirusTotalExplanation,
-  buildDomainExplanation,
-  buildSSLExplanation,
-  buildDNSExplanation
-};
+module.exports = buildExplanation;
