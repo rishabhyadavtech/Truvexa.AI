@@ -118,17 +118,29 @@ async function checkDNS(input) {
 
     // Simple Risk Logic
 
-    if (!result.hasMX && !result.hasSPF) {
+    let missing = 0;
 
-      result.risk = "MEDIUM";
+if (!result.hasA) missing++;
+if (!result.hasNS) missing++;
+if (!result.hasMX) missing++;
+if (!result.hasSPF) missing++;
+if (!result.hasDMARC) missing++;
 
-    }
+if (missing <= 1) {
 
-    if (!result.hasNS || !result.hasA) {
+    result.risk = "LOW";
 
-      result.risk = "HIGH";
+}
+else if (missing <= 3) {
 
-    }
+    result.risk = "MEDIUM";
+
+}
+else {
+
+    result.risk = "HIGH";
+
+}
 
     return result;
 
