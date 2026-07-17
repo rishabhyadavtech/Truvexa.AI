@@ -398,7 +398,28 @@ box.style.display="none";
 }
 
 }
+function getSeverityBadge(severity) {
 
+  switch ((severity || "").toLowerCase()) {
+
+    case "critical":
+      return "🔴 Critical";
+
+    case "high":
+      return "🟠 High";
+
+    case "medium":
+      return "🟡 Medium";
+
+    case "low":
+      return "🟢 Low";
+
+    case "info":
+    default:
+      return "🔵 Info";
+  }
+
+}
 
 // =========================
 // 👍 FEEDBACK SYSTEM
