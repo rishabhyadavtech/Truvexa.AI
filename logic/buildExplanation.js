@@ -459,11 +459,17 @@ if(type==="SAFE"){
 
 parts.push(`
 
-💡 Recommendation
+💡 Recommended Actions
 
-You can safely continue if you trust the source of this link.
+✅ You can continue if you trust the sender.
 
-Even trusted websites can be impersonated, so always double-check the URL before entering passwords, OTPs, payment details, or personal information.
+Before entering any password or payment details:
+
+• Verify the website address carefully.
+• Make sure HTTPS is enabled.
+• Check that the domain name is spelled correctly.
+
+Even safe websites can be impersonated through fake links.
 
 `);
 
@@ -473,13 +479,18 @@ else if(type==="SUSPICIOUS"){
 
 parts.push(`
 
-💡 Recommendation
+💡 Recommended Actions
 
-Take a moment to verify the sender.
+⚠ Do not rush.
 
-Avoid entering passwords or payment information until you are confident the website is genuine.
+Before continuing:
 
-If something feels unusual, leave the website and verify through the company's official website.
+• Verify the sender independently.
+• Visit the company's official website manually.
+• Avoid entering passwords or payment details.
+• Avoid downloading unknown files.
+
+If you are unsure, leave the website until it is verified.
 
 `);
 
@@ -489,17 +500,22 @@ else{
 
 parts.push(`
 
-💡 Recommendation
+🚨 Recommended Actions
 
-Do not open this website.
+❌ Do NOT continue.
 
-Do not enter your password.
+Immediately:
 
-Do not share OTPs.
+• Close the website.
+• Do not enter passwords.
+• Do not share OTPs.
+• Do not make any payment.
 
-Do not make payments.
+If you already entered sensitive information:
 
-If you already interacted with this website, consider changing your password immediately and monitor your accounts for suspicious activity.
+• Change your password immediately.
+• Contact your bank if payment information was shared.
+• Monitor your accounts for suspicious activity.
 
 `);
 
