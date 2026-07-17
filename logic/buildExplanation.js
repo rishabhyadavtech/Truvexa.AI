@@ -70,7 +70,7 @@ Evidence used:
 
 ${evidence.join("\n")}
 
-Here's what I found:
+Overall summary:
 `);
 
     // Human style transition
