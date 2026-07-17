@@ -111,8 +111,6 @@ data.language || "hi";
 
 if (hasURL) {
 
-  analysisCards.style.display = "block";
-
 }
   if (data.evidence && data.evidence.length > 0) {
 
@@ -136,20 +134,6 @@ evidenceCard.innerHTML =
 "✔ No suspicious evidence found.";
 
 }
-safeBrowsingCard.innerHTML = `
-<b>Status</b><br>
-
-${data.safeBrowsing.safe ?
-"✅ Safe" :
-"⚠ Threat Detected"}
-
-<br><br>
-
-${data.safeBrowsing.message}
-`;
-virusTotalCard.innerHTML = `
-Malicious :
-${data.virusTotal.malicious}
 
 <br>
 
