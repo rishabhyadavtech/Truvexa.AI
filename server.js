@@ -149,21 +149,75 @@ if (urlAnalysis.found) {
 
 }
 
+// ==========================
+// 🎯 Better Risk Calibration
+// ==========================
+
+// Strong trust signals
 if (
-  urlAnalysis.found &&
-  safeBrowsing.safe &&
-  virusTotal.malicious === 0 &&
-  virusTotal.suspicious === 0 &&
-  domainInfo.risk === "LOW" &&
-  dnsInfo.risk === "LOW" &&
-  sslInfo.risk === "LOW"
+    urlAnalysis.found &&
+    safeBrowsing.success &&
+    safeBrowsing.safe &&
+    virusTotal.success &&
+    virusTotal.malicious === 0 &&
+    virusTotal.suspicious === 0 &&
+    domainInfo.success &&
+    domainInfo.risk === "LOW" &&
+    dnsInfo.success &&
+    dnsInfo.risk === "LOW" &&
+    sslInfo.success &&
+    sslInfo.risk === "LOW"
 ) {
 
-  scamResult.riskScore = 5;
-  scamResult.result = "SAFE";
-  scamResult.scamCategory = "Safe Website";
+    scamResult.riskScore = Math.max(
+        scamResult.riskScore - 25,
+        5
+    );
+
+    scamResult.result = "SAFE";
+    scamResult.scamCategory = "Safe Website";
+}
+
+// Plain text + no suspicious signals
+if (
+    !urlAnalysis.found &&
+    scamResult.signals.length === 0
+) {
+
+    scamResult.riskScore = 5;
 
 }
+
+// Medium trust website
+if (
+    urlAnalysis.found &&
+    domainInfo.success &&
+    domainInfo.risk === "MEDIUM"
+) {
+
+    scamResult.riskScore += 5;
+
+}
+
+// Extremely dangerous website
+if (
+    safeBrowsing.success &&
+    !safeBrowsing.safe &&
+    virusTotal.success &&
+    virusTotal.malicious >= 5
+) {
+
+    scamResult.riskScore = Math.max(
+        scamResult.riskScore,
+        90
+    );
+
+}
+
+scamResult.riskScore = Math.min(
+    Math.max(scamResult.riskScore, 5),
+    100
+);
     
     // 🎯 FINAL TYPE
     const finalType = getFinalResultType(scamResult, manipulationResult,
