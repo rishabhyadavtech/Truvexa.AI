@@ -115,8 +115,8 @@ ${hasURL ? `
 
 <div class="detail-links">
 
-<button onclick="toggleDetail('safeBrowsingDetail')">
-🛡 Google Safe Browsing ▾
+<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
+▶🛡️ View Google Safe Browsing Details
 </button>
 
 <div
@@ -126,8 +126,8 @@ style="display:none;">
 ${data.safeBrowsingExplanation || ""}
 </div>
 
-<button onclick="toggleDetail('virusTotalDetail')">
-🦠 VirusTotal ▾
+<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
+▶🦠View VirusTotal Scan Details
 </button>
 
 <div
@@ -137,8 +137,8 @@ style="display:none;">
 ${data.virusTotalExplanation || ""}
 </div>
 
-<button onclick="toggleDetail('domainDetail')">
-🌍 Domain Information ▾
+<button class="details-btn" onclick="toggleDetail('domainDetail')">
+▶🌍 view Domain Information
 </button>
 
 <div
@@ -148,8 +148,8 @@ style="display:none;">
 ${data.domainExplanation || ""}
 </div>
 
-<button onclick="toggleDetail('sslDetail')">
-🔒 SSL Certificate ▾
+<button class="details-btn" onclick="toggleDetail('sslDetail')">
+▶🔒View SSL Certificate Details
 </button>
 
 <div
