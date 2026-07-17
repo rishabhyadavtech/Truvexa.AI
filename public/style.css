@@ -590,85 +590,47 @@ border-color:#9ca3af;
 
 }
 /* ===========================
-   Technical Analysis Cards
+   View Details
 =========================== */
 
-#analysisCards{
-display:grid;
-gap:16px;
-margin-top:20px;
-}
+.details-btn{
 
-.info-card{
-background:#111827;
-border:1px solid #374151;
-border-radius:14px;
-padding:18px;
-transition:.25s;
-}
-
-.info-card:hover{
-transform:translateY(-2px);
-border-color:#3b82f6;
-}
-
-.info-card h3{
-margin:0 0 14px;
-font-size:18px;
-color:#fff;
-}
-
-.info-card div{
-line-height:1.8;
-font-size:15px;
-color:#d1d5db;
-}
-
-.info-card b{
-color:#fff;
-}
-
-.info-card hr{
-border:none;
-border-top:1px solid #374151;
-margin:12px 0;
-}
-.status-safe{
 display:inline-block;
-padding:4px 10px;
-border-radius:999px;
-background:#16a34a;
-color:#fff;
-font-size:13px;
+
+margin-top:10px;
+
+color:#2563eb;
+
 font-weight:600;
-}
 
-.status-warning{
-display:inline-block;
-padding:4px 10px;
-border-radius:999px;
-background:#f59e0b;
-color:#fff;
-font-size:13px;
-font-weight:600;
-}
+cursor:pointer;
 
-.status-danger{
-display:inline-block;
-padding:4px 10px;
-border-radius:999px;
-background:#dc2626;
-color:#fff;
-font-size:13px;
-font-weight:600;
-}
-@media(min-width:900px){
-
-#analysisCards{
-
-grid-template-columns:
-repeat(2,1fr);
+user-select:none;
 
 }
+
+.details-btn:hover{
+
+text-decoration:underline;
+
+}
+
+.details-box{
+
+display:none;
+
+margin-top:10px;
+
+padding:12px;
+
+background:#f8fafc;
+
+border-left:4px solid #2563eb;
+
+border-radius:8px;
+
+white-space:pre-wrap;
+
+line-height:1.6;
 
 }
