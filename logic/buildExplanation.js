@@ -101,6 +101,7 @@ Google's Safe Browsing database did not flag this website.
 
 No known phishing, malware, or deceptive content was detected.
 
+[[SAFE_BROWSING_DETAILS]]
 `);
 
 } else {
@@ -149,6 +150,7 @@ Undetected : ${virusTotal.undetected}
 
 Because multiple security vendors detected problems, this website should be treated as potentially unsafe.
 
+[[VT_DETAILS]]
 `);
 
 } else {
@@ -198,6 +200,7 @@ The domain appears to be newly registered.
 
 Recently created domains are commonly used in phishing and scam campaigns because attackers can easily abandon them after being reported.
 
+[[DOMAIN_DETAILS]]
 `);
 
 }
@@ -247,6 +250,7 @@ Valid Until : ${sslInfo.validTo}
 
 Expires In : ${sslInfo.expiresInDays} days
 
+[[SSL_DETAILS]]
 `);
 
 if (sslInfo.risk === "HIGH") {
@@ -298,6 +302,7 @@ SPF : ${dnsInfo.hasSPF ? "Enabled" : "Missing"}
 
 DMARC : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
 
+ [[DNS_DETAILS]]
 `);
 
 if (dnsInfo.risk === "HIGH") {
