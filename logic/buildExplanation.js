@@ -496,17 +496,13 @@ parts.push(`
 
 💡 Recommended Actions
 
-✅ You can continue if you trust the sender.
+✅ This website passed all major security checks.
 
-Before entering any password or payment details:
+No known phishing, malware or security warnings were detected.
 
-• Verify the website address carefully.
-• Make sure HTTPS is enabled.
-• Check that the domain name is spelled correctly.
+You can continue normally.
 
-Even safe websites can be impersonated through fake links.
-
-`);
+If the website later requests unexpected passwords, OTPs or payments, review that request before proceeding.
 
 }
 
