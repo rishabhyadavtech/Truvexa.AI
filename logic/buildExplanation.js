@@ -504,6 +504,8 @@ You can continue normally.
 
 If the website later requests unexpected passwords, OTPs or payments, review that request before proceeding.
 
+`);
+
 }
 
 else if(type==="SUSPICIOUS"){
