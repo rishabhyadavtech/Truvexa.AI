@@ -3,7 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const buildExplanation = require("./logic/buildExplanation");
+const {
+  buildExplanation,
+  buildSafeBrowsingExplanation,
+  buildVirusTotalExplanation,
+  buildDomainExplanation,
+  buildSSLExplanation,
+  buildDNSExplanation
+} = require("./logic/buildExplanation");
 const { getLanguage } =
 require("./logic/languageEngine");
 const detectScam = require("./logic/scamDetector");
