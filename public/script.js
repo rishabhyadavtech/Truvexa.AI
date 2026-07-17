@@ -361,7 +361,7 @@ ${data.domainInfo.message}
     // =========================
     // 🎯 FINAL OUTPUT
     // =========================
-    resultBox.innerText = data.explanation;
+    resultBox.innerHTML = data.explanation;
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
