@@ -17,26 +17,6 @@ document.getElementById("confidenceFill");
 const confidenceText =
 document.getElementById("confidenceText");
   const feedbackBox = document.getElementById("feedbackBox");
-const analysisCards =
-document.getElementById("analysisCards");
-
-const evidenceCard =
-document.getElementById("evidenceCard");
-
-const safeBrowsingCard =
-document.getElementById("safeBrowsingCard");
-
-const virusTotalCard =
-document.getElementById("virusTotalCard");
-
-const domainCard =
-document.getElementById("domainCard");
-
-const sslCard =
-document.getElementById("sslCard");
-
-const dnsCard =
-document.getElementById("dnsCard");
 
   if (!message) {
     alert("Please enter a message");
