@@ -19,7 +19,6 @@ function buildExplanation(
   // SAFE MODE (Natural GPT Style)
   // ===================================
 
-
   if (type === "SAFE") {
 
 if (!urlAnalysis.found) {
