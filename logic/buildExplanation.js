@@ -513,6 +513,30 @@ return parts
 
 }
 
-module.exports = buildExplanation;
+function buildSafeBrowsingExplanation(safeBrowsing) {
 
- 
+  if (!safeBrowsing.success) {
+    return "No Google Safe Browsing data available.";
+  }
+
+  if (safeBrowsing.safe) {
+
+    return `
+Google Safe Browsing did not flag this website.
+
+No phishing, malware, or deceptive content was detected.
+`.trim();
+
+  }
+
+  return `
+Google Safe Browsing has flagged this website.
+
+This usually indicates phishing, malware, or another security threat.
+
+Avoid visiting this website unless you completely trust it.
+`.trim();
+
+}
+
+module.exports = buildExplanation;
