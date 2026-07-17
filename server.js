@@ -286,6 +286,21 @@ reputationResult,
   scamCategory: scamResult.scamCategory || "General"
 };
 
+response.safeBrowsingExplanation =
+  buildSafeBrowsingExplanation(safeBrowsing);
+
+response.virusTotalExplanation =
+  buildVirusTotalExplanation(virusTotal);
+
+response.domainExplanation =
+  buildDomainExplanation(domainInfo);
+
+response.sslExplanation =
+  buildSSLExplanation(sslInfo);
+
+response.dnsExplanation =
+  buildDNSExplanation(dnsInfo);
+
     // =========================
     // 🟢 SAFE
     // =========================
