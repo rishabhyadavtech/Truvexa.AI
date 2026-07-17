@@ -170,15 +170,19 @@ evidence.push({
 
 id:"OTP_REQUEST",
 
-title:"Sensitive information requested",
+title:"OTP Request Detected",
 
 severity:"critical",
 
 confidence:98,
 
-detected:"OTP",
+icon:"🚨",
 
-description: L.evidence.OTP_REQUEST
+summary:"This message asks for your OTP.",
+
+why:"Legitimate banks and companies never ask for your OTP through messages.",
+
+detected:"OTP"
 
 });
 
@@ -201,15 +205,19 @@ evidence.push({
 
 id:"EXTERNAL_LINK",
 
-title:"External link detected",
+title:"External Link Found",
 
-severity:"info",
+severity:"low",
 
 confidence:100,
 
-detected:urlAnalysis.url,
+icon:"🔗",
 
-description:L.evidence.EXTERNAL_LINK
+summary:"This message contains a website link.",
+
+why:"Links should always be verified before opening, especially if received unexpectedly.",
+
+detected:urlAnalysis.url
 
 });
 
@@ -264,15 +272,19 @@ evidence.push({
 
 id:"ADVANCE_FEE",
 
-title:"Advance fee requested",
+title:"Advance Payment Requested",
 
 severity:"critical",
 
 confidence:99,
 
-detected:"Registration fee",
+icon:"💰",
 
-description: L.evidence.ADVANCE_FEE
+summary:"The sender asks you to pay money before receiving the service.",
+
+why:"Advance-fee requests are one of the most common scam techniques.",
+
+detected:"Registration fee"
 
 });
 
