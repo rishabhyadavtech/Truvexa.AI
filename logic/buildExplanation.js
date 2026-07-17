@@ -80,41 +80,14 @@ I didn't find any strong signs of phishing, malware, impersonation, or deceptive
 
 Instead of relying on a single security check, this result is based on multiple independent sources working together.
 
-I'll explain each security check below so you can understand *why* this website appears safe.
+You can tap "View Details" under each security check if you'd like to see the technical analysis behind this result.
 `);
 
   }
 
-// ======================
-// 🛡 Google Safe Browsing
-// ======================
-
-// ======================
-// 🦠 VirusTotal
-// ======================
-
-
-// ======================
-// 🌍 Domain Information
-// ======================
-
-// ======================
-// 🔒 SSL Certificate
-// ======================
-
-// ======================
-// 🌐 DNS Security
-// ======================
-
-
-// ======================
-// 📋 Overall Assessment
-// ======================
-
-
-// =========================================
+// =====================================
 // ⚠ SUSPICIOUS (Natural GPT Style)
-// =========================================
+// =====================================
 
 if (type === "SUSPICIOUS") {
 
@@ -132,10 +105,9 @@ However, I recommend verifying it carefully before trusting it with sensitive in
 
 }
 
-
-// =========================================
+// =======================================
 // 🚨 DANGEROUS (Natural GPT Style)
-// =========================================
+// =======================================
 
 if (type === "DANGEROUS") {
 
@@ -151,10 +123,9 @@ Based on the available evidence, I do not recommend visiting or interacting with
 
 }
 
-
-// =========================================
+// =======================================
 // 🧠 Manipulation Detection
-// =========================================
+// =======================================
 
 if (
 manipulation.manipulationLevel !== "LOW" &&
@@ -175,10 +146,9 @@ Always pause and verify before taking action.
 
 }
 
-
-// =========================================
+// =======================================
 // 🔗 URL Analysis
-// =========================================
+// =======================================
 
 if (
 urlAnalysis.found &&
@@ -200,9 +170,9 @@ ${urlAnalysis.reasons.map(r=>"• "+r).join("\n")}
 
 }
 
-// =========================================
+// =======================================
 // 🧠 Smart Recommendation Engine
-// =========================================
+// =======================================
 
 if (scam.scamCategory?.includes("OTP")) {
 
@@ -245,9 +215,10 @@ if (virusTotal.malicious > 0) {
 smartAdvice.push("• Multiple security vendors detected this website as malicious.");
 
 }
-// =========================================
+
+// =======================================
 // 💡 Final Recommendation
-// =========================================
+// =======================================
 
 if(type==="SAFE"){
 
