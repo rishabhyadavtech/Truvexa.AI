@@ -12,7 +12,14 @@ function extractDomain(input) {
       url = "https://" + url;
     }
 
-    return new URL(url).hostname.toLowerCase();
+    let host = new URL(url).hostname.toLowerCase();
+
+// Remove www.
+if (host.startsWith("www.")) {
+    host = host.substring(4);
+}
+
+return host;
 
   } catch {
     return null;
