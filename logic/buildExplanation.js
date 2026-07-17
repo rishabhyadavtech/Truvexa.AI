@@ -601,5 +601,90 @@ Avoid visiting this website unless you completely trust it.
 `.trim();
 
 }
+function buildVirusTotalExplanation(virusTotal) {
+
+  if (!virusTotal.success) {
+    return "VirusTotal data unavailable.";
+  }
+
+  if (
+    virusTotal.malicious === 0 &&
+    virusTotal.suspicious === 0
+  ) {
+
+    return `
+VirusTotal scanned this website using many security vendors.
+
+No vendor reported this website as malicious.
+
+This is a positive trust signal.
+`.trim();
+
+  }
+
+  return `
+Several security vendors detected suspicious activity.
+
+Malicious : ${virusTotal.malicious}
+
+Suspicious : ${virusTotal.suspicious}
+
+Treat this website carefully.
+`.trim();
+
+}
+function buildDomainExplanation(domainInfo) {
+
+  if (!domainInfo.success) {
+    return "Domain information unavailable.";
+  }
+
+  return `
+Domain Age : ${domainInfo.age}
+
+Registrar : ${domainInfo.registrar}
+
+Risk : ${domainInfo.risk}
+
+Older domains are generally more trustworthy than newly created domains.
+`.trim();
+
+}
+function buildSSLExplanation(sslInfo) {
+
+  if (!sslInfo.success) {
+    return "SSL information unavailable.";
+  }
+
+  return `
+Certificate Status : ${sslInfo.valid ? "Valid" : "Invalid"}
+
+Issuer : ${sslInfo.issuer}
+
+Valid Until : ${sslInfo.validTo}
+
+HTTPS helps encrypt communication between you and the website.
+`.trim();
+
+}
+function buildDNSExplanation(dnsInfo) {
+
+  if (!dnsInfo.success) {
+    return "DNS information unavailable.";
+  }
+
+  return `
+A Record : ${dnsInfo.hasA ? "Found" : "Missing"}
+
+MX Record : ${dnsInfo.hasMX ? "Found" : "Missing"}
+
+NS Record : ${dnsInfo.hasNS ? "Found" : "Missing"}
+
+SPF : ${dnsInfo.hasSPF ? "Enabled" : "Missing"}
+
+DMARC : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
+`.trim();
+
+}
 
 module.exports = buildExplanation;
