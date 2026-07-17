@@ -66,25 +66,34 @@ confidenceCard.style.display = "block";
  riskFill.style.width =
 data.riskScore + "%";
 
-if(data.riskScore < 35){
+if (data.riskScore <= 10) {
 
-riskFill.style.background="#22c55e";
-
-riskText.innerText="Low Risk";
-
-}
-else if(data.riskScore <70){
-
-riskFill.style.background="#f59e0b";
-
-riskText.innerText="Medium Risk";
+  riskFill.style.background = "#22c55e";
+  riskText.innerText = "Very Safe";
 
 }
-else{
+else if (data.riskScore <= 30) {
 
-riskFill.style.background="#ef4444";
+  riskFill.style.background = "#84cc16";
+  riskText.innerText = "Low Risk";
 
-riskText.innerText="High Risk";
+}
+else if (data.riskScore <= 60) {
+
+  riskFill.style.background = "#f59e0b";
+  riskText.innerText = "Suspicious";
+
+}
+else if (data.riskScore <= 85) {
+
+  riskFill.style.background = "#f97316";
+  riskText.innerText = "High Risk";
+
+}
+else {
+
+  riskFill.style.background = "#ef4444";
+  riskText.innerText = "Dangerous";
 
 }
 confidenceFill.style.width =
