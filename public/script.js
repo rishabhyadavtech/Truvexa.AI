@@ -361,9 +361,8 @@ ${data.domainInfo.message}
     // =========================
     // 🎯 FINAL OUTPUT
     // =========================
-resultBox.innerHTML = data.explanation
+    resultBox.innerText =             data.explanation;
 
-.replace(/\[\[SAFE_BROWSING_DETAILS\]\]/g, `
 <button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
 
 ▶ 🛡️ View Google Safe Browsing Details
@@ -374,7 +373,6 @@ ${data.safeBrowsingExplanation || ""}
 </div>
 `)
 
-.replace(/\[\[VT_DETAILS\]\]/g, `
 <button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
 
 ▶ 🦠 View VirusTotal Details
@@ -385,7 +383,6 @@ ${data.virusTotalExplanation || ""}
 </div>
 `)
 
-.replace(/\[\[DOMAIN_DETAILS\]\]/g, `
 <button class="details-btn" onclick="toggleDetail('domainDetail')">
 
 ▶ 🌍 View Domain Details
@@ -396,7 +393,6 @@ ${data.domainExplanation || ""}
 </div>
 `)
 
-.replace(/\[\[SSL_DETAILS\]\]/g, `
 <button class="details-btn" onclick="toggleDetail('sslDetail')">
 
 ▶ 🔒 View SSL Details
@@ -407,7 +403,6 @@ ${data.sslExplanation || ""}
 </div>
 `)
 
-.replace(/\[\[DNS_DETAILS\]\]/g, `
 <button class="details-btn" onclick="toggleDetail('dnsDetail')">
 
 ▶ 🌐 View DNS Details
