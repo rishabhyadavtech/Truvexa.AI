@@ -90,268 +90,28 @@ I'll explain each security check below so you can understand *why* this website 
 // 🛡 Google Safe Browsing
 // ======================
 
-if (safeBrowsing.success) {
-
-if (safeBrowsing.safe) {
-
-parts.push(`
-
-🛡 Google Safe Browsing
-
-Google's Safe Browsing database did not flag this website.
-
-No known phishing, malware, or deceptive content was detected.
-`);
-
-} else {
-
-parts.push(`
-
-🛡 Google Safe Browsing
-
-⚠ Google has flagged this website as unsafe.
-
-This usually means the website has previously been associated with phishing, malware, or other harmful activity.
-
-Avoid visiting this website unless you completely trust the source.
-
-`);
-
-}
-
-}
-
-
 // ======================
 // 🦠 VirusTotal
 // ======================
-
-if (virusTotal.success) {
-
-if (
-virusTotal.malicious > 0 ||
-virusTotal.suspicious > 0
-) {
-
-parts.push(`
-
-🦠 VirusTotal
-
-VirusTotal scanned this website using dozens of security engines.
-
-Malicious detections : ${virusTotal.malicious}
-
-Suspicious detections : ${virusTotal.suspicious}
-
-Harmless detections : ${virusTotal.harmless}
-
-Undetected : ${virusTotal.undetected}
-
-Because multiple security vendors detected problems, this website should be treated as potentially unsafe.
-`);
-
-} else {
-
-parts.push(`
-
-🦠 VirusTotal
-
-No security vendor reported this website as malicious.
-
-Harmless detections : ${virusTotal.harmless}
-
-Malicious detections : ${virusTotal.malicious}
-
-Suspicious detections : ${virusTotal.suspicious}
-
-This is a positive trust signal.
-
-`);
-
-}
-
-}
 
 
 // ======================
 // 🌍 Domain Information
 // ======================
 
-if (domainInfo.success) {
-
-parts.push(`
-
-🌍 Domain Information
-
-Age : ${domainInfo.age}
-
-Registrar : ${domainInfo.registrar}
-
-`);
-
-if (domainInfo.risk === "HIGH") {
-
-parts.push(`
-
-The domain appears to be newly registered.
-
-Recently created domains are commonly used in phishing and scam campaigns because attackers can easily abandon them after being reported.
-`);
-
-}
-
-else if (domainInfo.risk === "MEDIUM") {
-
-parts.push(`
-
-The domain is relatively new.
-
-This doesn't automatically mean it is dangerous, but newer domains deserve extra caution.
-
-`);
-
-}
-
-else {
-
-parts.push(`
-
-This is a well-established domain.
-
-Older domains generally have a stronger trust history than newly registered websites.
-
-`);
-
-}
-
-}
-
-
 // ======================
 // 🔒 SSL Certificate
 // ======================
 
-if (sslInfo.success) {
-
-parts.push(`
-
-🔒 SSL Certificate
-
-Status : ${sslInfo.valid ? "Valid" : "Invalid"}
-
-Issuer : ${sslInfo.issuer}
-
-Valid Until : ${sslInfo.validTo}
-
-Expires In : ${sslInfo.expiresInDays} days
-`);
-
-if (sslInfo.risk === "HIGH") {
-
-parts.push(`
-
-The SSL certificate is invalid or expired.
-
-A trusted website should always maintain a valid HTTPS certificate.
-
-Proceed carefully.
-
-`);
-
-}
-
-else {
-
-parts.push(`
-
-The website is protected with a valid HTTPS certificate.
-
-This helps encrypt communication between your browser and the website.
-
-`);
-
-}
-
-}
-
-
 // ======================
 // 🌐 DNS Security
 // ======================
-
-if (dnsInfo.success) {
-
-parts.push(`
-
-🌐 DNS Security
-
-A Record : ${dnsInfo.hasA ? "Found" : "Missing"}
-
-MX Record : ${dnsInfo.hasMX ? "Found" : "Missing"}
-
-NS Record : ${dnsInfo.hasNS ? "Found" : "Missing"}
-
-SPF : ${dnsInfo.hasSPF ? "Enabled" : "Missing"}
-
-DMARC : ${dnsInfo.hasDMARC ? "Enabled" : "Missing"}
-`);
-
-if (dnsInfo.risk === "HIGH") {
-
-parts.push(`
-
-Some important DNS security records are missing.
-
-While this does not always indicate a scam, properly configured websites usually have stronger DNS protection.
-
-`);
-
-}
-
-else {
-
-parts.push(`
-
-The DNS configuration looks healthy.
-
-Important security records are present and properly configured.
-
-`);
-
-}
-
-}
 
 
 // ======================
 // 📋 Overall Assessment
 // ======================
 
-parts.push(`
-
-📋 Overall Assessment
-
-This result combines multiple independent security checks including:
-
-• Scam pattern analysis
-
-• Message analysis
-
-• URL analysis
-
-• Google Safe Browsing
-
-• VirusTotal
-
-• Domain history
-
-• DNS security
-
-• SSL certificate validation
-
-The final verdict is based on all of these signals together rather than any single check.
-
-`);
 
 // =========================================
 // ⚠ SUSPICIOUS (Natural GPT Style)
