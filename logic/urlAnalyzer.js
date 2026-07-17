@@ -139,22 +139,30 @@ function analyzeURL(text) {
 
     // Brand Impersonation
     for (const brand of BRANDS) {
-      if (
-        host.includes(brand) &&
-        host !== `${brand}.com`
-      ) {
+
+    if (host === `${brand}.com`) continue;
+
+    if (host.endsWith(`.${brand}.com`)) continue;
+
+    if (host.includes(brand)) {
+
         result.risk += 30;
+
         result.signals.push("BRAND_IMPERSONATION");
+
         result.reasons.push("BRAND_IMPERSONATION");
+
         result.advice.push("OPEN_OFFICIAL_WEBSITE");
+
         result.evidence.push({
-          id: "BRAND_IMPERSONATION",
-          title: "Brand impersonation detected",
-          severity: "high"
+            id: "BRAND_IMPERSONATION",
+            title: "Brand impersonation detected",
+            severity: "high"
         });
+
         break;
-      }
     }
+}
 
     // Long URL
     if (raw.length > 120) {
