@@ -205,6 +205,12 @@ const advice = [
   finalMessage: "",
   explanation: "",
 
+ safeBrowsingExplanation: "",
+virusTotalExplanation: "",
+domainExplanation: "",
+sslExplanation: "",
+dnsExplanation: "",
+
   // Existing
   signals,
   advice,
