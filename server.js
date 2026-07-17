@@ -3,14 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const {
-  buildExplanation,
-  buildSafeBrowsingExplanation,
-  buildVirusTotalExplanation,
-  buildDomainExplanation,
-  buildSSLExplanation,
-  buildDNSExplanation
-} = require("./logic/buildExplanation");
+const buildExplanation = require("./logic/buildExplanation");
 const { getLanguage } =
 require("./logic/languageEngine");
 const detectScam = require("./logic/scamDetector");
@@ -292,21 +285,6 @@ reputationResult,
   matchedPatterns: scamResult.matchedPatterns || [],
   scamCategory: scamResult.scamCategory || "General"
 };
-
-response.safeBrowsingExplanation =
-  buildSafeBrowsingExplanation(safeBrowsing);
-
-response.virusTotalExplanation =
-  buildVirusTotalExplanation(virusTotal);
-
-response.domainExplanation =
-  buildDomainExplanation(domainInfo);
-
-response.sslExplanation =
-  buildSSLExplanation(sslInfo);
-
-response.dnsExplanation =
-  buildDNSExplanation(dnsInfo);
 
     // =========================
     // 🟢 SAFE
