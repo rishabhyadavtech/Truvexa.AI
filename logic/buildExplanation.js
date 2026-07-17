@@ -13,6 +13,7 @@ function buildExplanation(
 ) {
 
   let parts = [];
+  let smartAdvice = [];
 
   // ===================================
   // SAFE MODE (Natural GPT Style)
@@ -450,7 +451,51 @@ ${urlAnalysis.reasons.map(r=>"• "+r).join("\n")}
 
 }
 
+// =========================================
+// 🧠 Smart Recommendation Engine
+// =========================================
 
+if (scam.scamCategory?.includes("OTP")) {
+
+smartAdvice.push("• Never share your OTP with anyone.");
+
+}
+
+if (scam.scamCategory?.includes("Banking")) {
+
+smartAdvice.push("• Contact your bank through its official helpline if you suspect fraud.");
+
+}
+
+if (scam.scamCategory?.includes("Job")) {
+
+smartAdvice.push("• Genuine employers never ask for registration or joining fees.");
+
+}
+
+if (scam.scamCategory?.includes("Investment")) {
+
+smartAdvice.push("• Verify the investment company before sending money.");
+
+}
+
+if (urlAnalysis.found) {
+
+smartAdvice.push("• Type the website address manually instead of clicking unknown links.");
+
+}
+
+if (safeBrowsing.success && !safeBrowsing.safe) {
+
+smartAdvice.push("• Google Safe Browsing has flagged this website. Avoid visiting it.");
+
+}
+
+if (virusTotal.malicious > 0) {
+
+smartAdvice.push("• Multiple security vendors detected this website as malicious.");
+
+}
 // =========================================
 // 💡 Final Recommendation
 // =========================================
@@ -518,6 +563,18 @@ If you already entered sensitive information:
 • Monitor your accounts for suspicious activity.
 
 `);
+
+if (smartAdvice.length > 0) {
+
+parts.push(`
+
+🔍 Personalized Advice
+
+${smartAdvice.join("\n")}
+
+`);
+
+}
 
 }
 
