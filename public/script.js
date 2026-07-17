@@ -361,8 +361,6 @@ ${data.domainInfo.message}
     // =========================
     // 🎯 FINAL OUTPUT
     // =========================
-    resultBox.innerHTML = data.explanation;
-
 resultBox.innerHTML = data.explanation
 .replace(/\n/g, "<br>")
 .replace(/\[\[SAFE_BROWSING_DETAILS\]\]/g, `
