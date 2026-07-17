@@ -35,14 +35,6 @@ confidenceFill.style.width = "100%";
 confidenceText.innerText = "100%";
 
 feedbackBox.style.display = "none";
-analysisCards.style.display = "none";
-
-evidenceCard.innerHTML = "";
-safeBrowsingCard.innerHTML = "";
-virusTotalCard.innerHTML = "";
-domainCard.innerHTML = "";
-sslCard.innerHTML = "";
-dnsCard.innerHTML = "";
 
 loadingBox.style.display = "block";
 
