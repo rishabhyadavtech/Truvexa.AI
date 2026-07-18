@@ -46,6 +46,7 @@ const {
 
 const {
   checkDNS,
+  buildDNSSummary,
   buildDNSExplanation
 } = require("./logic/dnsChecker");
 
@@ -313,6 +314,9 @@ buildSSLSummary(sslInfo),
 
 sslExplanation:
 buildSSLExplanation(sslInfo),
+
+dnsSummary:
+buildDNSSummary(dnsInfo),
 
 dnsExplanation:
 buildDNSExplanation(dnsInfo),
