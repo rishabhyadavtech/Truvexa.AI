@@ -188,228 +188,8 @@ ${data.dnsExplanation || ""}
   return;
 }
 
-    // =========================
-    // 🔴 / 🟡 COLOR STATE
-    // =========================
-    if (type === "DANGEROUS") {
-      resultBox.classList.add("danger");
-    } else {
-      resultBox.classList.add("warning");
-    }
+      renderResult(data, hasURL);
 
-    // =========================
-    // 🧠 EXPLANATION CLEAN
-    // =========================
-    let explanation = (data.explanation || "").replace(/\n{3,}/g, "\n\n");
-   
-    // =========================
-// 📊 RISK SCORE
-// =========================
-let riskBlock = "";
-
-if (typeof data.riskScore === "number") {
-  riskBlock = `
-----------------------------
-
-📊 Risk Score
-
-${data.riskScore} / 100
-  `;
-}
-
-// =========================
-// 🎯 CONFIDENCE
-// =========================
-let confidenceBlock = "";
-
-if (typeof data.confidence === "number") {
-
-  let bars = Math.round(data.confidence / 10);
-
-  confidenceBlock = `
-----------------------------
-
-🎯 Detection Confidence
-
-${"█".repeat(bars)}${"░".repeat(10-bars)}
-
-${data.confidence}%
-  `;
-}
-
-// =========================
-// 🛡️ SCAM CATEGORY
-// =========================
-let categoryBlock = "";
-
-if (data.scamCategory) {
-
-  categoryBlock = `
-----------------------------
-
-🛡️ Detected Category
-
-${data.scamCategory}
-  `;
-}
-
-// =========================
-// 🔍 EVIDENCE
-// =========================
-let evidenceBlock = "";
-
-if (data.evidence && data.evidence.length > 0) {
-
-  evidenceBlock =
-`
-----------------------------
-
-🔍 Evidence Found
-`;
-
-  data.evidence.forEach(item => {
-
-    evidenceBlock +=
-`
-• ${item.title}
-Severity : ${item.severity}
-Confidence : ${item.confidence}%
-`;
-  });
-
-  }
-    // =========================
-    // 🎯 DECISION BLOCK
-    // =========================
-    let decisionBlock = "";
-
-    if (decision.decision || decision.action || decision.reason) {
-      decisionBlock = `
-----------------------------
-
-🧠 Final Decision:
-
-👉 ${decision.decision || ""}
-
-📌 Kya karein:
-👉 ${decision.action || ""}
-
-💡 Kyun:
-${decision.reason || ""}
-      `;
-    }
-
-    // =========================
-    // ⚠️ SIGNALS BLOCK
-    // =========================
-    let signalsBlock = "";
-
-    if (data.signals && data.signals.length > 0) {
-      signalsBlock = `
-----------------------------
-
-⚠️ Risk Signals:
-- ${data.signals.join("\n- ")}
-      `;
-    }
-
-    // =========================
-    // 👉 ADVICE BLOCK
-    // =========================
-
-let domainBlock = "";
-
-if (
-  hasURL &&
-  data.domainInfo &&
-  data.domainInfo.success
-) {
-
-  domainBlock = `
-----------------------------
-
-🌍 Domain Information
-
-🔹 Domain:
-${data.domainInfo.domain}
-
-📅 Domain Age:
-${data.domainInfo.age}
-
-🏢 Registrar:
-${data.domainInfo.registrar}
-
-⚠️ Domain Risk:
-${data.domainInfo.risk}
-
-📝 Status:
-${data.domainInfo.message}
-`;
-
-}
-    let adviceBlock = "";
-
-    if (data.advice && data.advice.length > 0) {
-      adviceBlock = `
-----------------------------
-
-👉 Aap kya karein:
-- ${data.advice.join("\n- ")}
-      `;
-    }
-
-    // =========================
-    // 🎯 FINAL OUTPUT
-    // =========================
-   resultBox.innerHTML = `
-<div>${data.explanation}</div>
-
-${hasURL ? `
-
-<hr>
-
-<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
-▶ 🛡️ View Google Safe Browsing Details
-</button>
-
-<div id="safeBrowsingDetail" class="detail-box" style="display:none;">
-${data.safeBrowsingExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
-▶ 🦠 View VirusTotal Details
-</button>
-
-<div id="virusTotalDetail" class="detail-box" style="display:none;">
-${data.virusTotalExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('domainDetail')">
-▶ 🌍 View Domain Details
-</button>
-
-<div id="domainDetail" class="detail-box" style="display:none;">
-${data.domainExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('sslDetail')">
-▶ 🔒 View SSL Details
-</button>
-
-<div id="sslDetail" class="detail-box" style="display:none;">
-${data.sslExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('dnsDetail')">
-▶ 🌐 View DNS Details
-</button>
-
-<div id="dnsDetail" class="detail-box" style="display:none;">
-${data.dnsExplanation || ""}
-</div>
-
-` : ""}
-`;
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
@@ -428,6 +208,66 @@ confidenceCard.style.display = "none";
       "❌ Server error. Please refresh and try again.";  
   }  
 }  
+
+function renderResult(data, hasURL) {
+
+resultBox.innerHTML = `
+
+<div class="summary-block">
+
+${data.explanation}
+
+</div>
+
+${hasURL ? `
+
+<hr>
+
+<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
+▶ 🛡 Google Safe Browsing
+</button>
+
+<div id="safeBrowsingDetail" class="detail-box">
+${data.safeBrowsingExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
+▶ 🦠 VirusTotal
+</button>
+
+<div id="virusTotalDetail" class="detail-box">
+${data.virusTotalExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('domainDetail')">
+▶ 🌍 Domain Information
+</button>
+
+<div id="domainDetail" class="detail-box">
+${data.domainExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('sslDetail')">
+▶ 🔒 SSL Certificate
+</button>
+
+<div id="sslDetail" class="detail-box">
+${data.sslExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('dnsDetail')">
+▶ 🌐 DNS Security
+</button>
+
+<div id="dnsDetail" class="detail-box">
+${data.dnsExplanation || ""}
+</div>
+
+` : ""}
+
+`;
+
+}
 
 function toggleDetail(id){
 
