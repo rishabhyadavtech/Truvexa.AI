@@ -111,7 +111,64 @@ async function checkVirusTotal(url) {
   }
 
 }
+function buildVirusTotalExplanation(result) {
+
+  if (!result.success) {
+    return result.message;
+  }
+
+  if (
+    result.malicious === 0 &&
+    result.suspicious === 0
+  ) {
+
+    return `
+
+🦠 VirusTotal Analysis
+
+Status : Clean
+
+Malicious detections : ${result.malicious}
+
+Suspicious detections : ${result.suspicious}
+
+Harmless detections : ${result.harmless}
+
+Undetected : ${result.undetected}
+
+VirusTotal scanned this website using multiple security vendors.
+
+No security vendor reported this website as malicious.
+
+This is a strong trust signal, although no single security check can guarantee complete safety.
+
+`.trim();
+
+  }
+
+  return `
+
+🦠 VirusTotal Analysis
+
+Status : Warning
+
+Malicious detections : ${result.malicious}
+
+Suspicious detections : ${result.suspicious}
+
+Harmless detections : ${result.harmless}
+
+Undetected : ${result.undetected}
+
+One or more security vendors reported this website as suspicious or malicious.
+
+Avoid entering passwords, payment information, or downloading files unless you completely trust this website.
+
+`.trim();
+
+}
 
 module.exports = {
-  checkVirusTotal
+  checkVirusTotal,
+  buildVirusTotalExplanation
 };
