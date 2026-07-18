@@ -188,7 +188,7 @@ ${data.dnsExplanation || ""}
   return;
 }
 
-      renderResult(data, hasURL);
+      renderResult(resultBox,data, hasURL);
 
 
     // ✅ SHOW FEEDBACK UI
