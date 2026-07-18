@@ -168,7 +168,97 @@ else {
   }
 
 }
+function buildDNSExplanation(result) {
+
+  if (!result.success) {
+    return result.message;
+  }
+
+  if (result.risk === "LOW") {
+
+    return `
+
+🌐 DNS Security
+
+Status : Healthy
+
+Domain : ${result.domain}
+
+A Record : ${result.hasA ? "Available" : "Missing"}
+
+MX Record : ${result.hasMX ? "Available" : "Missing"}
+
+NS Record : ${result.hasNS ? "Available" : "Missing"}
+
+SPF Protection : ${result.hasSPF ? "Enabled" : "Missing"}
+
+DMARC Protection : ${result.hasDMARC ? "Enabled" : "Missing"}
+
+The DNS configuration appears healthy.
+
+Important security records are present, which helps improve email security and domain reliability.
+
+`.trim();
+
+  }
+
+  if (result.risk === "MEDIUM") {
+
+    return `
+
+🌐 DNS Security
+
+Status : Moderate Risk
+
+Domain : ${result.domain}
+
+A Record : ${result.hasA ? "Available" : "Missing"}
+
+MX Record : ${result.hasMX ? "Available" : "Missing"}
+
+NS Record : ${result.hasNS ? "Available" : "Missing"}
+
+SPF Protection : ${result.hasSPF ? "Enabled" : "Missing"}
+
+DMARC Protection : ${result.hasDMARC ? "Enabled" : "Missing"}
+
+Some recommended DNS security records are missing.
+
+This does not automatically indicate a malicious website, but stronger DNS security is recommended.
+
+`.trim();
+
+  }
+
+  return `
+
+🌐 DNS Security
+
+Status : High Risk
+
+Domain : ${result.domain}
+
+A Record : ${result.hasA ? "Available" : "Missing"}
+
+MX Record : ${result.hasMX ? "Available" : "Missing"}
+
+NS Record : ${result.hasNS ? "Available" : "Missing"}
+
+SPF Protection : ${result.hasSPF ? "Enabled" : "Missing"}
+
+DMARC Protection : ${result.hasDMARC ? "Enabled" : "Missing"}
+
+Several important DNS security records are missing.
+
+Poor DNS configuration is commonly found on newly created, abandoned, or poorly maintained websites.
+
+Proceed carefully before trusting this website.
+
+`.trim();
+
+}
 
 module.exports = {
-  checkDNS
+  checkDNS,
+  buildDNSExplanation
 };
