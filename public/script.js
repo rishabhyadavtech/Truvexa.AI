@@ -361,7 +361,55 @@ ${data.domainInfo.message}
     // =========================
     // 🎯 FINAL OUTPUT
     // =========================
-   
+   resultBox.innerHTML = `
+<div>${data.explanation}</div>
+
+${hasURL ? `
+
+<hr>
+
+<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
+▶ 🛡️ View Google Safe Browsing Details
+</button>
+
+<div id="safeBrowsingDetail" class="detail-box" style="display:none;">
+${data.safeBrowsingExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
+▶ 🦠 View VirusTotal Details
+</button>
+
+<div id="virusTotalDetail" class="detail-box" style="display:none;">
+${data.virusTotalExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('domainDetail')">
+▶ 🌍 View Domain Details
+</button>
+
+<div id="domainDetail" class="detail-box" style="display:none;">
+${data.domainExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('sslDetail')">
+▶ 🔒 View SSL Details
+</button>
+
+<div id="sslDetail" class="detail-box" style="display:none;">
+${data.sslExplanation || ""}
+</div>
+
+<button class="details-btn" onclick="toggleDetail('dnsDetail')">
+▶ 🌐 View DNS Details
+</button>
+
+<div id="dnsDetail" class="detail-box" style="display:none;">
+${data.dnsExplanation || ""}
+</div>
+
+` : ""}
+`;
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
