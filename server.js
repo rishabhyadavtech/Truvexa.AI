@@ -12,7 +12,11 @@ const { calculateConfidence } = require("./logic/confidenceEngine");
 const { decideAction } = require("./logic/decisionHelper");
 const { analyzeUrlReputation } = require("./logic/urlReputation");
 const { analyzeURL } = require("./logic/urlAnalyzer");
-const { checkDomainAge } = require("./logic/domainAge");
+
+const {
+  checkDomainAge,
+  buildDomainExplanation
+} = require("./domainAge");
 
 const {
   checkSafeBrowsing,
