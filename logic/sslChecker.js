@@ -204,6 +204,49 @@ async function checkSSL(input) {
   });
 
 }
+function buildSSLSummary(result) {
+
+  if (!result.success) {
+    return `🔒 SSL Certificate
+
+${result.message}`;
+  }
+
+  let text = `🔒 SSL Certificate
+
+Status: ${result.valid ? "Valid" : "Invalid"}
+
+Issuer: ${result.issuer}
+
+Risk Level: ${result.risk}
+
+`;
+
+  if (result.risk === "LOW") {
+
+    text +=
+`The SSL certificate is valid and currently trusted. This means your connection to the website is encrypted.`;
+
+  }
+
+  else if (result.risk === "MEDIUM") {
+
+    text +=
+`The SSL certificate is close to expiring. The connection is encrypted, but the certificate should be renewed soon.`;
+
+  }
+
+  else {
+
+    text +=
+`The SSL certificate is invalid or expired. This can indicate an insecure or potentially unsafe website.`;
+
+  }
+
+  return text;
+
+}
+
 function buildSSLExplanation(result) {
 
   if (!result.success) {
@@ -284,5 +327,6 @@ Sensitive information such as passwords or payment details should not be entered
 
 module.exports = {
   checkSSL,
+  buildSSLSummary,
   buildSSLExplanation
 };
