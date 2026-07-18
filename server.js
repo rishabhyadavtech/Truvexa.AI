@@ -27,6 +27,7 @@ const {
 
 const {
   checkSafeBrowsing,
+  buildSafeBrowsingSummary,
   buildSafeBrowsingExplanation
 } = require("./logic/safeBrowsing");
 
@@ -286,7 +287,10 @@ const advice = [
   finalMessage: "",
   explanation: "",
 
- safeBrowsingExplanation:
+ safeBrowsingSummary:
+buildSafeBrowsingSummary(safeBrowsing),
+
+safeBrowsingExplanation:
 buildSafeBrowsingExplanation(safeBrowsing),
 
 virusTotalExplanation:
