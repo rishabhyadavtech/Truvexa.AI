@@ -279,7 +279,7 @@ virusTotalExplanation:
 buildVirusTotalExplanation(virusTotal),
 
 domainExplanation:
-domainInfo.message || "No Domain information available.",
+buildDomainExplanation(domainInfo),
 
 sslExplanation:
 sslInfo.message || "No SSL information available.",
