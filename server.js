@@ -4,39 +4,46 @@ const express = require("express");
 const app = express();
 
 const buildExplanation = require("./logic/buildExplanation");
+
 const { getLanguage } =
 require("./logic/languageEngine");
+
 const detectScam = require("./logic/scamDetector");
+
 const { detectManipulation } = require("./logic/manipulationDetector");
+
 const { calculateConfidence } = require("./logic/confidenceEngine");
+
 const { decideAction } = require("./logic/decisionHelper");
+
 const { analyzeUrlReputation } = require("./logic/urlReputation");
+
 const { analyzeURL } = require("./logic/urlAnalyzer");
 
 const {
   checkDomainAge,
   buildDomainExplanation
-} = require("./domainAge");
+} = require("./logic/domainAge");
 
 const {
   checkSafeBrowsing,
   buildSafeBrowsingExplanation
-} = require("./safeBrowsing");
+} = require("./logic/safeBrowsing");
 
 const {
   checkVirusTotal,
   buildVirusTotalExplanation
-} = require("./virusTotal");
+} = require("./logic/virusTotal");
 
 const {
   checkSSL,
   buildSSLExplanation
-} = require("./ssl");
+} = require("./logic/ssl");
 
 const {
   checkDNS,
   buildDNSExplanation
-} = require("./dns");
+} = require("./logic/dns");
 
 app.use(express.json());
 app.use(express.static("public"));
