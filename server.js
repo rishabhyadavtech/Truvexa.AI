@@ -28,12 +28,15 @@ const {
   buildVirusTotalExplanation
 } = require("./virusTotal");
 
-const { checkDNS } = require("./logic/dnsChecker");
-
 const {
   checkSSL,
   buildSSLExplanation
 } = require("./ssl");
+
+const {
+  checkDNS,
+  buildDNSExplanation
+} = require("./dns");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -289,7 +292,7 @@ sslExplanation:
 buildSSLExplanation(sslInfo),
 
 dnsExplanation:
-dnsInfo.message || "No DNS information available.",
+buildDNSExplanation(dnsInfo),
 
   // Existing
   signals,
