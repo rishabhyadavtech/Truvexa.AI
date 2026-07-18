@@ -116,7 +116,9 @@ data.language || "hi";
   resultBox.className = "card result-card safe";
 
   resultBox.innerHTML = `
-<div>${data.explanation}</div>
+<div class="summary-block">
+${data.explanation}
+</div>
 
 ${hasURL ? `
 
