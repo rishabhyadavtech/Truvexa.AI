@@ -168,6 +168,53 @@ else {
   }
 
 }
+function buildDNSSummary(result) {
+
+  if (!result.success) {
+
+    return `🌐 DNS Security
+
+${result.message}`;
+
+  }
+
+  let text = `🌐 DNS Security
+
+Risk Level: ${result.risk}
+
+`;
+
+  if (result.risk === "LOW") {
+
+    text +=
+`Essential DNS records were found.
+
+The domain appears to have a healthy DNS configuration, which improves reliability and email security.`;
+
+  }
+
+  else if (result.risk === "MEDIUM") {
+
+    text +=
+`Some recommended DNS records are missing.
+
+The website may still be legitimate, but its security configuration could be improved.`;
+
+  }
+
+  else {
+
+    text +=
+`Several important DNS records are missing.
+
+Poor DNS configuration can reduce trust and may indicate a weak or poorly maintained website.`;
+
+  }
+
+  return text;
+
+}
+
 function buildDNSExplanation(result) {
 
   if (!result.success) {
@@ -260,5 +307,6 @@ Proceed carefully before trusting this website.
 
 module.exports = {
   checkDNS,
+  buildDNSSummary,
   buildDNSExplanation
 };
