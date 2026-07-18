@@ -22,6 +22,7 @@ const { analyzeURL } = require("./logic/urlAnalyzer");
 
 const {
   checkDomainAge,
+  buildDomainSummary,
   buildDomainExplanation
 } = require("./logic/domainAge");
 
@@ -299,6 +300,9 @@ buildVirusTotalSummary(virusTotal),
 
 virusTotalExplanation:
 buildVirusTotalExplanation(virusTotal),
+
+domainSummary:
+buildDomainSummary(domainInfo),
 
 domainExplanation:
 buildDomainExplanation(domainInfo),
