@@ -607,19 +607,21 @@ cursor:pointer;
 
 user-select:none;
 
+transition:color .2s ease;
 }
 
 .details-btn:hover{
 
 text-decoration:underline;
-
 }
 
-.details-box{
+.detail-box{
 
 display:none;
 
 margin-top:10px;
+
+margin-bottom:12px;
 
 padding:12px;
 
@@ -633,4 +635,7 @@ white-space:pre-wrap;
 
 line-height:1.6;
 
+font-size:14px;
+
+overflow-x:auto;
 }
