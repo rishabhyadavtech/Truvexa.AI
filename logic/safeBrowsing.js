@@ -165,8 +165,34 @@ Avoid opening this website unless you completely trust the source.
 `.trim();
 
 }
+function buildSafeBrowsingSummary(result) {
+
+if (!result.success) {
+
+return "Google Safe Browsing could not be checked right now.";
+
+}
+
+if (result.safe) {
+
+return `
+This website looks safe based on Google's security database.
+
+Google did not find any known phishing, malware, or harmful activity associated with this website.
+`.trim();
+
+}
+
+return `
+Google Safe Browsing has flagged this website as potentially unsafe.
+
+Proceed only after careful verification.
+`.trim();
+
+}
 
 module.exports = {
   checkSafeBrowsing,
+  buildSafeBrowsingSummary,
   buildSafeBrowsingExplanation
 };
