@@ -43,7 +43,7 @@ const {
 const {
   checkDNS,
   buildDNSExplanation
-} = require("./logic/dns");
+} = require("./logic/dnsChecker");
 
 app.use(express.json());
 app.use(express.static("public"));
