@@ -19,7 +19,11 @@ const {
   buildSafeBrowsingExplanation
 } = require("./safeBrowsing");
 
-const { checkVirusTotal } = require("./logic/virusTotal");
+const {
+  checkVirusTotal,
+  buildVirusTotalExplanation
+} = require("./virusTotal");
+
 const { checkDNS } = require("./logic/dnsChecker");
 const { checkSSL } = require("./logic/sslChecker");
 
@@ -268,7 +272,7 @@ const advice = [
 buildSafeBrowsingExplanation(safeBrowsing),
 
 virusTotalExplanation:
-virusTotal.message || "No VirusTotal information available.",
+buildVirusTotalExplanation(virusTotal),
 
 domainExplanation:
 domainInfo.message || "No Domain information available.",
