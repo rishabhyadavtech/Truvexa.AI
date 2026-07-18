@@ -29,7 +29,11 @@ const {
 } = require("./virusTotal");
 
 const { checkDNS } = require("./logic/dnsChecker");
-const { checkSSL } = require("./logic/sslChecker");
+
+const {
+  checkSSL,
+  buildSSLExplanation
+} = require("./ssl");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -282,7 +286,7 @@ domainExplanation:
 buildDomainExplanation(domainInfo),
 
 sslExplanation:
-sslInfo.message || "No SSL information available.",
+buildSSLExplanation(sslInfo),
 
 dnsExplanation:
 dnsInfo.message || "No DNS information available.",
