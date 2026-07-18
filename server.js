@@ -13,7 +13,12 @@ const { decideAction } = require("./logic/decisionHelper");
 const { analyzeUrlReputation } = require("./logic/urlReputation");
 const { analyzeURL } = require("./logic/urlAnalyzer");
 const { checkDomainAge } = require("./logic/domainAge");
-const { checkSafeBrowsing } = require("./logic/safeBrowsing");
+
+const {
+  checkSafeBrowsing,
+  buildSafeBrowsingExplanation
+} = require("./safeBrowsing");
+
 const { checkVirusTotal } = require("./logic/virusTotal");
 const { checkDNS } = require("./logic/dnsChecker");
 const { checkSSL } = require("./logic/sslChecker");
@@ -259,7 +264,8 @@ const advice = [
   finalMessage: "",
   explanation: "",
 
- safeBrowsingExplanation: safeBrowsing.message || "No Google Safe Browsing information available.",
+ safeBrowsingExplanation:
+buildSafeBrowsingExplanation(safeBrowsing),
 
 virusTotalExplanation:
 virusTotal.message || "No VirusTotal information available.",
