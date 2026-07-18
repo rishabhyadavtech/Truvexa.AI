@@ -351,6 +351,64 @@ reputationResult,
 );
 
 }
+
+  response.safeBrowsingExplanation = `
+Status : ${safeBrowsing.safe ? "Safe" : "Unsafe"}
+
+${safeBrowsing.message}
+
+Threats:
+${safeBrowsing.threats?.length ? safeBrowsing.threats.join("\n") : "No threats detected."}
+`;
+
+response.virusTotalExplanation = `
+Malicious : ${virusTotal.malicious}
+
+Suspicious : ${virusTotal.suspicious}
+
+Harmless : ${virusTotal.harmless}
+
+Undetected : ${virusTotal.undetected}
+
+${virusTotal.message}
+`;
+
+response.domainExplanation = `
+Domain : ${domainInfo.domain || "Unknown"}
+
+Age : ${domainInfo.age || "Unknown"}
+
+Registrar : ${domainInfo.registrar || "Unknown"}
+
+Risk : ${domainInfo.risk || "Unknown"}
+
+${domainInfo.message || ""}
+`;
+
+response.sslExplanation = `
+Status : ${sslInfo.valid ? "Valid" : "Invalid"}
+
+Issuer : ${sslInfo.issuer || "Unknown"}
+
+Valid Until : ${sslInfo.validTo || "Unknown"}
+
+Risk : ${sslInfo.risk || "Unknown"}
+`;
+
+response.dnsExplanation = `
+A Record : ${dnsInfo.hasA ? "Yes" : "No"}
+
+MX Record : ${dnsInfo.hasMX ? "Yes" : "No"}
+
+NS Record : ${dnsInfo.hasNS ? "Yes" : "No"}
+
+SPF : ${dnsInfo.hasSPF ? "Yes" : "No"}
+
+DMARC : ${dnsInfo.hasDMARC ? "Yes" : "No"}
+
+Risk : ${dnsInfo.risk || "Unknown"}
+`;
+
     // ✅ SEND FINAL
     res.json(response);
 
