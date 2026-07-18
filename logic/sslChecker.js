@@ -204,7 +204,85 @@ async function checkSSL(input) {
   });
 
 }
+function buildSSLExplanation(result) {
+
+  if (!result.success) {
+    return result.message;
+  }
+
+  if (result.risk === "LOW") {
+
+    return `
+
+🔒 SSL Certificate
+
+Status : Valid
+
+Domain : ${result.domain}
+
+Certificate Issuer : ${result.issuer}
+
+Valid From : ${result.validFrom}
+
+Valid Until : ${result.validTo}
+
+Days Remaining : ${result.expiresInDays}
+
+The website is protected with a valid HTTPS certificate.
+
+This means data exchanged between your browser and the website is encrypted, helping protect passwords and personal information during transmission.
+
+`.trim();
+
+  }
+
+  if (result.risk === "MEDIUM") {
+
+    return `
+
+🔒 SSL Certificate
+
+Status : Expiring Soon
+
+Domain : ${result.domain}
+
+Certificate Issuer : ${result.issuer}
+
+Valid Until : ${result.validTo}
+
+Days Remaining : ${result.expiresInDays}
+
+The SSL certificate is still valid but will expire soon.
+
+While this is not necessarily dangerous, website owners should renew the certificate to maintain secure communication.
+
+`.trim();
+
+  }
+
+  return `
+
+🔒 SSL Certificate
+
+Status : Invalid
+
+Domain : ${result.domain}
+
+Certificate Issuer : ${result.issuer}
+
+Valid Until : ${result.validTo}
+
+Days Remaining : ${result.expiresInDays}
+
+The SSL certificate is expired, invalid, or missing.
+
+Sensitive information such as passwords or payment details should not be entered unless the issue is resolved and the website is trusted.
+
+`.trim();
+
+}
 
 module.exports = {
-  checkSSL
+  checkSSL,
+  buildSSLExplanation
 };
