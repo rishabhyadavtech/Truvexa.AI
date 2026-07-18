@@ -273,19 +273,20 @@ function toggleDetail(id){
 
 const box=document.getElementById(id);
 
-if(box.style.display==="none"){
+if(
+box.style.display==="none" ||
+box.style.display===""){
 
 box.style.display="block";
 
-}
-
-else{
+}else{
 
 box.style.display="none";
 
 }
 
 }
+
 function getSeverityBadge(severity) {
 
   switch ((severity || "").toLowerCase()) {
