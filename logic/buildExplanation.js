@@ -147,30 +147,6 @@ Always pause and verify before taking action.
 }
 
 // =======================================
-// 🔗 URL Analysis
-// =======================================
-
-if (
-urlAnalysis.found &&
-urlAnalysis.reasons &&
-urlAnalysis.reasons.length
-){
-
-parts.push(`
-
-🔗 URL Analysis
-
-I also inspected the website address itself.
-
-Possible observations:
-
-${urlAnalysis.reasons.map(r=>"• "+r).join("\n")}
-
-`);
-
-}
-
-// =======================================
 // 🧠 Smart Recommendation Engine
 // =======================================
 
