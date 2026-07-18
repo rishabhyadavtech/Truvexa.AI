@@ -145,7 +145,85 @@ if (years > 0) {
   }
 
 }
+function buildDomainExplanation(result) {
+
+  if (!result.success) {
+    return result.message;
+  }
+
+  if (result.risk === "LOW") {
+
+    return `
+
+🌍 Domain Information
+
+Status : Trusted
+
+Domain : ${result.domain}
+
+Age : ${result.age}
+
+Registrar : ${result.registrar}
+
+Creation Date : ${result.created}
+
+This domain has been registered for a long time.
+
+Older domains are generally more trustworthy because scammers usually prefer newly created domains that can be abandoned quickly.
+
+`.trim();
+
+  }
+
+  if (result.risk === "MEDIUM") {
+
+    return `
+
+🌍 Domain Information
+
+Status : Moderate Risk
+
+Domain : ${result.domain}
+
+Age : ${result.age}
+
+Registrar : ${result.registrar}
+
+Creation Date : ${result.created}
+
+This domain is relatively new.
+
+A newer domain does not automatically indicate a scam, but it deserves additional verification before sharing sensitive information.
+
+`.trim();
+
+  }
+
+  return `
+
+🌍 Domain Information
+
+Status : High Risk
+
+Domain : ${result.domain}
+
+Age : ${result.age}
+
+Registrar : ${result.registrar}
+
+Creation Date : ${result.created}
+
+This domain was registered very recently.
+
+Newly created domains are commonly used for phishing, fake investment websites, fake job portals, and other online scams.
+
+Proceed with extreme caution.
+
+`.trim();
+
+}
 
 module.exports = {
-  checkDomainAge
+  checkDomainAge,
+  buildDomainExplanation
 };
