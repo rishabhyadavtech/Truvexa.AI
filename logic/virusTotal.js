@@ -111,6 +111,32 @@ async function checkVirusTotal(url) {
   }
 
 }
+function buildVirusTotalSummary(result) {
+
+if (!result.success) {
+
+return "VirusTotal scan could not be completed.";
+
+}
+
+if (result.malicious === 0 && result.suspicious === 0) {
+
+return `
+VirusTotal scanned this website using multiple security vendors.
+
+No security vendor detected malware or suspicious activity.
+`.trim();
+
+}
+
+return `
+One or more security vendors reported this website as suspicious or malicious.
+
+Please review the detailed scan before trusting this website.
+`.trim();
+
+}
+
 function buildVirusTotalExplanation(result) {
 
   if (!result.success) {
@@ -170,5 +196,6 @@ Avoid entering passwords, payment information, or downloading files unless you c
 
 module.exports = {
   checkVirusTotal,
+  buildVirusTotalSummary,
   buildVirusTotalExplanation
 };
