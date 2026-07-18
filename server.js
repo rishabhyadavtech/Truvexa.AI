@@ -286,7 +286,7 @@ virusTotalExplanation:
 buildVirusTotalExplanation(virusTotal),
 
 domainExplanation:
-buildDomainExplanation(domainInfo),
+buildDomainExplanation(domainAge),
 
 sslExplanation:
 buildSSLExplanation(sslInfo),
