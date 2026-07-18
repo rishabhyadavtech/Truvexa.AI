@@ -224,6 +224,6 @@ Proceed with extreme caution.
 }
 
 module.exports = {
-  checkdomainAge,
+  checkDomainAge,
   buildDomainExplanation
 };
