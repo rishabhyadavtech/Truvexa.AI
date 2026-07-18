@@ -40,6 +40,7 @@ const {
 
 const {
   checkSSL,
+  buildSSLSummary,
   buildSSLExplanation
 } = require("./logic/sslChecker");
 
@@ -306,6 +307,9 @@ buildDomainSummary(domainInfo),
 
 domainExplanation:
 buildDomainExplanation(domainInfo),
+
+sslSummary:
+buildSSLSummary(sslInfo),
 
 sslExplanation:
 buildSSLExplanation(sslInfo),
