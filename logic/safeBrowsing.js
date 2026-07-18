@@ -122,7 +122,51 @@ async function checkSafeBrowsing(url) {
   }
 
 }
+function buildSafeBrowsingExplanation(result) {
+
+if (!result.success) {
+
+return result.message;
+
+}
+
+if (result.safe) {
+
+return `
+
+🛡 Google Safe Browsing
+
+Status : Safe
+
+Google's Safe Browsing database did not detect this website as phishing, malware, deceptive, or harmful.
+
+Threats Found : None
+
+This is a strong trust signal, although it should still be combined with other security checks.
+
+`.trim();
+
+}
+
+return `
+
+🛡 Google Safe Browsing
+
+Status : Unsafe
+
+Google has identified this website as potentially dangerous.
+
+Threat Types:
+
+${result.threats.map(t => "• " + t).join("\n")}
+
+Avoid opening this website unless you completely trust the source.
+
+`.trim();
+
+}
 
 module.exports = {
-  checkSafeBrowsing
+  checkSafeBrowsing,
+  buildSafeBrowsingExplanation
 };
