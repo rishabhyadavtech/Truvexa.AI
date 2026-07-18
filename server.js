@@ -33,6 +33,7 @@ const {
 
 const {
   checkVirusTotal,
+  buildVirusTotalSummary,
   buildVirusTotalExplanation
 } = require("./logic/virusTotal");
 
@@ -292,6 +293,9 @@ buildSafeBrowsingSummary(safeBrowsing),
 
 safeBrowsingExplanation:
 buildSafeBrowsingExplanation(safeBrowsing),
+
+virusTotalSummary:
+buildVirusTotalSummary(virusTotal),
 
 virusTotalExplanation:
 buildVirusTotalExplanation(virusTotal),
