@@ -209,7 +209,7 @@ confidenceCard.style.display = "none";
   }  
 }  
 
-function renderResult(data, hasURL) {
+function renderResult(resultBox,data, hasURL) {
 
 resultBox.innerHTML = `
 
