@@ -114,84 +114,13 @@ data.language || "hi";
    if (type === "SAFE") {
 
   resultBox.className = "card result-card safe";
-
-  resultBox.innerHTML = `
-<div class="summary-block">
-${data.explanation}
-</div>
-
-${hasURL ? `
-
-<hr>
-
-<div class="detail-links">
-
-<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
-▶🛡️View Google Safe Browsing Details
-</button>
-
-<div
-id="safeBrowsingDetail"
-class="detail-box"
-style="display:none;">
-${data.safeBrowsingExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
-▶🦠View VirusTotal Scan Details
-</button>
-
-<div
-id="virusTotalDetail"
-class="detail-box"
-style="display:none;">
-${data.virusTotalExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('domainDetail')">
-▶🌍view Domain Information
-</button>
-
-<div
-id="domainDetail"
-class="detail-box"
-style="display:none;">
-${data.domainExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('sslDetail')">
-▶🔒View SSL Certificate Details
-</button>
-
-<div
-id="sslDetail"
-class="detail-box"
-style="display:none;">
-${data.sslExplanation || ""}
-</div>
-
-<button class="details-btn" onclick="toggleDetail('dnsDetail')">
-▶🌐View DNS Security Details
-</button>
-
-<div
-id="dnsDetail"
-class="detail-box"
-style="display:none;">
-${data.dnsExplanation || ""}
-</div>
-
-` : ""}
-
-`;
+ 
+  renderResult(resultBox,data, hasURL);
 
   feedbackBox.style.display = "block";
 
   return;
 }
-
-      renderResult(resultBox,data, hasURL);
-
 
     // ✅ SHOW FEEDBACK UI
     feedbackBox.style.display = "block";
