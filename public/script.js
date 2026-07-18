@@ -225,44 +225,139 @@ ${hasURL ? `
 
 <hr>
 
-<button class="details-btn" onclick="toggleDetail('safeBrowsingDetail')">
-▶ 🛡 Google Safe Browsing
+<div class="security-summary">
+
+<div class="summary-title">
+🛡 Google Safe Browsing
+</div>
+
+<div class="summary-text">
+${data.safeBrowsingSummary || ""}
+</div>
+
+<button class="details-btn"
+onclick="toggleDetail('safeBrowsingDetail')">
+
+▶ View Details
+
 </button>
 
-<div id="safeBrowsingDetail" class="detail-box">
+<div id="safeBrowsingDetail"
+class="detail-box"
+style="display:none;">
+
 ${data.safeBrowsingExplanation || ""}
+
 </div>
 
-<button class="details-btn" onclick="toggleDetail('virusTotalDetail')">
-▶ 🦠 VirusTotal
+</div>
+
+<div class="security-summary">
+
+<div class="summary-title">
+🦠 VirusTotal
+</div>
+
+<div class="summary-text">
+${data.virusTotalSummary || ""}
+</div>
+
+<button class="details-btn"
+onclick="toggleDetail('virusTotalDetail')">
+
+▶ View Details
+
 </button>
 
-<div id="virusTotalDetail" class="detail-box">
+<div id="virusTotalDetail"
+class="detail-box"
+style="display:none;">
+
 ${data.virusTotalExplanation || ""}
+
 </div>
 
-<button class="details-btn" onclick="toggleDetail('domainDetail')">
-▶ 🌍 Domain Information
+</div>
+
+<div class="security-summary">
+
+<div class="summary-title">
+🌍 Domain Information
+</div>
+
+<div class="summary-text">
+${data.domainSummary || ""}
+</div>
+
+<button class="details-btn"
+onclick="toggleDetail('domainDetail')">
+
+▶ View Details
+
 </button>
 
-<div id="domainDetail" class="detail-box">
+<div id="domainDetail"
+class="detail-box"
+style="display:none;">
+
 ${data.domainExplanation || ""}
+
 </div>
 
-<button class="details-btn" onclick="toggleDetail('sslDetail')">
-▶ 🔒 SSL Certificate
+</div>
+
+<div class="security-summary">
+
+<div class="summary-title">
+🔒 SSL Certificate
+</div>
+
+<div class="summary-text">
+${data.sslSummary || ""}
+</div>
+
+<button class="details-btn"
+onclick="toggleDetail('sslDetail')">
+
+▶ View Details
+
 </button>
 
-<div id="sslDetail" class="detail-box">
+<div id="sslDetail"
+class="detail-box"
+style="display:none;">
+
 ${data.sslExplanation || ""}
+
 </div>
 
-<button class="details-btn" onclick="toggleDetail('dnsDetail')">
-▶ 🌐 DNS Security
+</div>
+
+<div class="security-summary">
+
+<div class="summary-title">
+🌐 DNS Security
+</div>
+
+<div class="summary-text">
+${data.dnsSummary || ""}
+</div>
+
+<button class="details-btn"
+onclick="toggleDetail('dnsDetail')">
+
+▶ View Details
+
 </button>
 
-<div id="dnsDetail" class="detail-box">
+<div id="dnsDetail"
+class="detail-box"
+style="display:none;">
+
 ${data.dnsExplanation || ""}
+
+</div>
+
 </div>
 
 ` : ""}
