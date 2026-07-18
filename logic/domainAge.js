@@ -145,6 +145,49 @@ if (years > 0) {
   }
 
 }
+function buildDomainSummary(result) {
+
+  if (!result.success) {
+    return `🌍 Domain Information
+
+${result.message}`;
+  }
+
+  let text = `🌍 Domain Information
+
+Domain: ${result.domain}
+
+Age: ${result.age}
+
+Risk Level: ${result.risk}
+
+`;
+
+  if (result.risk === "LOW") {
+
+    text +=
+`This domain has existed for a long time, which generally increases trust.`;
+
+  }
+
+  else if (result.risk === "MEDIUM") {
+
+    text +=
+`The domain is relatively new. Verify the website before trusting it.`;
+
+  }
+
+  else {
+
+    text +=
+`This is a very new domain. Scam websites often use recently registered domains.`;
+
+  }
+
+  return text;
+
+}
+
 function buildDomainExplanation(result) {
 
   if (!result.success) {
@@ -225,5 +268,6 @@ Proceed with extreme caution.
 
 module.exports = {
   checkDomainAge,
+  buildDomainSummary,
   buildDomainExplanation
 };
