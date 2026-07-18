@@ -259,11 +259,19 @@ const advice = [
   finalMessage: "",
   explanation: "",
 
- safeBrowsingExplanation: "",
-virusTotalExplanation: "",
-domainExplanation: "",
-sslExplanation: "",
-dnsExplanation: "",
+ safeBrowsingExplanation: safeBrowsing.message || "No Google Safe Browsing information available.",
+
+virusTotalExplanation:
+virusTotal.message || "No VirusTotal information available.",
+
+domainExplanation:
+domainInfo.message || "No Domain information available.",
+
+sslExplanation:
+sslInfo.message || "No SSL information available.",
+
+dnsExplanation:
+dnsInfo.message || "No DNS information available.",
 
   // Existing
   signals,
