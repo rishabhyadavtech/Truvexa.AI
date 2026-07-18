@@ -38,7 +38,7 @@ const {
 const {
   checkSSL,
   buildSSLExplanation
-} = require("./logic/ssl");
+} = require("./logic/sslChecker");
 
 const {
   checkDNS,
