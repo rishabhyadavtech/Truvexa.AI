@@ -416,7 +416,7 @@ Please try again later.
 // =========================
 // 🚨 OPEN REPORT MODAL
 // =========================
-async function reportIssue(){
+  function reportIssue(){
 
 const modal =
 document.getElementById("reportModal");
@@ -427,7 +427,7 @@ modal.style.display="flex";
 // ==========================
 // 📌 CLOSE REPORT MODAL
 // ==========================
-async function closeReportModal(){
+function closeReportModal(){
 
 document.getElementById(
 "reportModal"
@@ -486,9 +486,6 @@ async function submitReport() {
         })
       }
     );
-
-   closeReportModal();  
-document.getElementById("customReport").value="";
 
 document.querySelector(".feedback-actions").innerHTML = `
 
