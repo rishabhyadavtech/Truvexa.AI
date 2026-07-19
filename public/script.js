@@ -340,24 +340,6 @@ function getSeverityBadge(severity) {
 // 👍 FEEDBACK SYSTEM
 // =========================
 async function sendFeedback(type) {
-  
-   document.querySelector(".feedback-actions").innerHTML = `
-<button
-class="btn-success"
-onclick="sendFeedback('yes')">
-
-👍 Yes, Helpful
-
-</button>
-
-<button
-class="btn-danger"
-onclick="reportIssue()">
-
-👎 Needs Improvement
-
-</button>
-`;
 
   const message = document.getElementById("input").value;
 
@@ -416,6 +398,18 @@ async function reportIssue(){
 const modal =
 document.getElementById("reportModal");
 
+modal.style.display="flex";
+
+}
+// ==========================
+// 📌 CLOSE REPORT MODAL
+// ==========================
+async function closeReportModal(){
+
+document.getElementById(
+"reportModal"
+).style.display="none";
+
 document.getElementById(
 "customReport"
 ).value="";
@@ -426,10 +420,7 @@ document
 )
 .forEach(x=>x.checked=false);
 
-modal.style.display="flex";
-
 }
-
 // =========================
 // 📤 SUBMIT REPORT
 // =========================
@@ -473,14 +464,7 @@ async function submitReport() {
       }
     );
 
-    closeReportModal();
-document.getElementById("customReport").value="";
-
-document
-.querySelectorAll(
-'input[name="reportReason"]'
-)
-.forEach(x=>x.checked=false);
+ 
 
 document.querySelector(".feedback-actions").innerHTML = `
 
@@ -499,8 +483,6 @@ Thank you for helping make Truvexa AI better.
 `;
 
 document.querySelector(".feedback-note").style.display = "none";
-
-    closeReportModal();
 
   } catch (err) {
 
