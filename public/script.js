@@ -1,5 +1,7 @@
 async function checkScam() {
 
+console.log("✅ checkScam started");
+
   const message = document.getElementById("input").value.trim();
 const language =
 document.getElementById("language").value;
@@ -60,6 +62,8 @@ document.querySelector(".feedback-note").style.display = "block";
 
 loadingBox.style.display = "block";
 
+console.log("✅ Loading shown");
+
 riskMeter.style.display = "none";
 
 confidenceCard.style.display = "none";
@@ -76,11 +80,16 @@ confidenceCard.style.display = "none";
     if (!res.ok) throw new Error("Server error");
 
     const data = await res.json();
+    console.log("✅ Response received", data);
+
     const hasURL =
 data.urlAnalysis &&
 data.urlAnalysis.found;
 
    loadingBox.style.display = "none";
+
+console.log("✅ Loading shown");
+
 
 riskMeter.style.display = "block";
 
