@@ -431,17 +431,6 @@ modal.style.display="flex";
 }
 
 // =========================
-// ❌ CLOSE REPORT MODAL
-// =========================
-function closeReportModal() {
-
-  document.getElementById(
-    "reportModal"
-  ).style.display = "none";
-}
-
-
-// =========================
 // 📤 SUBMIT REPORT
 // =========================
 async function submitReport() {
@@ -493,7 +482,7 @@ document
 )
 .forEach(x=>x.checked=false);
 
-document.querySelector(".feedback-actions").innerHTML=`
+document.querySelector(".feedback-actions").innerHTML = `
 
 <div class="feedback-success">
 
@@ -507,7 +496,9 @@ Thank you for helping make Truvexa AI better.
 
 </div>
 
-document.querySelector(".feedback-note").style.display="none";
+`;
+
+document.querySelector(".feedback-note").style.display = "none";
 
     closeReportModal();
 
