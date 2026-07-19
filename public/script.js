@@ -357,27 +357,60 @@ async function sendFeedback(type) {
       }
     );
 
-    alert("❤️ Feedback saved successfully");
+   document.querySelector(".feedback-actions").innerHTML = `
+
+<div class="feedback-success">
+
+✅ Thank you ☺️!
+
+<br><br>
+
+Your feedback helps improve
+future scam detection accuracy.
+
+</div>
+
+`;
 
   } catch (err) {
 
     console.error(err);
 
-    alert("❌ Feedback failed");
-  }
+    document.querySelector(".feedback-actions").innerHTML = `
+
+<div class="feedback-error">
+
+❌ Unable to save feedback.
+
+Please try again later.
+
+</div>
+
+`;
 }
 
 
 // =========================
 // 🚨 OPEN REPORT MODAL
 // =========================
-async function reportIssue() {
+async function reportIssue(){
 
-  document.getElementById(
-    "reportModal"
-  ).style.display = "flex";
+const modal =
+document.getElementById("reportModal");
+
+document.getElementById(
+"customReport"
+).value="";
+
+document
+.querySelectorAll(
+'input[name="reportReason"]'
+)
+.forEach(x=>x.checked=false);
+
+modal.style.display="flex";
+
 }
-
 
 // =========================
 // ❌ CLOSE REPORT MODAL
@@ -433,7 +466,25 @@ async function submitReport() {
       }
     );
 
-    alert("✅ Report submitted successfully");
+    closeReportModal();
+
+document.querySelector(".feedback-actions").innerHTML=`
+
+<div class="feedback-success">
+
+✅ Thank you ☺️!
+
+<br><br>
+
+Your report has been submitted.
+
+Truvexa AI will use this
+feedback to improve future
+detections.
+
+</div>
+
+`;
 
     closeReportModal();
 
@@ -441,6 +492,16 @@ async function submitReport() {
 
     console.error(err);
 
-    alert("❌ Report failed");
+    document.querySelector(".feedback-actions").innerHTML=`
+
+<div class="feedback-error">
+
+❌ Unable to submit report.
+
+Please try again.
+
+</div>
+
+`;
   }
-}
+
