@@ -200,6 +200,13 @@ cursor:pointer;
 transition:.25s;
 
 }
+.feedback-box:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+}
 .btn-success {
   background: #22c55e;
   color: white;
@@ -318,15 +325,21 @@ animation:popup .25s ease;
 }
 @keyframes popup{
 
-from{
+0%{
 
 opacity:0;
 
-transform:translateY(20px) scale(.95);
+transform:translateY(25px) scale(.94);
 
 }
 
-to{
+70%{
+
+transform:translateY(-3px) scale(1.01);
+
+}
+
+100%{
 
 opacity:1;
 
@@ -344,24 +357,60 @@ transform:translateY(0) scale(1);
 
   margin: 16px 0;
 }
+.report-options label{
 
-.report-options label {
-  font-size: 14px;
-  color: #333;
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+.report-options label:hover{
+
+background:#f3f4f6;
+
 }
 
-#customReport {
-  width: 100%;
+#customReport{
 
-  border: 1px solid #ddd;
+width:100%;
 
-  border-radius: 12px;
+padding:14px;
 
-  padding: 12px;
+border:1px solid #d1d5db;
 
-  resize: none;
+border-radius:12px;
 
-  margin-top: 10px;
+resize:vertical;
+
+min-height:110px;
+
+font-size:14px;
+
+font-family:inherit;
+
+outline:none;
+
+transition:.25s;
+
+margin-top:10px;
+
+}
+#customReport:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
 }
 
 .report-actions {
@@ -403,6 +452,27 @@ font-weight:600;
 cursor:pointer;
 
 transition:.25s;
+
+}
+.feedback-actions button:active,
+.report-actions button:active{
+
+transform:scale(.98);
+
+}
+@media(max-width:480px){
+
+.feedback-actions{
+
+flex-direction:column;
+
+}
+
+.report-actions{
+
+flex-direction:column;
+
+}
 
 }
 /* ===========================
