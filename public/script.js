@@ -488,13 +488,7 @@ async function submitReport() {
     );
 
    closeReportModal();  
-document.getElementById("customReport").value="";  
-  
-document  
-.querySelectorAll(  
-'input[name="reportReason"]'  
-)  
-.forEach(x=>x.checked=false);  
+document.getElementById("customReport").value="";
 
 document.querySelector(".feedback-actions").innerHTML = `
 
@@ -518,14 +512,21 @@ document.querySelector(".feedback-note").style.display = "none";
 
   } catch (err) {
 
-    console.error(err);
+  console.error(err);
 
-    document.querySelector(".feedback-actions").innerHTML=`
+  alert("❌ Unable to submit report. Please try again.");
 
+  document.querySelector(".feedback-actions").innerHTML = `
 
 <div class="feedback-error">
 
-alert("❌ Unable to submit report. Please try again.");
+❌ Unable to submit report.
 
-  }
+Please try again later.
+
+</div>
+
+`;
+
+}
 
