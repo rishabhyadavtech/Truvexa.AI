@@ -340,6 +340,24 @@ function getSeverityBadge(severity) {
 // 👍 FEEDBACK SYSTEM
 // =========================
 async function sendFeedback(type) {
+  
+   document.querySelector(".feedback-actions").innerHTML = `
+<button
+class="btn-success"
+onclick="sendFeedback('yes')">
+
+👍 Yes, Helpful
+
+</button>
+
+<button
+class="btn-danger"
+onclick="reportIssue()">
+
+👎 Needs Improvement
+
+</button>
+`;
 
   const message = document.getElementById("input").value;
 
@@ -389,7 +407,7 @@ Please try again later.
 `;
 }
 
-
+}
 // =========================
 // 🚨 OPEN REPORT MODAL
 // =========================
@@ -467,24 +485,29 @@ async function submitReport() {
     );
 
     closeReportModal();
+document.getElementById("customReport").value="";
+
+document
+.querySelectorAll(
+'input[name="reportReason"]'
+)
+.forEach(x=>x.checked=false);
 
 document.querySelector(".feedback-actions").innerHTML=`
 
 <div class="feedback-success">
 
-✅ Thank you ☺️!
+✅ Report submitted successfully.
 
 <br><br>
 
-Your report has been submitted.
+Our security team will use this report to improve future detection quality.
 
-Truvexa AI will use this
-feedback to improve future
-detections.
+Thank you for helping make Truvexa AI better.
 
 </div>
 
-`;
+document.querySelector(".feedback-note").style.display="none";
 
     closeReportModal();
 
