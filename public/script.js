@@ -36,6 +36,28 @@ confidenceText.innerText = "100%";
 
 feedbackBox.style.display = "none";
 
+document.querySelector(".feedback-actions").innerHTML = `
+
+<button
+class="btn-success"
+onclick="sendFeedback('yes')">
+
+👍 Yes, Helpful
+
+</button>
+
+<button
+class="btn-danger"
+onclick="reportIssue()">
+
+👎 Needs Improvement
+
+</button>
+
+`;
+
+document.querySelector(".feedback-note").style.display = "block";
+
 loadingBox.style.display = "block";
 
 riskMeter.style.display = "none";
@@ -365,8 +387,9 @@ async function sendFeedback(type) {
 
 <br><br>
 
-Your feedback helps improve
-future scam detection accuracy.
+Your feedback has been securely received.
+
+It will help improve future scam detection accuracy.
 
 </div>
 
@@ -464,7 +487,14 @@ async function submitReport() {
       }
     );
 
- 
+   closeReportModal();  
+document.getElementById("customReport").value="";  
+  
+document  
+.querySelectorAll(  
+'input[name="reportReason"]'  
+)  
+.forEach(x=>x.checked=false);  
 
 document.querySelector(".feedback-actions").innerHTML = `
 
@@ -474,9 +504,11 @@ document.querySelector(".feedback-actions").innerHTML = `
 
 <br><br>
 
-Our security team will use this report to improve future detection quality.
+Your report has been securely received.
 
-Thank you for helping make Truvexa AI better.
+It will help improve future scam detection and security analysis.
+
+Thank you for helping improve Truvexa AI🚀.
 
 </div>
 
@@ -490,14 +522,10 @@ document.querySelector(".feedback-note").style.display = "none";
 
     document.querySelector(".feedback-actions").innerHTML=`
 
+
 <div class="feedback-error">
 
-❌ Unable to submit report.
+alert("❌ Unable to submit report. Please try again.");
 
-Please try again.
-
-</div>
-
-`;
   }
 
