@@ -157,63 +157,130 @@ Was this analysis accurate and helpful?
 </div>
 
     <div class="feedback-actions">
-      <button class="btn-success" onclick="sendFeedback('yes')">
-        👍 Helpful
-        </button>
 
-      <button class="btn-danger" onclick="sendFeedback('no')">
-        👎 Needs Improvement
-      </button>
-    </div>
+<button
+class="btn-success"
+onclick="sendFeedback('yes')">
+
+👍 Yes, Helpful
+
+</button>
+
+<button
+class="btn-danger"
+onclick="reportIssue()">
+
+👎 Needs Improvement
+
+</button>
+
+</div>
+<p class="feedback-note">
+
+Your feedback helps improve
+future scam detection accuracy.
+
+</p>
 
   <!-- 🚨 REPORT MODAL -->
 <div id="reportModal" class="report-modal">
 
   <div class="report-content">
 
-    <h3>🚨 Report Wrong Result</h3>
+  <h3>
+📝 Help Improve Truvexa AI
+</h3>
 
-    <p>What went wrong?</p>
+   <p>
+
+Tell us what should be improved.
+
+</p>
 
     <div class="report-options">
 
-      <label>
-        <input type="radio" name="reportReason" value="Scam detected as safe">
-        Scam detected as safe
-      </label>
+<label>
+<input
+type="radio"
+name="reportReason"
+value="Wrong risk score">
 
-      <label>
-        <input type="radio" name="reportReason" value="Safe message marked dangerous">
-        Safe message marked dangerous
-      </label>
+Wrong risk score
 
-      <label>
-        <input type="radio" name="reportReason" value="Explanation confusing">
-        Explanation confusing
-      </label>
+</label>
 
-      <label>
-        <input type="radio" name="reportReason" value="Important signal missing">
-        Important signal missing
-      </label>
+<label>
+<input
+type="radio"
+name="reportReason"
+value="Explanation unclear">
 
-      <label>
-        <input type="radio" name="reportReason" value="Other">
-        Other
-      </label>
+Explanation unclear
 
-    </div>
+</label>
+
+<label>
+<input
+type="radio"
+name="reportReason"
+value="Missed suspicious signals">
+
+Missed suspicious signals
+
+</label>
+
+<label>
+<input
+type="radio"
+name="reportReason"
+value="False positive">
+
+Marked safe content as dangerous
+
+</label>
+
+<label>
+<input
+type="radio"
+name="reportReason"
+value="False negative">
+
+Marked dangerous content as safe
+
+</label>
+
+<label>
+<input
+type="radio"
+name="reportReason"
+value="Technical issue">
+
+Technical issue
+
+</label>
+
+<label>
+<input
+type="radio"
+name="reportReason"
+value="Other">
+
+Other
+
+</label>
+
+</div>
 
     <textarea
       id="customReport"
-      placeholder="Optional: explain the issue..."
+      placeholder="Describe what you expected (optional)"
       rows="4">
     </textarea>
 
     <div class="report-actions">
 
       <button onclick="submitReport()">
-        Submit Report
+        Submit Feedback
       </button>
 
       <button
