@@ -123,24 +123,83 @@ border-left:4px solid #ef4444;
 }
 
 /* FEEDBACK */
-.feedback-box {
-  margin-top: 14px;
-  display: none;
+.feedback-box{
+margin-top:20px;
+
+display:none;
+
+padding:18px;
+
+border:1px solid #e5e7eb;
+
+border-radius:18px;
+
+background:#fafafa;
+
+box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+transition:.25s;
+}
+.feedback-header h3{
+
+margin:0;
+
+font-size:18px;
+
+font-weight:700;
+
+color:#111827;
+
 }
 
-.feedback-text {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 8px;
+.feedback-header{
+
+margin-bottom:14px;
+
+}
+
+.feedback-text{
+
+font-size:14px;
+
+line-height:1.6;
+
+color:#6b7280;
+
+margin-top:6px;
+
+margin-bottom:18px;
+
 }
 
 /* FEEDBACK BUTTONS */
-.feedback-actions {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 8px;
+.feedback-actions{
+
+display:flex;
+
+gap:12px;
+
+margin-bottom:16px;
+
 }
 
+.feedback-actions button{
+
+flex:1;
+
+padding:13px;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
 .btn-success {
   background: #22c55e;
   color: white;
@@ -168,7 +227,19 @@ border-left:4px solid #ef4444;
 .btn-warning:hover {
   background: #d97706;
 }
+.feedback-note{
 
+font-size:13px;
+
+text-align:center;
+
+color:#6b7280;
+
+margin-top:8px;
+
+line-height:1.5;
+
+}
 /* =========================
 🚨 REPORT MODAL
 ========================= */
