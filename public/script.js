@@ -1,3 +1,4 @@
+alert("checkScam started");
 async function checkScam() {
 
   const message = document.getElementById("input").value.trim();
