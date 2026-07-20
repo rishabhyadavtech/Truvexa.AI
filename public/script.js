@@ -1,5 +1,3 @@
-alert("Script Loaded");
-
 async function checkScam() {
 
   const message = document.getElementById("input").value.trim();
