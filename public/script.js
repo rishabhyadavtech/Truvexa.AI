@@ -508,6 +508,7 @@ Thank you for helping improve Truvexa AI🚀.
 `;
 
 document.querySelector(".feedback-note").style.display = "none";
+closeReportModal();
 
   } catch (err) {
 
@@ -528,4 +529,4 @@ Please try again later.
 `;
 
 }
-
+}
