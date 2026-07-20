@@ -1,5 +1,7 @@
 async function checkScam() {
 
+alert("Button clicked");
+
   const message = document.getElementById("input").value.trim();
 const language =
 document.getElementById("language").value;
