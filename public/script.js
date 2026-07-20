@@ -74,8 +74,10 @@ confidenceCard.style.display = "none";
     });
 
     if (!res.ok) throw new Error("Server error");
+alert("Fetch completed");
 
     const data = await res.json();
+alert(JSON.stringify(data));
 
     const hasURL =
 data.urlAnalysis &&
