@@ -1,4 +1,25 @@
 alert("checkScam started");
+alert("1");
+
+document.querySelector(".feedback-actions").innerHTML = `
+<button class="btn-success" onclick="sendFeedback('yes')">
+👍 Yes, Helpful
+</button>
+
+<button class="btn-danger" onclick="reportIssue()">
+👎 Needs Improvement
+</button>
+`;
+
+alert("2");
+
+document.querySelector(".feedback-note").style.display = "block";
+
+alert("3");
+
+loadingBox.style.display = "block";
+
+alert("4");
 async function checkScam() {
 
   const message = document.getElementById("input").value.trim();
