@@ -375,18 +375,16 @@ async function sendFeedback(type) {
   const message = document.getElementById("input").value;
 
   try {
+     const { error } = await supabase
+.from("Feedback")
+.insert([
+{
+message: message,
+feedback: type
+}
+]);
 
-    await fetch(
-      "https://script.google.com/macros/s/AKfycby5KiRfYhhHGa4jAS1QDy64eI1EzYmgkB_Bd3zo_fvAMX99pzysGi4J03viLijZgvOw1A/exec",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          message: message,
-          feedback: type,
-          report: ""
-        })
-      }
-    );
+if (error) throw error;
 
    document.querySelector(".feedback-actions").innerHTML = `
 
@@ -477,24 +475,17 @@ async function submitReport() {
       : "No option selected";
 
   try {
+    const { error } = await supabase
+.from("Feedback")
+.insert([
+{
+message: message,
+report: reason,
+customreason: customReason
+}
+]);
 
-    await fetch(
-      "https://script.google.com/macros/s/AKfycby5KiRfYhhHGa4jAS1QDy64eI1EzYmgkB_Bd3zo_fvAMX99pzysGi4J03viLijZgvOw1A/exec",
-      {
-        method: "POST",
-
-        body: JSON.stringify({
-
-          message: message,
-
-          feedback: "",
-
-          report: reason,
-
-          customReason: customReason
-        })
-      }
-    );
+if (error) throw error;
 
 document.querySelector(".feedback-actions").innerHTML = `
 
