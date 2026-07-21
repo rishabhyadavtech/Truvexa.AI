@@ -1,12 +1,12 @@
-async function checkScam() {
+const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
+const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
 
- const SUPABASE_URL = "YAHAN_APNA_PROJECT_URL";
-const SUPABASE_KEY = "YAHAN_APNI_PUBLISHABLE_KEY";
-
-const supabase = window.supabase.createClient(
+  const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
+async function checkScam() {
 
  const message = document.getElementById("input").value.trim();
 const language =
