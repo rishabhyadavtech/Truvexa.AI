@@ -1,13 +1,15 @@
 const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
 const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
 
- alert(typeof window.supabase);
-console.log(window.supabase);
+ alert("Before createClient");
+alert(window.supabase);
 
-   const supabase = window.supabase.createClient(
+const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
+
+alert("After createClient");
 
 async function checkScam() {
 
