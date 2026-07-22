@@ -407,19 +407,10 @@ It will help improve future scam detection accuracy.
 
   } catch (err) {
 
-    console.error(err);
+  console.error(err);
 
-    document.querySelector(".feedback-actions").innerHTML = `
+  alert("ERROR:\n" + JSON.stringify(err, null, 2));
 
-<div class="feedback-error">
-
-❌ Unable to save feedback.
-
-Please try again later.
-
-</div>
-
-`;
 }
 
 }
