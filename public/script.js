@@ -1,3 +1,4 @@
+alert("checkScam started");
 const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
 const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
    const supabase = window.supabase.createClient(
@@ -43,6 +44,7 @@ confidenceText.innerText = "100%";
 
 feedbackBox.style.display = "none";
 
+alert("1");
 document.querySelector(".feedback-actions").innerHTML = `
 
 <button
@@ -62,7 +64,7 @@ onclick="reportIssue()">
 </button>
 
 `;
-
+alert("2")
 document.querySelector(".feedback-note").style.display = "block";
 
 loadingBox.style.display = "block";
