@@ -383,7 +383,11 @@ feedback: type
 }
 ]);
 
-if (error) throw error;
+if (error) {
+  console.log(error);
+  alert(JSON.stringify(error));
+  throw error;
+}
 
    document.querySelector(".feedback-actions").innerHTML = `
 
