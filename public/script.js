@@ -383,18 +383,9 @@ feedback: type
 }
 ]);
 
-if (error) {
-  console.log("Full Error:", error);
-
-  alert(
-    "Code: " + error.code +
-    "\nMessage: " + error.message +
-    "\nDetails: " + error.details +
-    "\nHint: " + error.hint
-  );
-
-  throw error;
-}
+console.log("Insert finished");
+console.log("Error =", error);
+alert("Error = " + JSON.stringify(error));
    document.querySelector(".feedback-actions").innerHTML = `
 
 <div class="feedback-success">
