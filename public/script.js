@@ -1,5 +1,18 @@
-alert("Script loaded");
-alert(typeof window.supabase);
+try {
+  alert("window.supabase = " + typeof window.supabase);
+
+  const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
+  const SUPABASE_KEY = "YOUR_KEY";
+
+  const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  alert("Supabase client created");
+} catch (e) {
+  alert("ERROR: " + e.message);
+}
 const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
 const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
    const supabase = window.supabase.createClient(
