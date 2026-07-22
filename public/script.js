@@ -384,11 +384,17 @@ feedback: type
 ]);
 
 if (error) {
-  console.log(error);
-  alert(error.message);
+  console.log("Full Error:", error);
+
+  alert(
+    "Code: " + error.code +
+    "\nMessage: " + error.message +
+    "\nDetails: " + error.details +
+    "\nHint: " + error.hint
+  );
+
   throw error;
 }
-
    document.querySelector(".feedback-actions").innerHTML = `
 
 <div class="feedback-success">
