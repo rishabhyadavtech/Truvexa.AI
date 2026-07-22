@@ -370,11 +370,6 @@ function getSeverityBadge(severity) {
 // 👍 FEEDBACK SYSTEM
 // =========================
 async function sendFeedback(type) {
-    
-     alert("feedback started");
-
-  console.log("supabase =", supabase);
-  console.log("window.supabase =", window.supabase);
 
   const message = document.getElementById("input").value;
 
