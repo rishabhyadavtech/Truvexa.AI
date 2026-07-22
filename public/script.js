@@ -1,3 +1,10 @@
+window.onerror = function(message, source, line, col, error) {
+  alert(
+    "ERROR:\n" +
+    message +
+    "\nLine: " + line
+  );
+};
 const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
 const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
 
