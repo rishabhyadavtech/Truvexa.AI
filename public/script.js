@@ -385,7 +385,7 @@ feedback: type
 
 if (error) {
   console.log(error);
-  alert(JSON.stringify(error));
+  alert(error.message);
   throw error;
 }
 
