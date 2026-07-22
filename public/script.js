@@ -1,3 +1,4 @@
+alert("Script loaded");
 alert(typeof window.supabase);
 const SUPABASE_URL = "https://okuufwhspjocsnnmdpkd.supabase.co";
 const SUPABASE_KEY = "sb_publishable_9b6klFx52hR46xKzOWxDfQ_S0GcwSD6";
