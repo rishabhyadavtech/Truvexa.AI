@@ -383,13 +383,7 @@ const data = await res.json();
 if (!data.success) {
   throw new Error(data.error);
 }
-
-if (error) {
-  console.log(error);
-  alert(JSON.stringify(error));
-  throw error;
-}
-   document.querySelector(".feedback-actions").innerHTML = `
+ document.querySelector(".feedback-actions").innerHTML = `
 
 <div class="feedback-success">
 
@@ -486,8 +480,6 @@ const data = await res.json();
 if (!data.success) {
   throw new Error(data.error);
 }
-
-if (error) throw error;
 
 document.querySelector(".feedback-actions").innerHTML = `
 
