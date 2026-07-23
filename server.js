@@ -488,6 +488,46 @@ Risk : ${dnsInfo.risk || "Unknown"}
 
 });
 
+app.post("/feedback", async (req, res) => {
+
+  try {
+
+    const {
+      message,
+      feedback,
+      report,
+      customreason
+    } = req.body;
+
+    const { error } = await supabase
+      .from("Feedback")
+      .insert([
+        {
+          message,
+          feedback,
+          report,
+          customreason
+        }
+      ]);
+
+    if (error) throw error;
+
+    res.json({
+      success: true
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+
+  }
+
+});
 // =========================
 // 🧠 DEBUG ROUTE (OPTIONAL ADD)
 // =========================
