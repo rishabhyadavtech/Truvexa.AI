@@ -3,13 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-try {
-  const { createClient } = require("@supabase/supabase-js");
-  console.log("✅ Supabase package installed successfully");
-} catch (err) {
-  console.error("❌ Supabase package NOT installed");
-  console.error(err.message);
-}
+const { createClient } = require("@supabase/supabase-js");
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
