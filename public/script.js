@@ -367,14 +367,22 @@ async function sendFeedback(type) {
   const message = document.getElementById("input").value;
 
   try {
-     const { error } = await supabase
-.from("Feedback")
-.insert([
-{
-message: message,
-feedback: type
+   const res = await fetch("/feedback", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: message,
+    feedback: type
+  })
+});
+
+const data = await res.json();
+
+if (!data.success) {
+  throw new Error(data.error);
 }
-]);
 
 if (error) {
   console.log(error);
@@ -461,15 +469,23 @@ async function submitReport() {
       : "No option selected";
 
   try {
-    const { error } = await supabase
-.from("Feedback")
-.insert([
-{
-message: message,
-report: reason,
-customreason: customReason
+   const res = await fetch("/feedback", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: message,
+    report: reason,
+    customreason: customReason
+  })
+});
+
+const data = await res.json();
+
+if (!data.success) {
+  throw new Error(data.error);
 }
-]);
 
 if (error) throw error;
 
