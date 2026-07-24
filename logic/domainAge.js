@@ -54,10 +54,6 @@ const timeout = setTimeout(() => {
       }
     );
 
-console.log("API KEY:", process.env.APILAYER_API_KEY);
-console.log("Status:", response.status);
-console.log("Status Text:", response.statusText);
-
   if (!response.ok) {
   throw new Error(`WHOIS API Error: ${response.status}`);
 }
