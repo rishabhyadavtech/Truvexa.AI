@@ -5,10 +5,6 @@ const app = express();
 
 const { createClient } = require("@supabase/supabase-js");
 
-console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
-console.log("SERVICE_KEY exists:", !!process.env.SUPABASE_SERVICE_KEY);
-console.log("SERVICE_KEY first 10 chars:", process.env.SUPABASE_SERVICE_KEY?.substring(0,10));
-
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_KEY
