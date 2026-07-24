@@ -471,7 +471,7 @@ async function submitReport() {
   body: JSON.stringify({
     message: message,
     report: reason,
-    customreason: customReason
+    custom_reason: customReason
   })
 });
 
