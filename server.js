@@ -496,7 +496,7 @@ app.post("/feedback", async (req, res) => {
       message,
       feedback,
       report,
-      customreason
+      custom_reason
     } = req.body;
 
     const { error } = await supabase
