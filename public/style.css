@@ -51,6 +51,37 @@ text-align:center;
 margin-bottom:32px;
 
 }
+/* HERO */
+
+.hero-title{
+
+font-size:28px;
+
+font-weight:700;
+
+line-height:1.3;
+
+max-width:560px;
+
+margin:0 auto 12px;
+
+color:#111827;
+
+}
+
+.hero-subtitle{
+
+font-size:16px;
+
+line-height:1.7;
+
+color:#6b7280;
+
+max-width:430px;
+
+margin:0 auto;
+
+}
 
 /* LOGO */
 
