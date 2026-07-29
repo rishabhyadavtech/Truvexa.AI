@@ -497,38 +497,6 @@ border-radius:10px;
 
 }
 
-/* Nice footer */
-.footer{
-    margin-top:auto;
-    padding-top:28px;
-
-    text-align:center;
-    font-size:13px;
-    color:#9ca3af;
-}
-
-.card{
-
-background:#fff;
-
-border:1px solid #ececec;
-
-border-radius:16px;
-
-padding:18px;
-
-margin-top:18px;
-
-box-shadow:none;
-
-}
-
-.card:hover{
-
-border-color:#d1d5db;
-
-}
-
 .scan-btn{
 
 width:100%;
