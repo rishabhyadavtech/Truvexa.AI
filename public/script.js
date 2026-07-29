@@ -35,6 +35,8 @@ confidenceFill.style.width = "100%";
 confidenceText.innerText = "100%";
 
 feedbackBox.style.display = "none";
+document.getElementById("trustBox").style.display = "none";
+document.getElementById("featureBox").style.display = "none";
 
 document.querySelector(".feedback-actions").innerHTML = `
 
@@ -141,6 +143,8 @@ data.language || "hi";
   renderResult(resultBox,data, hasURL);
 
   feedbackBox.style.display = "block";
+document.getElementById("trustBox").style.display = "block";
+document.getElementById("featureBox").style.display = "block";
 
   return;
 }
