@@ -727,39 +727,49 @@ background:#bcbcbc;
 border-radius:10px;
 
 }
-
 .scan-btn{
 
 width:100%;
 
-padding:16px;
+height:58px;
 
-font-size:16px;
-
-font-weight:600;
+margin-top:18px;
 
 background:#111827;
 
-color:white;
-
-border-radius:12px;
+color:#ffffff;
 
 border:none;
 
+border-radius:16px;
+
+font-size:18px;
+
+font-weight:600;
+
 cursor:pointer;
 
-transition:background .2s ease,
-transform .2s ease;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+transition:all .25s ease;
+
+box-shadow:0 10px 24px rgba(17,24,39,.18);
 
 }
 .scan-btn:active{
-
-transform:scale(.98);
+transform:scale(.97);
 
 }
 .scan-btn:hover{
-    background:#0f172a;
-    transform:translateY(-2px);
+background:#0f172a;
+transform:translateY(-3px);
+box-shadow:0 16px 32px rgba(17,24,39,.25);
 }
 .loading-card{
 
