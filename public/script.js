@@ -35,6 +35,7 @@ confidenceFill.style.width = "100%";
 confidenceText.innerText = "100%";
 
 feedbackBox.style.display = "none";
+document.getElementById("result").style.display = "none";
 document.getElementById("trustBox").style.display = "none";
 document.getElementById("featureBox").style.display = "none";
 
@@ -60,6 +61,7 @@ onclick="reportIssue()">
 document.querySelector(".feedback-note").style.display = "block";
 
 loadingBox.style.display = "block";
+document.getElementById("result").style.display = "block";
 
 riskMeter.style.display = "none";
 
