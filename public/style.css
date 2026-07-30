@@ -152,10 +152,31 @@ margin-top:20px;
 transition:.25s;
 
 }
-
 .card:hover{
 
 border-color:#d1d5db;
+
+}
+.input-card{
+
+padding:22px;
+
+border:1px solid #e5e7eb;
+
+border-radius:22px;
+
+background:#ffffff;
+
+box-shadow:0 8px 24px rgba(0,0,0,.05);
+
+transition:.25s;
+
+}
+.input-card:hover{
+
+border-color:#d1d5db;
+
+box-shadow:0 14px 32px rgba(0,0,0,.08);
 
 }
 
@@ -663,7 +684,9 @@ textarea{
 
 width:100%;
 
-min-height:145px;
+height:130px;
+
+padding:8px;
 
 border:none;
 
@@ -673,11 +696,22 @@ resize:none;
 
 background:transparent;
 
-font-size:16px;
+font-size:17px;
 
 line-height:1.7;
 
 font-family:inherit;
+
+color:#111827;
+
+}
+textarea::placeholder{
+
+color:#9ca3af;
+
+font-size:17px;
+
+line-height:1.8;
 
 }
 textarea::-webkit-scrollbar{
