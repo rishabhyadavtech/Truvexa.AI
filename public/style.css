@@ -169,18 +169,19 @@ box-shadow:0 10px 24px rgba(0,0,0,.08);
 }
 
 /* FOOTER */
-
 .footer{
 
 text-align:center;
 
-margin-top:32px;
+margin-top:26px;
 
-font-size:13px;
+font-size:14px;
 
-color:#9ca3af;
+font-weight:500;
 
-padding-bottom:18px;
+color:#6b7280;
+
+padding-bottom:24px;
 
 }
 
