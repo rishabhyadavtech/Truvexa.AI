@@ -44,9 +44,7 @@ padding:32px 22px 28px;
 
 /* HEADER */
 .header{
-
 text-align:center;
-
 margin-bottom:24px;
 
 }
@@ -295,7 +293,6 @@ color:#111827;
 }
 
 .feedback-header{
-
 margin-bottom:14px;
 
 }
@@ -568,15 +565,12 @@ box-shadow:0 0 0 4px rgba(37,99,235,.12);
 }
 
 .cancel-btn{
-
 background:#e5e7eb;
-
 color:#111827;
 
 }
 
 .cancel-btn:hover{
-
 background:#d1d5db;
 
 }
@@ -611,7 +605,6 @@ flex-direction:column;
 }
 
 .report-actions{
-
 flex-direction:column;
 
 }
