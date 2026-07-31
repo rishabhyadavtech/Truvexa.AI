@@ -666,8 +666,8 @@ textarea{
 
 width:100%;
 
-min-height:90px;      /* Starting size */
-max-height:320px;     /* Maximum size */
+min-height:100px; 
+max-height:320px;   
 
 padding:12px;
 
