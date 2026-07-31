@@ -2,7 +2,7 @@ async function checkScam() {
 
  const message = document.getElementById("input").value.trim();
 const textarea = document.getElementById("input");
-textarea.style.height = "100px";
+textarea.style.height = "90px";
 const language =
 document.getElementById("language").value;
   const resultBox = document.getElementById("result");
