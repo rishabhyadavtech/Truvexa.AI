@@ -80,11 +80,11 @@ color:#111827;
 }
 .hero-text{
 
-margin-top:12px;
+margin-top:8px;
 
-font-size:17px;
+font-size:16px;
 
-line-height:1.6;
+line-height:1.5;
 
 color:#6b7280;
 
@@ -146,30 +146,25 @@ transition:.25s;
 
 }
 .card:hover{
-
 border-color:#d1d5db;
 
 }
 .input-card{
-
-padding:22px;
+padding:18px;
 
 border:1px solid #e5e7eb;
 
 border-radius:22px;
 
 background:#ffffff;
-
-box-shadow:0 8px 24px rgba(0,0,0,.05);
+box-shadow:0 4px 16px rgba(0,0,0,.05);
 
 transition:.25s;
 
 }
 .input-card:hover{
-
 border-color:#d1d5db;
-
-box-shadow:0 14px 32px rgba(0,0,0,.08);
+box-shadow:0 10px 24px rgba(0,0,0,.08);
 
 }
 
