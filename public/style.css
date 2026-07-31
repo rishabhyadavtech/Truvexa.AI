@@ -715,11 +715,11 @@ background:#bcbcbc;
 border-radius:10px;
 
 }
-.scan-btn{
+.analyze-btn{
 
 width:100%;
 
-height:58px;
+height:62px;
 
 margin-top:18px;
 
@@ -729,11 +729,11 @@ color:#ffffff;
 
 border:none;
 
-border-radius:16px;
+border-radius:18px;
 
 font-size:18px;
 
-font-weight:600;
+font-weight:700;
 
 cursor:pointer;
 
@@ -750,13 +750,13 @@ transition:all .25s ease;
 box-shadow:0 10px 24px rgba(17,24,39,.18);
 
 }
-.scan-btn:active{
+.analyze-btn:active{
 transform:scale(.97);
 
 }
-.scan-btn:hover{
+.analyze-btn:hover{
 background:#0f172a;
-transform:translateY(-3px);
+transform:translateY(-2px);
 box-shadow:0 16px 32px rgba(17,24,39,.25);
 }
 .loading-card{
