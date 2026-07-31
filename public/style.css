@@ -149,14 +149,11 @@ border-color:#d1d5db;
 }
 .input-card{
 padding:18px;
-
+margin-top:14px;
 border:1px solid #e5e7eb;
-
 border-radius:22px;
-
 background:#ffffff;
 box-shadow:0 4px 16px rgba(0,0,0,.05);
-
 transition:.25s;
 
 }
