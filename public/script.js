@@ -1,6 +1,8 @@
 async function checkScam() {
 
  const message = document.getElementById("input").value.trim();
+const textarea = document.getElementById("input");
+textarea.style.height = "90px";
 const language =
 document.getElementById("language").value;
   const resultBox = document.getElementById("result");
@@ -323,6 +325,13 @@ ${data.dnsExplanation || ""}
 `;
 
 }
+// Auto Expand Textarea
+const textarea = document.getElementById("input");
+
+textarea.addEventListener("input", function () {
+  this.style.height = "auto";
+  this.style.height = Math.min(this.scrollHeight, 320) + "px";
+});
 
 function toggleDetail(id){
 
