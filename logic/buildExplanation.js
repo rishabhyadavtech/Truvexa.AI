@@ -23,67 +23,67 @@ function buildExplanation(
 
 if (!urlAnalysis.found) {
 
-    parts.push(`
+parts.push(`
 
-✅ This message looks safe.
+✅ Safe
 
-I analyzed the message for common scam patterns, manipulation techniques, urgency, impersonation, and suspicious language.
+I carefully analyzed this message for phishing patterns, emotional manipulation, fake urgency, impersonation attempts, and suspicious language.
 
-I didn't find any strong warning signs.
+I didn't find any meaningful warning signs.
 
-Based on the content alone, this message appears legitimate.
+Based on the content, this message appears legitimate.
 
 `);
 
-    return parts.join("\n\n");
+return parts.join("\n\n");
 
 }
 
-    // Small evidence summary
-    let evidence = [];
+let evidence=[];
 
-    if (safeBrowsing.safe)
-      evidence.push("✔ Google Safe Browsing");
+if(safeBrowsing.safe)
+evidence.push("✔ Google Safe Browsing: No unsafe website detected.");
 
-    if (
-      virusTotal.malicious === 0 &&
-      virusTotal.suspicious === 0
-    )
-      evidence.push("✔ VirusTotal");
+if(
+virusTotal.malicious===0 &&
+virusTotal.suspicious===0
+)
+evidence.push("✔ VirusTotal: No malware reported.");
 
-    if (domainInfo.risk === "LOW")
-      evidence.push("✔ Trusted Domain");
+if(domainInfo.risk==="LOW")
+evidence.push("✔ Domain: Domain appears trustworthy.");
 
-    if (sslInfo.risk === "LOW")
-      evidence.push("✔ Valid SSL");
+if(sslInfo.risk==="LOW")
+evidence.push("✔ SSL Certificate: Secure connection detected.");
 
-    if (dnsInfo.risk === "LOW")
-      evidence.push("✔ Healthy DNS");
+if(dnsInfo.risk==="LOW")
+evidence.push("✔ DNS Security: No abnormal DNS behaviour.");
 
+parts.push(`
 
-    parts.push(`
-✅ Everything looks legitimate.
+✅ Safe
 
-I checked this website using multiple independent security signals before making this decision.
+This website successfully passed the major security checks performed by Truvexa.
 
-Evidence used:
+I didn't find evidence of phishing, malware, impersonation or deceptive behaviour.
+
+Evidence
 
 ${evidence.join("\n")}
 
-Overall summary:
+What should I do?
+
+• You can continue normally.
+
+• Still avoid sharing OTPs, passwords or banking information unless you completely trust the website.
+
+• If anything unusual happens later, verify it before proceeding.
+
 `);
 
-    // Human style transition
+return parts.join("\n\n");
 
-    parts.push(`
-I didn't find any strong signs of phishing, malware, impersonation, or deceptive behaviour.
-
-Instead of relying on a single security check, this result is based on multiple independent sources working together.
-
-You can tap "View Details" under each security check if you'd like to see the technical analysis behind this result.
-`);
-
-  }
+}
 
 // =====================================
 // ⚠ SUSPICIOUS (Natural GPT Style)
