@@ -174,157 +174,144 @@ confidenceCard.style.display = "none";
 
 function renderResult(resultBox,data, hasURL) {
 
+resultBox.innerHTML = "";
+
+const risk = data.riskScore || 0;
+
+if (risk <= 20) {
+
 resultBox.innerHTML = `
 
-<div class="summary-block">
+<div class="decision-card safe">
 
-${data.explanation}
+<div class="decision-icon">🟢</div>
+
+<h2 class="decision-title">
+Safe
+</h2>
+
+<p class="decision-subtitle">
+
+This message appears safe.
+
+</p>
+
+<div class="confidence-row">
+
+<span>AI Confidence</span>
+
+<strong>${data.confidence}%</strong>
 
 </div>
 
-${hasURL ? `
+<div class="next-action safe-action">
 
-<hr>
+✅ You can continue normally.
 
-<div class="security-summary">
+<br><br>
 
-<div class="summary-title">
-🛡 Google Safe Browsing
-</div>
-
-<div class="summary-text">
-${data.safeBrowsingSummary || ""}
-</div>
-
-<button class="details-btn"
-onclick="toggleDetail('safeBrowsingDetail')">
-
-▶ View Details
-
-</button>
-
-<div id="safeBrowsingDetail"
-class="detail-box"
-style="display:none;">
-
-${data.safeBrowsingExplanation || ""}
+Still avoid sharing OTPs, passwords or banking details.
 
 </div>
 
 </div>
-
-<div class="security-summary">
-
-<div class="summary-title">
-🦠 VirusTotal
-</div>
-
-<div class="summary-text">
-${data.virusTotalSummary || ""}
-</div>
-
-<button class="details-btn"
-onclick="toggleDetail('virusTotalDetail')">
-
-▶ View Details
-
-</button>
-
-<div id="virusTotalDetail"
-class="detail-box"
-style="display:none;">
-
-${data.virusTotalExplanation || ""}
-
-</div>
-
-</div>
-
-<div class="security-summary">
-
-<div class="summary-title">
-🌍 Domain Information
-</div>
-
-<div class="summary-text">
-${data.domainSummary || ""}
-</div>
-
-<button class="details-btn"
-onclick="toggleDetail('domainDetail')">
-
-▶ View Details
-
-</button>
-
-<div id="domainDetail"
-class="detail-box"
-style="display:none;">
-
-${data.domainExplanation || ""}
-
-</div>
-
-</div>
-
-<div class="security-summary">
-
-<div class="summary-title">
-🔒 SSL Certificate
-</div>
-
-<div class="summary-text">
-${data.sslSummary || ""}
-</div>
-
-<button class="details-btn"
-onclick="toggleDetail('sslDetail')">
-
-▶ View Details
-
-</button>
-
-<div id="sslDetail"
-class="detail-box"
-style="display:none;">
-
-${data.sslExplanation || ""}
-
-</div>
-
-</div>
-
-<div class="security-summary">
-
-<div class="summary-title">
-🌐 DNS Security
-</div>
-
-<div class="summary-text">
-${data.dnsSummary || ""}
-</div>
-
-<button class="details-btn"
-onclick="toggleDetail('dnsDetail')">
-
-▶ View Details
-
-</button>
-
-<div id="dnsDetail"
-class="detail-box"
-style="display:none;">
-
-${data.dnsExplanation || ""}
-
-</div>
-
-</div>
-
-` : ""}
 
 `;
 
+return;
+
+}
+// ===============================
+// 🟡 Suspicious / 🔴 Dangerous
+// ===============================
+
+const isDanger = risk >= 60;
+
+resultBox.innerHTML = `
+
+<div class="decision-card ${isDanger ? "danger" : "warning"}">
+
+<div class="decision-icon">
+${isDanger ? "🔴" : "🟡"}
+</div>
+
+<h2 class="decision-title">
+${isDanger ? "Scam Detected" : "Suspicious"}
+</h2>
+
+<p class="decision-subtitle">
+${isDanger
+? "Do NOT trust this message until you verify it."
+: "Be careful before trusting this message."}
+</p>
+
+<div class="confidence-row">
+
+<span>AI Confidence</span>
+
+<strong>${data.confidence}%</strong>
+
+</div>
+
+<div class="why-box">
+
+<h3>Why did Truvexa flag this?</h3>
+
+<p>
+
+${data.explanation || "Multiple suspicious patterns were detected."}
+
+</p>
+
+</div>
+
+<div class="action-box">
+
+<h3>What should I do?</h3>
+
+<p>
+
+${isDanger
+? "❌ Don't click links, don't share OTP, password or banking details."
+: "⚠️ Verify the sender before taking any action."}
+
+</p>
+
+</div>
+
+<button
+class="details-btn"
+onclick="toggleDetail('technicalDetails')">
+
+▼ View Technical Details
+
+</button>
+
+<div
+id="technicalDetails"
+class="detail-box"
+style="display:none;">
+
+<b>🛡 Google Safe Browsing</b><br>
+${data.safeBrowsingExplanation || "No data"}<br><br>
+
+<b>🦠 VirusTotal</b><br>
+${data.virusTotalExplanation || "No data"}<br><br>
+
+<b>🌍 Domain Information</b><br>
+${data.domainExplanation || "No data"}<br><br>
+
+<b>🔒 SSL Certificate</b><br>
+${data.sslExplanation || "No data"}<br><br>
+
+<b>🌐 DNS Security</b><br>
+${data.dnsExplanation || "No data"}
+
+</div>
+
+</div>
+
+`;
 }
 // Auto Expand Textarea
 const textarea = document.getElementById("input");
