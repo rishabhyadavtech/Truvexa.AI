@@ -217,49 +217,20 @@ display:none;
 
 /* RESULT BOX */
 .result-box{
-
 margin-top:20px;
-
 padding:24px;
-
 border:1px solid #ececec;
-
 border-radius:16px;
-
 background:#fff;
-
 white-space:pre-wrap;
-
 line-height:1.8;
-
 font-size:15px;
-
 box-shadow:none;
-
 animation:fadeIn .35s ease;
 
 }
-
-/* STATES */
-.safe{
-
-border-left:4px solid #22c55e;
-
-}
-
-.warning{
-
-border-left:4px solid #f59e0b;
-
-}
-
-.danger{
-
-border-left:4px solid #ef4444;
-
-}
-
 /* FEEDBACK */
+
 .feedback-box{
 margin-top:20px;
 
@@ -889,29 +860,6 @@ border-color:#9ca3af;
 /* ===========================
    View Details
 =========================== */
-
-.details-btn{
-
-display:inline-block;
-
-margin-top:10px;
-
-color:#2563eb;
-
-font-weight:600;
-
-cursor:pointer;
-
-user-select:none;
-
-transition:color .2s ease;
-}
-
-.details-btn:hover{
-
-text-decoration:underline;
-}
-
 .detail-box{
 
 display:none;
@@ -945,41 +893,6 @@ line-height:1.8;
 font-size:16px;
 
 margin-bottom:20px;
-
-}
-.security-summary{
-
-margin-top:20px;
-
-padding:16px;
-
-background:#ffffff;
-
-border:1px solid #e5e7eb;
-
-border-radius:12px;
-
-}
-
-.summary-title{
-
-font-size:18px;
-
-font-weight:700;
-
-margin-bottom:10px;
-
-}
-
-.summary-text{
-
-white-space:pre-wrap;
-
-line-height:1.7;
-
-margin-bottom:12px;
-
-color:#374151;
 
 }
 .trust-box{
