@@ -255,25 +255,85 @@ ${isDanger
 
 <div class="why-box">
 
-<h3>Why did Truvexa flag this?</h3>
+<h3>
+Why did Truvexa flag this?
+</h3>
 
-<p>
+<ul class="why-list">
 
-${data.explanation || "Multiple suspicious patterns were detected."}
+${data.whyPoints || ""}
 
-</p>
+</ul>
+
+</div>
+
+<div class="evidence-box">
+
+<h3>
+Evidence
+</h3>
+
+<div class="evidence-item">
+
+🛡 Google Safe Browsing
+
+<span>
+
+${data.safeBrowsingSummary || "No data"}
+
+</span>
+
+</div>
+
+<div class="evidence-item">
+
+🦠 VirusTotal
+
+<span>
+
+${data.virusTotalSummary || "No data"}
+
+</span>
+
+</div>
+
+<div class="evidence-item">
+
+🌍 Domain
+
+<span>
+
+${data.domainSummary || "No data"}
+
+</span>
+
+</div>
+
+<div class="evidence-item">
+
+🔒 SSL
+
+<span>
+
+${data.sslSummary || "No data"}
+
+</span>
+
+</div>
 
 </div>
 
 <div class="action-box">
 
-<h3>What should I do?</h3>
+<h3>
+
+What should I do?
+
+</h3>
 
 <p>
 
-${isDanger
-? "❌ Don't click links, don't share OTP, password or banking details."
-: "⚠️ Verify the sender before taking any action."}
+${data.nextAction || "Verify before trusting this message."}
 
 </p>
 
@@ -293,18 +353,31 @@ class="detail-box"
 style="display:none;">
 
 <b>🛡 Google Safe Browsing</b><br>
-${data.safeBrowsingExplanation || "No data"}<br><br>
+
+${data.safeBrowsingExplanation || "No data"}
+
+<br><br>
 
 <b>🦠 VirusTotal</b><br>
-${data.virusTotalExplanation || "No data"}<br><br>
 
-<b>🌍 Domain Information</b><br>
-${data.domainExplanation || "No data"}<br><br>
+${data.virusTotalExplanation || "No data"}
 
-<b>🔒 SSL Certificate</b><br>
-${data.sslExplanation || "No data"}<br><br>
+<br><br>
 
-<b>🌐 DNS Security</b><br>
+<b>🌍 Domain</b><br>
+
+${data.domainExplanation || "No data"}
+
+<br><br>
+
+<b>🔒 SSL</b><br>
+
+${data.sslExplanation || "No data"}
+
+<br><br>
+
+<b>🌐 DNS</b><br>
+
 ${data.dnsExplanation || "No data"}
 
 </div>
