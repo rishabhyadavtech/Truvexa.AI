@@ -860,30 +860,6 @@ border-color:#9ca3af;
 /* ===========================
    View Details
 =========================== */
-.detail-box{
-
-display:none;
-
-margin-top:10px;
-
-margin-bottom:12px;
-
-padding:12px;
-
-background:#f8fafc;
-
-border-left:4px solid #2563eb;
-
-border-radius:8px;
-
-white-space:pre-wrap;
-
-line-height:1.6;
-
-font-size:14px;
-
-overflow-x:auto;
-}
 .summary-block{
 
 white-space:pre-wrap;
@@ -1144,19 +1120,31 @@ border-color:#c7d2fe;
 }
 .detail-box{
 
+display:none;
+
 margin-top:18px;
+
+margin-bottom:12px;
 
 padding:18px;
 
 background:#f8fafc;
 
+border-left:4px solid #2563eb;
+
 border-radius:14px;
 
-font-size:14px;
+white-space:pre-wrap;
 
 line-height:1.8;
 
+font-size:14px;
+
 color:#374151;
+
+overflow-x:auto;
+
+animation:fadeIn .25s ease;
 
 }
 .decision-card.safe{
