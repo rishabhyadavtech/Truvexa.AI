@@ -1045,3 +1045,221 @@ transform:translateY(-2px);
 border-color:#d1d5db;
 
 }
+/* ===========================
+RESULT REDESIGN
+=========================== */
+
+.decision-card{
+
+padding:24px;
+
+border-radius:18px;
+
+background:#ffffff;
+
+border:1px solid #e5e7eb;
+
+}
+
+.decision-icon{
+
+font-size:46px;
+
+margin-bottom:10px;
+
+}
+
+.decision-title{
+
+font-size:30px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+color:#111827;
+
+}
+
+.decision-subtitle{
+
+font-size:17px;
+
+color:#6b7280;
+
+margin-bottom:24px;
+
+line-height:1.7;
+
+}
+
+.confidence-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-top:1px solid #f1f5f9;
+
+border-bottom:1px solid #f1f5f9;
+
+margin-bottom:22px;
+
+font-size:15px;
+
+}
+
+.confidence-row strong{
+
+font-size:17px;
+
+}
+.why-box,
+.evidence-box,
+.action-box{
+
+margin-top:22px;
+
+padding-top:20px;
+
+border-top:1px solid #f1f5f9;
+
+}
+
+.why-box h3,
+.evidence-box h3,
+.action-box h3{
+
+font-size:19px;
+
+font-weight:700;
+
+margin-bottom:14px;
+
+color:#111827;
+
+}
+.why-list{
+
+padding-left:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.why-list li{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#374151;
+
+}
+.evidence-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px 0;
+
+border-bottom:1px solid #f8fafc;
+
+font-size:15px;
+
+}
+
+.evidence-item span{
+
+font-weight:600;
+
+color:#16a34a;
+
+}
+.action-box p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#374151;
+
+}
+.details-btn{
+
+margin-top:24px;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:10px 16px;
+
+border-radius:10px;
+
+background:#f8fafc;
+
+border:1px solid #e5e7eb;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.details-btn:hover{
+
+background:#eef2ff;
+
+border-color:#c7d2fe;
+
+}
+.detail-box{
+
+margin-top:18px;
+
+padding:18px;
+
+background:#f8fafc;
+
+border-radius:14px;
+
+font-size:14px;
+
+line-height:1.8;
+
+color:#374151;
+
+}
+.decision-card.safe{
+
+border-left:5px solid #22c55e;
+
+}
+
+.decision-card.warning{
+
+border-left:5px solid #f59e0b;
+
+}
+
+.decision-card.danger{
+
+border-left:5px solid #ef4444;
+
+}
