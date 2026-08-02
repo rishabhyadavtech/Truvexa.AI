@@ -91,18 +91,6 @@ You can tap "View Details" under each security check if you'd like to see the te
 
 if (type === "SUSPICIOUS") {
 
-parts.push(`
-
-⚠ This website deserves some caution.
-
-I found a few warning signs that increase the risk, but I don't have enough evidence to confidently classify it as malicious.
-
-This doesn't necessarily mean the website is dangerous.
-
-However, I recommend verifying it carefully before trusting it with sensitive information.
-
-`);
-
 }
 
 // =======================================
@@ -110,16 +98,6 @@ However, I recommend verifying it carefully before trusting it with sensitive in
 // =======================================
 
 if (type === "DANGEROUS") {
-
-parts.push(`
-
-🚨 This website appears to be unsafe.
-
-Multiple independent security checks reported serious risk signals.
-
-Based on the available evidence, I do not recommend visiting or interacting with this website.
-
-`);
 
 }
 
@@ -131,18 +109,6 @@ if (
 manipulation.manipulationLevel !== "LOW" &&
 manipulation.manipulationMessage
 ){
-
-parts.push(`
-
-🧠 Social Engineering Analysis
-
-${manipulation.manipulationMessage}
-
-This message appears to use psychological pressure or emotional manipulation to influence your decision.
-
-Always pause and verify before taking action.
-
-`);
 
 }
 
@@ -198,65 +164,11 @@ smartAdvice.push("• Multiple security vendors detected this website as malicio
 
 if(type==="SAFE"){
 
-parts.push(`
-
-💡 Recommended Actions
-
-✅ This website passed all major security checks.
-
-No known phishing, malware or security warnings were detected.
-
-You can continue normally.
-
-If the website later requests unexpected passwords, OTPs or payments, review that request before proceeding.
-
-`);
-
 }
 
 else if(type==="SUSPICIOUS"){
 
-parts.push(`
-
-💡 Recommended Actions
-
-⚠ Do not rush.
-
-Before continuing:
-
-• Verify the sender independently.
-• Visit the company's official website manually.
-• Avoid entering passwords or payment details.
-• Avoid downloading unknown files.
-
-If you are unsure, leave the website until it is verified.
-
-`);
-
 }
-
-else{
-
-parts.push(`
-
-🚨 Recommended Actions
-
-❌ Do NOT continue.
-
-Immediately:
-
-• Close the website.
-• Do not enter passwords.
-• Do not share OTPs.
-• Do not make any payment.
-
-If you already entered sensitive information:
-
-• Change your password immediately.
-• Contact your bank if payment information was shared.
-• Monitor your accounts for suspicious activity.
-
-`);
 
 if (smartAdvice.length > 0) {
 
