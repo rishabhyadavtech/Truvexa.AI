@@ -29,14 +29,3 @@ Instead of waiting for the cloud to flag a malicious domain, **Vajrex runs local
 - **🔄 Context Drift Protection:** Detects anomalies in user environment state transitions before authentication.
 
 ---
-
-## 🚀 Request Alpha Access (Restricted Slots)
-
-We don't care about vanity metrics. We want brutal technical feedback from developers who actually care about protecting their users. 
-
-If you are a security engineer, developer, or a founder building a SaaS app, you can request an early alpha testing slot.
-
-👉 **[CLICK HERE TO REQUEST ALPHA ACCESS](https://forms.gle/nLvtaPrYshCL6yHC8)**
-
----
-*Maintained by [rishabhyadavtech](https://github.com/rishabhyadavtech). Built for a safer edge.*
