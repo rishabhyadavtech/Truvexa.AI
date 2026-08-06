@@ -18,7 +18,7 @@ Every day, early-stage startups and indie hackers lose their first users not bec
 2. **The Session Hijacking Nightmare:** Once a session token is copied from local storage, your server thinks it's a legitimate user. The damage is done.
 
 ### The Vajrex Approach:
-Instead of waiting for the cloud to flag a malicious domain, **Truvexa runs locally at the client layer**. It continuously analyzes telemetry, intercepts context drifts, and locks down sensitive states locally before user credentials can be exfiltrated.
+Instead of waiting for the cloud to flag a malicious domain, **Vajrex runs locally at the client layer**. It continuously analyzes telemetry, intercepts context drifts, and locks down sensitive states locally before user credentials can be exfiltrated.
 
 ---
 
