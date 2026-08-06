@@ -107,7 +107,7 @@ reminder:
   "👉 Kabhi bhi OTP, password ya bank details share mat karein.",
 
 emergency:
-  "⚠️ Agar aapne details share kar di hain to turant bank se contact karein.";
+  "⚠️ Agar aapne details share kar di hain to turant bank se contact karein.",
 
   decisions: {
 
