@@ -182,8 +182,6 @@ ${smartAdvice.join("\n")}
 
 }
 
-}
-
 return parts
   .filter(Boolean)
   .join("\n\n")
