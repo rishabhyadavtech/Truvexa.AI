@@ -164,7 +164,7 @@ if (urlAnalysis.found) {
   dnsInfo = await checkDNS(urlAnalysis.url);
 }
 
-    let safeBrowsing = {
+  let safeBrowsing = {
   success: false,
   safe: true,
   threats: [],
