@@ -256,7 +256,7 @@ ${isDanger
 <div class="why-box">
 
 <h3>
-Why did Truvexa flag this?
+Why did Vajrex flag this?
 </h3>
 
 <ul class="why-list">
