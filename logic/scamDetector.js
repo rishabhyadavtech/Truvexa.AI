@@ -1,9 +1,7 @@
-const { getLanguage } = require("./languageEngine");
 const { analyzeURL } = require("./urlAnalyzer");
 
 function detectScam(input, lang = "en") {
 
-  const L = getLanguage(lang);
   const text = input.toLowerCase();
   const urlAnalysis = analyzeURL(input);
 
