@@ -4,7 +4,6 @@ en: {
     // =========================
     // BASIC UI
     // =========================
-
 highRisk:
   "High risk — this message appears to be a scam.",
 
@@ -19,6 +18,86 @@ reminder:
 
 emergency:
   "If you already shared sensitive information, contact your bank immediately.",
+safe:
+  "This message appears safe.",
+
+suspicious:
+  "This message looks suspicious.",
+
+dangerous:
+  "This message may be a scam.",
+
+dontShare:
+  "Do not share OTP, passwords or banking details.",
+reasons: {
+
+  SAFE:
+    "No significant security risks were detected.",
+
+  URGENCY:
+    "The message creates pressure to act immediately.",
+
+  GREED:
+    "The message promises money, rewards or unrealistic benefits.",
+
+  OTP_REQUEST:
+    "The message asks for an OTP or banking credentials.",
+
+  EXTERNAL_LINK:
+    "The message contains an external link that should be verified before opening.",
+
+  FEAR:
+    "The message uses fear to pressure you into taking action.",
+
+  UPFRONT_PAYMENT:
+    "The message asks for money before providing the promised service.",
+
+  TOO_EASY_JOB:
+    "The job offer promises high income with little or no experience.",
+
+  JOB_COMBO:
+    "The combination of an easy job and high income is commonly used in scams.",
+
+  JOB_FEE:
+    "Legitimate employers do not ask candidates to pay fees before hiring.",
+
+  URGENT_LINK:
+    "Urgency combined with a link is a common phishing technique.",
+
+  OTP_LINK:
+    "The combination of an OTP request and a link is a high-risk phishing signal.",
+
+  MONEY_URGENCY:
+    "Money combined with urgency is a common scam pattern.",
+
+  FEAR_LINK:
+    "Fear combined with a link is frequently used in phishing attacks.",
+
+  SHORTENED_URL:
+    "The message contains a shortened URL that hides its real destination.",
+
+  UNUSUAL_TLD:
+    "The website uses an uncommon domain extension.",
+
+  BRAND_IMPERSONATION:
+    "The domain appears to imitate a well-known brand.",
+
+  LONG_URL:
+    "The URL is unusually long, which can be a phishing indicator.",
+
+  MULTIPLE_SUBDOMAINS:
+    "The domain contains multiple subdomains, which can be used in phishing.",
+
+  INVALID_URL:
+    "The URL format appears to be invalid.",
+
+  HIGH_RISK:
+    "Multiple independent security signals indicate a high-risk message.",
+
+  MEDIUM_RISK:
+    "Several suspicious indicators were detected."
+
+},
 
     // =========================
     // DECISIONS
