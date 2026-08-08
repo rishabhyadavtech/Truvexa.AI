@@ -31,16 +31,6 @@ advice.push(...urlAnalysis.advice);
 
 evidence.push(...urlAnalysis.evidence);
 
-// NEW: Context
-let context = {
-  hasMoney: false,
-  hasUrgency: false,
-  hasFear: false,
-  hasLink: false,
-  hasSensitiveInfo: false,
-  hasGreed: false
-};
-
   // 🎯 CONTEXT FLAGS
 
 const hasLink = urlAnalysis.found;
@@ -110,17 +100,6 @@ const hasNoExperience =
   text.includes("without experience") ||
   text.includes("freshers") ||
   text.includes("experience not required");
-
-const hasSensitiveInfo =
-  hasOTP && hasBank;
-context.hasGreed = hasGreed;
-
-// Context
-context.hasMoney = hasMoney;
-context.hasUrgency = hasUrgency;
-context.hasFear = hasFear;
-context.hasLink = hasLink;
-context.hasSensitiveInfo = hasOTP && hasBank;
 
   // 🎯 TYPE DETECTION
   if (hasJob) scamTypes.push("Job Scam");
@@ -306,19 +285,6 @@ matchedPatterns.push("ADVANCE_FEE");
 
   if (riskScore >= 60) result = "DANGEROUS";
   else if (riskScore >= 25) result = "SUSPICIOUS";
-
-  // =========================
-  // 🧠 HUMAN MESSAGE
-  // =========================
-
-  let humanMessage = "";
-  
- riskScore = Math.min(riskScore, 100);
-  if (signals.length === 0) {
-    humanMessage = L.reasons.SAFE;
-  } else {
-    humanMessage = reasons.join("\n");
-  }
 
   // =========================
   // 🛡️ SAFETY STATUS
