@@ -96,9 +96,9 @@ function detectScam(input, lang = "en") {
     text.includes("freshers") ||
     text.includes("experience not required");
 
-  // =========================
+  // ==========================
   // TYPE DETECTION
-  // =========================
+  // ==========================
 
   if (hasJob) {
     scamTypes.push("Job Scam");
