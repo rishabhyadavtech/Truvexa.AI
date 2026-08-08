@@ -4,8 +4,7 @@ async function checkScam() {
 const textarea = document.getElementById("input");
 textarea.style.height = "90px";
 
-const language =
-document.getElementById("language").value;
+const language = "en";
   const resultBox = document.getElementById("result");
   const loadingBox = document.getElementById("loadingBox");
 const riskMeter = document.getElementById("riskMeter");
@@ -138,24 +137,28 @@ data.language || "hi";
     const type = data.type;
     const decision = data.decision || {};
 
-    // =========================
-    // 🟢 SAFE MODE
-    // =========================
-   if (type === "SAFE") {
+    // ========================
+    // 🧠 RENDER RESULT
+    // ========================
+
+if (type === "SAFE") {
 
   resultBox.className = "card result-card safe";
- 
-  renderResult(resultBox,data, hasURL);
 
-  feedbackBox.style.display = "block";
-document.getElementById("trustBox").style.display = "block";
-document.getElementById("featureBox").style.display = "block";
+  renderResult(resultBox, data, hasURL);
 
-  return;
+  document.getElementById("trustBox").style.display = "block";
+  document.getElementById("featureBox").style.display = "block";
+
+} else {
+
+  resultBox.className = "card result-card";
+
+  renderResult(resultBox, data, hasURL);
+
 }
 
-    // ✅ SHOW FEEDBACK UI
-    feedbackBox.style.display = "block";
+feedbackBox.style.display = "block";
 
   } catch (error) {  
     console.error("Fetch Error:", error);
