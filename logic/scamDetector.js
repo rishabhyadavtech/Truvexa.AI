@@ -144,13 +144,11 @@ signals.push("UPFRONT_PAYMENT");
 signals.push("TOO_EASY_JOB");
 signals.push("JOB_FEE");
 signals.push("EXTERNAL_LINK");
-    reasons.push(L.reasons.URGENCY);
   }
 
   if (hasGreed || hasMoney) {
     riskScore += 20;
     signals.push("Greed");
-    reasons.push(L.reasons.GREED);
     advice.push(L.actions.VERIFY_OFFER);
   }
 
@@ -161,8 +159,6 @@ riskScore += 40;
 signals.push("Sensitive Info");
 
 scamTypes.push("OTP Scam");
-
-reasons.push(L.reasons.OTP_REQUEST);
 
 advice.push(L.actions.DONT_SHARE_OTP);
 
@@ -197,8 +193,6 @@ riskScore += 5;
 
 signals.push("External Link");
 
-reasons.push(L.reasons.EXTERNAL_LINK);
-
 advice.push(L.actions.VERIFY_LINK);
 
 evidence.push({
@@ -228,7 +222,6 @@ matchedPatterns.push("EXTERNAL_LINK");
   if (hasFear) {
     riskScore += 20;
     signals.push("Fear");
-    reasons.push(L.reasons.FEAR);
     advice.push(L.actions.VERIFY_FIRST);
   }
 
@@ -240,8 +233,6 @@ matchedPatterns.push("EXTERNAL_LINK");
   if (hasFee) {
     riskScore += 35;
     signals.push("Upfront Payment");
-
-    reasons.push(L.reasons.UPFRONT_PAYMENT);
     advice.push(L.actions.DONT_SEND_MONEY);
   }
 
@@ -249,14 +240,11 @@ matchedPatterns.push("EXTERNAL_LINK");
   if (hasNoExperience) {
     riskScore += 15;
     signals.push("Too Easy Job");
-
-   reasons.push(L.reasons.TOO_EASY_JOB);
   }
 
   // 🔴 JOB SCAM BOOST
   if (hasJob && hasMoney) {
     riskScore += 25;
-    reasons.push(L.reasons.JOB_COMBO);
   }
 
   // 💥 ULTIMATE JOB FEE SCAM
@@ -265,8 +253,6 @@ matchedPatterns.push("EXTERNAL_LINK");
 riskScore +=40;
 
 signals.push("Job Fee Scam");
-
-reasons.push(L.reasons.JOB_FEE);
 
 evidence.push({
 
@@ -298,22 +284,18 @@ matchedPatterns.push("ADVANCE_FEE");
 
   if (hasUrgency && hasLink) {
     riskScore += 20;
-    reasons.push(L.reasons.URGENT_LINK);
 }
 
   if (hasOTP && hasLink) {
     riskScore += 25;
-    reasons.push(L.reasons.OTP_LINK);
   }
 
   if (hasMoney && hasUrgency) {
     riskScore += 20;
-    reasons.push(L.reasons.MONEY_URGENCY);
   }
 
   if (hasFear && hasLink) {
     riskScore += 20;
-    reasons.push(L.reasons.FEAR_LINK);
   }
 
   // =========================
@@ -347,8 +329,7 @@ let reminder = L.dontShare;
 let emergency = "";
 
 if (result === "DANGEROUS") {
-  safetyStatus = L.dangerous;
-  emergency = L.actions.VERIFY_OFFICIAL_SOURCE;
+
 } else if (result === "SUSPICIOUS") {
   safetyStatus = L.suspicious;
 } else {
@@ -381,8 +362,6 @@ scamTypes.join(", ") || "General",
 evidence,
 
 matchedPatterns,
-
-reasons,
 
 advice:[...new Set(advice)],
 
