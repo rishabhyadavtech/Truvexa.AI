@@ -1,6 +1,5 @@
 const LANG = {
-
-  en: {
+en: {
 
     // =========================
     // BASIC UI
@@ -26,7 +25,6 @@ emergency:
     // =========================
 
     decisions: {
-
       SAFE:
         "No major risk detected.",
 
