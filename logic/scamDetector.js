@@ -10,17 +10,15 @@ function detectScam(input, lang = "en") {
   let riskScore = urlAnalysis.risk;
 
   let signals = [];
-  let reasons = [];
-  let advice = [];
   let scamTypes = [];
   let evidence = [];
   let matchedPatterns = [];
 
   signals.push(...urlAnalysis.signals);
 
-  reasons.push(
-    ...urlAnalysis.reasons.map(r => L.reasons[r] || r)
-  );
+ reasons.push(
+  ...(urlAnalysis.reasons || [])
+);
 
   advice.push(...urlAnalysis.advice);
   evidence.push(...urlAnalysis.evidence);
@@ -129,7 +127,6 @@ function detectScam(input, lang = "en") {
     riskScore += 20;
     signals.push("GREED");
 
-    advice.push(L.actions.VERIFY_OFFER);
   }
 
   if (hasOTP && hasBank) {
@@ -139,8 +136,6 @@ function detectScam(input, lang = "en") {
     signals.push("OTP_REQUEST");
 
     scamTypes.push("OTP Scam");
-
-    advice.push(L.actions.DONT_SHARE_OTP);
 
     evidence.push({
       id: "OTP_REQUEST",
@@ -162,8 +157,6 @@ function detectScam(input, lang = "en") {
 
     signals.push("EXTERNAL_LINK");
 
-    advice.push(L.actions.VERIFY_LINK);
-
     evidence.push({
       id: "EXTERNAL_LINK",
       title: "External Link Found",
@@ -181,7 +174,6 @@ function detectScam(input, lang = "en") {
   if (hasFear) {
     riskScore += 20;
     signals.push("FEAR");
-    advice.push(L.actions.VERIFY_FIRST);
   }
 
   // =========================
@@ -191,7 +183,6 @@ function detectScam(input, lang = "en") {
   if (hasFee) {
     riskScore += 35;
     signals.push("UPFRONT_PAYMENT");
-    advice.push(L.actions.DONT_SEND_MONEY);
   }
 
   if (hasNoExperience) {
@@ -274,10 +265,6 @@ function detectScam(input, lang = "en") {
     evidence,
 
     matchedPatterns,
-
-    reasons,
-
-    advice: [...new Set(advice)],
 
     signals: [...new Set(signals)]
 
