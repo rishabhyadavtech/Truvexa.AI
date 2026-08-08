@@ -25,9 +25,9 @@ function detectScam(input, lang = "en") {
   advice.push(...urlAnalysis.advice);
   evidence.push(...urlAnalysis.evidence);
 
-  // =========================
+  // ========================
   // CONTEXT FLAGS
-  // =========================
+  // ========================
 
   const hasLink = urlAnalysis.found;
 
